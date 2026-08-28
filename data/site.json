@@ -8,7 +8,7 @@
     { "name": "Instagram", "icon": "📷", "label": "Instagram",       "handle": "@ancohimesama", "url": "https://www.instagram.com/ancohimesama/" },
     { "name": "TikTok",    "icon": "🎵", "label": "TikTok",          "handle": "@Ancohimeco",   "url": "https://www.tiktok.com/@Ancohimeco" },
     { "name": "YouTube1",  "icon": "▶", "label": "YouTube「子ども15匹＋旦那1」", "handle": "@ancogame", "url": "https://www.youtube.com/@ancogame" },
-    { "name": "YouTube2",  "icon": "▶", "label": "YouTube「名言チャンネル」",     "handle": "@himekazoma", "url": "https://www.youtube.com/@himekazoma" }
+    { "name": "YouTube2",  "icon": "▶", "label": "YouTube「ひめかとゾーマの名言喫茶」", "handle": "@himekazoma", "url": "https://www.youtube.com/@himekazoma" }
   ],
   "funnel": {
     "youtube_main": "https://www.youtube.com/@ancogame",

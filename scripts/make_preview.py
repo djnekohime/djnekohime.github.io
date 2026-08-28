@@ -68,7 +68,7 @@ DATA = {
     "groups": ["経営者・実業家", "スポーツ選手", "歴史上の人物", "海外の名言"],
 }
 
-HTML = """<title>あんこひめの隠れ家</title>
+HTML = """<title>昭和上等あんこ姫の隠れ家</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
@@ -225,7 +225,7 @@ footer.site .sns{font-size:1.1rem;letter-spacing:.45rem;}
 </style>
 
 <header class="site"><div class="wrap">
-  <a class="brand" href="#/">あんこひめの隠れ家</a>
+  <a class="brand" href="#/">昭和上等あんこ姫の隠れ家</a>
   <nav class="site">
     <a href="#/" data-nav="/">ホーム</a>
     <a href="#/meigen" data-nav="/meigen">名言</a>
@@ -239,7 +239,7 @@ footer.site .sns{font-size:1.1rem;letter-spacing:.45rem;}
 <footer class="site"><div class="wrap">
   <p class="fl" id="foot-links"></p>
   <p class="sns" id="foot-sns"></p>
-  <p>&copy; あんこひめの隠れ家 &nbsp;/&nbsp; これは確認用プレビューです（本番は Cloudflare Pages 予定）</p>
+  <p>&copy; 昭和上等あんこ姫の隠れ家 &nbsp;/&nbsp; これは確認用プレビューです</p>
 </div></footer>
 
 <script>
@@ -272,11 +272,11 @@ const views = {
     const recent = quotes.slice(-3).reverse();
     return `<section class="hero">
       <div class="mark">姫</div>
-      <h1>あんこひめの隠れ家</h1>
+      <h1>昭和上等あんこ姫の隠れ家</h1>
       <p>${esc(site.tagline)}</p>
     </section>
     <section class="cards">
-      <a class="card" href="#/meigen"><h2>名言</h2><p>心に残った言葉を${quotes.length}個。人物やテーマからも探せます。</p></a>
+      <a class="card" href="#/meigen"><h2>名言</h2><p>心に残った言葉を${quotes.length}個。解説はひめか＆黒猫ゾーマ（名言喫茶）。</p></a>
       <a class="card" href="#/diary"><h2>日記</h2><p>日々のできごと。動画は YouTube「子ども15匹＋旦那1」でも。</p></a>
       <a class="card" href="#/sns"><h2>SNS</h2><p>X・Instagram・TikTok・YouTube。各アカウントへの入り口。</p></a>
     </section>
@@ -286,10 +286,10 @@ const views = {
       <p style="margin-top:1rem"><a class="more" href="#/meigen/all">すべての名言を読む ›</a></p>
     </section>
     <section>
-      <h2 class="sectitle">あんこひめの活動</h2>
+      <h2 class="sectitle">昭和上等あんこ姫の活動</h2>
       <ul class="linklist">
         <li><a href="${site.funnel.youtube_main}">YouTube「子ども15匹＋旦那1」— 日々の事件と日記</a></li>
-        <li><a href="${site.funnel.youtube_meigen}">YouTube「名言チャンネル」</a></li>
+        <li><a href="${site.funnel.youtube_meigen}">YouTube「ひめかとゾーマの名言喫茶」</a></li>
         <li><a href="${site.funnel.note}">note — 詳しい体験記・解決編</a></li>
       </ul>
     </section>`;
@@ -299,8 +299,10 @@ const views = {
     const tcount = t => quotes.filter(q => (q.categories||[]).includes(t.name)).length;
     const pByGroup = {};
     people.forEach(p => (pByGroup[p.group] ||= []).push(p));
-    return `<h1>名言</h1>
+    return `<p class="eyebrow">ひめかとゾーマの名言喫茶</p>
+      <h1>名言</h1>
       <p class="lead">${quotes.length}個の名言を、人物やテーマからも探せます。気になる入り口からどうぞ。</p>
+      <p class="muted">解説は、あんこ姫の連載キャラクター「ひめか」と黒猫「ゾーマ」が担当。</p>
       <p><a class="more" href="#/meigen/all">すべての名言を1ページで読む ›</a></p>
       <section><h2 class="sectitle">テーマから探す</h2><div class="chips">
         ${themes.map(t => `<a class="chip" href="#/theme/${t.slug}">「${t.name}」の名言 <b>${tcount(t)}</b></a>`).join('')}
@@ -313,7 +315,7 @@ const views = {
   },
   all(){
     crumbs([['ホーム','#/'],['名言','#/meigen'],['すべての名言','']]);
-    return `<h1>すべての名言</h1><p class="lead">あんこひめが心に残った言葉を、少しずつ書き溜めています。</p>` +
+    return `<h1>すべての名言</h1><p class="lead">あんこ姫が集めた名言に、ひめかとゾーマが解説をつけています。</p>` +
       groups.map(g => {
         const qs = quotes.filter(q => q.group === g);
         if(!qs.length) return '';
@@ -392,7 +394,7 @@ const views = {
   },
   sns(){
     crumbs([['ホーム','#/'],['SNS','']]);
-    return `<h1>SNS</h1><p class="lead">下のリンクから、あんこひめの各SNSに移動できます。</p>
+    return `<h1>SNS</h1><p class="lead">下のリンクから、昭和上等あんこ姫の各SNSに移動できます。</p>
       <ul class="snslist">${site.sns.map(s => `<li><a href="${s.url}"><span class="ic">${s.icon}</span><span class="nm">${esc(s.label)}</span> <span class="hd">${esc(s.handle)}</span></a></li>`).join('')}</ul>
       <p class="muted">今後YouTubeチャンネルが増えたら、このリストに同じ形式で追加していきます。</p>`;
   },
