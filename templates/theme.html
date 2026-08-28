@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}「{{ theme.name }}」の名言 — {{ site.title }}{% endblock %}
+{% block content %}
+<h1>「{{ theme.name }}」の名言</h1>
+<p class="muted">{{ theme.quotes|length }}件</p>
+
+{% for q in theme.quotes %}
+<article class="quote-card">
+  <blockquote>
+    {% if q.en %}<span class="en">{{ q.en }}</span>{% endif %}
+    「{{ q.quote }}」
+    <cite>― <a href="{{ q.url }}">{{ q.person }}</a></cite>
+  </blockquote>
+  {% if q.commentary %}<p class="himeka"><b>ひめか</b>：{{ q.commentary }}</p>{% endif %}
+</article>
+{% endfor %}
+{% endblock %}

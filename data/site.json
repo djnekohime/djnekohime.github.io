@@ -1,0 +1,19 @@
+{
+  "title": "あんこひめの隠れ家",
+  "tagline": "YouTube・note・日記・名言を、ぜんぶここから。",
+  "description": "昭和のあんこ姫（子ども15匹＋旦那1）の本拠地。名言、日記、SNSへの入り口。",
+  "domain": "ancohime.com",
+  "sns": [
+    { "name": "X",        "icon": "𝕏",  "label": "X（旧Twitter）", "handle": "@Ancohimesama", "url": "https://x.com/Ancohimesama" },
+    { "name": "Instagram", "icon": "📷", "label": "Instagram",       "handle": "@ancohimesama", "url": "https://www.instagram.com/ancohimesama/" },
+    { "name": "TikTok",    "icon": "🎵", "label": "TikTok",          "handle": "@Ancohimeco",   "url": "https://www.tiktok.com/@Ancohimeco" },
+    { "name": "YouTube1",  "icon": "▶", "label": "YouTube「子ども15匹＋旦那1」", "handle": "@ancogame", "url": "https://www.youtube.com/@ancogame" },
+    { "name": "YouTube2",  "icon": "▶", "label": "YouTube「名言チャンネル」",     "handle": "@himekazoma", "url": "https://www.youtube.com/@himekazoma" }
+  ],
+  "funnel": {
+    "youtube_main": "https://www.youtube.com/@ancogame",
+    "youtube_meigen": "https://www.youtube.com/@himekazoma",
+    "note": "https://note.com/ancohimesama"
+  },
+  "diary_intro": "ここに日々のできごとを書いていきます。"
+}

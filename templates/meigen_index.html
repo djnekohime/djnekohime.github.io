@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}名言 — {{ site.title }}{% endblock %}
+{% block content %}
+<h1>名言</h1>
+<p class="lead">{{ total_quotes }}個の名言を、人物やテーマからも探せます。気になる入り口からどうぞ。</p>
+
+<p><a class="more" href="/meigen/all/">すべての名言を1ページで読む ›</a></p>
+
+<section class="block" id="themes">
+  <h2 class="block-title">テーマから探す</h2>
+  <div class="chip-row">
+    {% for t in themes %}
+    <a class="chip" href="/meigen/theme/{{ t.slug }}/">「{{ t.name }}」の名言 <span class="count">{{ t.quotes|length }}</span></a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="block" id="people">
+  <h2 class="block-title">人物から探す</h2>
+  {% for group, plist in people_by_group.items() %}
+  <h3 class="group-title">{{ group }}</h3>
+  <div class="chip-row">
+    {% for p in plist %}
+    <a class="chip" href="{{ p.url }}">{{ p.name }} <span class="count">{{ p.quote_nos|length }}</span></a>
+    {% endfor %}
+  </div>
+  {% endfor %}
+</section>
+
+<section class="block">
+  <h2 class="block-title">最近追加した名言</h2>
+  <ul class="quote-list">
+    {% for q in recent_quotes %}
+    <li><a href="{{ q.url }}"><span class="qno">No.{{ q.slug }}</span>{{ q.quote }}<span class="qby">— {{ q.person }}</span></a></li>
+    {% endfor %}
+  </ul>
+</section>
+{% endblock %}

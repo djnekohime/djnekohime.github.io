@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}SNS — {{ site.title }}{% endblock %}
+{% block content %}
+<h1>SNS</h1>
+<p class="lead">下のリンクから、あんこひめの各SNSに移動できます。</p>
+
+<ul class="sns-list">
+  {% for s in site.sns %}
+  <li><a href="{{ s.url }}"><span class="sns-icon">{{ s.icon }}</span>
+    <span class="sns-name">{{ s.label }}</span>
+    <span class="sns-handle">{{ s.handle }}</span></a></li>
+  {% endfor %}
+</ul>
+
+<p class="muted">今後YouTubeチャンネルが増えたら、このリストに同じ形式で追加していきます。</p>
+{% endblock %}

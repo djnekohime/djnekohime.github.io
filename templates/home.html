@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <h1>{{ site.title }}</h1>
+  <p class="lead">{{ site.tagline }}</p>
+</section>
+
+<section class="cards">
+  <a class="card" href="/meigen/">
+    <h2>名言</h2>
+    <p>心に残った言葉を{{ total_quotes }}個。人物やテーマからも探せます。</p>
+  </a>
+  <a class="card" href="/diary/">
+    <h2>日記</h2>
+    <p>日々のできごと。動画は YouTube「子ども15匹＋旦那1」でも。</p>
+  </a>
+  <a class="card" href="/sns/">
+    <h2>SNS</h2>
+    <p>X・Instagram・TikTok・YouTube。各アカウントへの入り口。</p>
+  </a>
+</section>
+
+{% if recent_quotes %}
+<section class="block">
+  <h2 class="block-title">最近ふれた名言</h2>
+  <ul class="quote-list">
+    {% for q in recent_quotes %}
+    <li><a href="{{ q.url }}"><span class="qno">No.{{ q.slug }}</span>{{ q.quote }}<span class="qby">— {{ q.person }}</span></a></li>
+    {% endfor %}
+  </ul>
+  <p><a class="more" href="/meigen/all/">すべての名言を読む ›</a></p>
+</section>
+{% endif %}
+
+<section class="block funnel">
+  <h2 class="block-title">あんこひめの活動</h2>
+  <ul class="link-list">
+    <li><a href="{{ site.funnel.youtube_main }}">YouTube「子ども15匹＋旦那1」— 日々の事件と日記</a></li>
+    <li><a href="{{ site.funnel.youtube_meigen }}">YouTube「名言チャンネル」</a></li>
+    <li><a href="{{ site.funnel.note }}">note — 詳しい体験記・解決編</a></li>
+  </ul>
+</section>
+{% endblock %}

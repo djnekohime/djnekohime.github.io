@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}日記 — {{ site.title }}{% endblock %}
+{% block content %}
+<h1>日記</h1>
+<p class="lead">{{ site.diary_intro }}</p>
+<p class="link-list">
+  <a href="{{ site.funnel.youtube_main }}">日々の動画は YouTube「子ども15匹＋旦那1」でも配信中</a><br>
+  <a href="{{ site.funnel.note }}">note でも日々のできごとを発信しています</a>
+</p>
+
+{% if entries %}
+<ul class="entry-list">
+  {% for e in entries %}
+  <li>
+    <a href="{{ e.url }}">
+      {% if e.date %}<time>{{ e.date }}</time>{% endif %}
+      <span class="entry-title">{{ e.title }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p class="muted">まだ記事がありません。</p>
+{% endif %}
+{% endblock %}

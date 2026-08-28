@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{{ site.title }}{% endblock %}</title>
+<meta name="description" content="{% block description %}{{ site.description }}{% endblock %}">
+<link rel="stylesheet" href="/static/css/style.css">
+<link rel="icon" href="/static/img/favicon.svg">
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">{{ site.title }}</a>
+    <nav class="site-nav" aria-label="メインメニュー">
+      <a href="/">ホーム</a>
+      <a href="/meigen/">名言</a>
+      <a href="/diary/">日記</a>
+      <a href="/sns/">SNS</a>
+    </nav>
+  </div>
+</header>
+
+{% if breadcrumbs %}
+<nav class="breadcrumb wrap" aria-label="パンくずリスト">
+  {% for label, href in breadcrumbs %}
+    {% if href %}<a href="{{ href }}">{{ label }}</a><span aria-hidden="true">›</span>
+    {% else %}<span aria-current="page">{{ label }}</span>{% endif %}
+  {% endfor %}
+</nav>
+{% endif %}
+
+<main id="main" class="wrap">
+{% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="{{ site.funnel.youtube_main }}">YouTube「子ども15匹＋旦那1」</a>
+      <a href="{{ site.funnel.note }}">note</a>
+      <a href="/sns/">SNS一覧</a>
+    </p>
+    <p class="sns-row" aria-label="SNS">
+      {% for s in site.sns %}<a href="{{ s.url }}" title="{{ s.name }}">{{ s.icon }}</a>{% endfor %}
+    </p>
+    <p class="copyright">&copy; {{ site.title }}</p>
+  </div>
+</footer>
+</body>
+</html>

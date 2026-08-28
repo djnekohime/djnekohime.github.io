@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}すべての名言 — {{ site.title }}{% endblock %}
+{% block content %}
+<h1>すべての名言</h1>
+<p class="lead">あんこひめが心に残った言葉を、少しずつ書き溜めています。</p>
+
+{% for group, quotes in groups.items() %}
+<section class="block">
+  <h2 class="block-title">{{ group }}</h2>
+  {% for q in quotes %}
+  <article class="quote-card" id="no{{ q.slug }}">
+    <blockquote>
+      {% if q.en %}<span class="en">{{ q.en }}</span>{% endif %}
+      「{{ q.quote }}」
+      <cite>― {{ q.person }}{% if q.attribution %}（{{ q.attribution }}）{% endif %}{% if q.note %} <span class="note">{{ q.note }}</span>{% endif %}</cite>
+    </blockquote>
+    {% if q.commentary %}<p class="himeka"><b>ひめか</b>：{{ q.commentary }}</p>{% endif %}
+    <p class="quote-meta"><a href="{{ q.url }}">No.{{ q.slug }} の詳細 ›</a></p>
+  </article>
+  {% endfor %}
+</section>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}No.{{ q.slug }} {{ q.person }} — {{ site.title }}{% endblock %}
+{% block description %}{{ q.quote }} ― {{ q.person }}{% endblock %}
+{% block content %}
+<article class="quote-detail">
+  <p class="eyebrow">No.{{ q.slug }}</p>
+  <blockquote class="big">
+    {% if q.en %}<span class="en">{{ q.en }}</span>{% endif %}
+    「{{ q.quote }}」
+    <cite>― <a href="{{ person.url }}">{{ q.person }}</a>{% if q.attribution %}（{{ q.attribution }}）{% endif %}{% if q.note %} <span class="note">{{ q.note }}</span>{% endif %}</cite>
+  </blockquote>
+
+  {% if q.commentary %}
+  <div class="himeka-box">
+    <h2>💬 この言葉が伝えていること／今の時代なら？</h2>
+    <p><b>ひめか</b>：{{ q.commentary }}</p>
+  </div>
+  {% endif %}
+
+  {% if q.categories %}
+  <p class="tag-row">
+    {% for c in q.categories %}<a class="tag" href="/meigen/theme/{{ theme_slugs[c] }}/">#{{ c }}</a>{% endfor %}
+  </p>
+  {% endif %}
+
+  {% if q.youtube %}
+  <p class="watch"><a href="{{ q.youtube }}">▶ 関連動画（YouTube）</a></p>
+  {% endif %}
+</article>
+
+<nav class="pager" aria-label="前後の名言">
+  {% if prev %}<a class="prev" href="{{ prev.url }}">‹ No.{{ prev.slug }}</a>{% else %}<span></span>{% endif %}
+  <a href="/meigen/all/">一覧</a>
+  {% if next %}<a class="next" href="{{ next.url }}">No.{{ next.slug }} ›</a>{% else %}<span></span>{% endif %}
+</nav>
+
+{% if same_person %}
+<section class="block">
+  <h2 class="block-title">{{ q.person }} の名言をもっと</h2>
+  <ul class="quote-list">
+    {% for s in same_person %}
+    <li><a href="{{ s.url }}"><span class="qno">No.{{ s.slug }}</span>{{ s.quote }}</a></li>
+    {% endfor %}
+  </ul>
+  <p><a class="more" href="{{ person.url }}">{{ q.person }} の一覧へ ›</a></p>
+</section>
+{% endif %}
+{% endblock %}

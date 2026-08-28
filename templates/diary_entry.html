@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{{ entry.title }} — 日記 — {{ site.title }}{% endblock %}
+{% block content %}
+<article class="diary">
+  <h1>{{ entry.title }}</h1>
+  {% if entry.date %}<p class="muted"><time>{{ entry.date }}</time></p>{% endif %}
+  <div class="prose">
+    {{ entry.html|safe }}
+  </div>
+  {% if entry.youtube %}
+  <p class="watch"><a href="{{ entry.youtube }}">▶ この日の関連動画を見る</a></p>
+  {% endif %}
+</article>
+<nav class="pager"><a href="/diary/">‹ 日記の一覧へ</a></nav>
+{% endblock %}
