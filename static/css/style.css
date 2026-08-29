@@ -37,7 +37,7 @@ a:hover { text-decoration: underline; }
 .skip:focus { left: 1rem; top: 1rem; background: var(--accent); color: #000; padding: .4rem .8rem; border-radius: 6px; }
 
 /* header */
-.site-header { border-bottom: 1px solid var(--line); background: rgba(20,20,22,.94); position: sticky; top: 0; z-index: 10; }
+.site-header { border-bottom: 1px solid rgba(255,255,255,.12); background: rgba(14,14,17,.55); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 10; }
 .site-header .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .4rem .9rem; padding-top: .7rem; padding-bottom: .7rem; }
 .brand { display: flex; align-items: center; gap: .55rem; font-weight: 700; color: var(--text); font-size: 1.02rem; }
 .brand:hover { text-decoration: none; }
@@ -77,25 +77,27 @@ h3 { font-size: 1.02rem; }
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse at 62% 40%, rgba(0,0,0,.18), rgba(0,0,0,.5) 74%),
-    linear-gradient(180deg, rgba(10,10,14,.52) 0%, rgba(10,10,14,.34) 30%, rgba(10,10,14,.68) 100%);
+  /* light veil so text stays readable while the wallpaper still shows through */
+  background: linear-gradient(180deg,
+    rgba(8,8,11,.58) 0%,
+    rgba(8,8,11,.46) 35%,
+    rgba(8,8,11,.66) 100%);
 }
 
-/* content lives in translucent dark panels above the fixed background */
+/* content sits directly over the wallpaper (see-through), no opaque panel */
 .breadcrumb.wrap,
-main.wrap {
-  position: relative;
-  z-index: 1;
-  background: rgba(15,15,18,.9);
-}
-main.wrap { padding-top: 1rem; padding-bottom: 2.5rem; }
-.breadcrumb.wrap { padding-bottom: .5rem; }
+main.wrap,
 .site-footer {
   position: relative;
   z-index: 1;
-  background: rgba(15,15,18,.94);
+  background: transparent;
 }
+main.wrap {
+  padding-top: 1rem;
+  padding-bottom: 2.5rem;
+  text-shadow: 0 1px 6px rgba(0,0,0,.6);
+}
+.breadcrumb.wrap { padding-bottom: .5rem; }
 
 /* ---- home: full-screen video splash, no header ---- */
 .page-home .site-header { display: none; }
@@ -135,11 +137,7 @@ main.wrap { padding-top: 1rem; padding-bottom: 2.5rem; }
   padding: 3rem 1.1rem 4rem;
 }
 @supports (height: 100svh) { .splash { min-height: 100svh; } }
-.page-home main.wrap {
-  border-radius: 20px 20px 0 0;
-  box-shadow: 0 -24px 70px rgba(0,0,0,.55);
-  padding-top: 2rem;
-}
+.page-home main.wrap { padding-top: 2rem; }
 
 .splash-content { position: relative; z-index: 1; max-width: 42rem; }
 .splash-eyebrow {
@@ -219,7 +217,7 @@ main.wrap { padding-top: 1rem; padding-bottom: 2.5rem; }
 
 /* cards (home) */
 .cards { display: grid; gap: .9rem; margin: 1.5rem 0; }
-.card { display: block; background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.1rem 1.2rem; color: var(--text); }
+.card { display: block; background: rgba(26,22,28,.4); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius); padding: 1.1rem 1.2rem; color: var(--text); }
 .card:hover { border-color: var(--accent); text-decoration: none; }
 .card h2 { margin: 0 0 .3rem; font-size: 1.1rem; }
 .card p { margin: 0; color: var(--muted); font-size: .92rem; }
@@ -237,12 +235,12 @@ main.wrap { padding-top: 1rem; padding-bottom: 2.5rem; }
 
 /* chips */
 .chip-row { display: flex; flex-wrap: wrap; gap: .5rem; margin: .6rem 0 1.2rem; }
-.chip { display: inline-flex; align-items: center; gap: .4rem; background: var(--bg-card); border: 1px solid var(--line); border-radius: 999px; padding: .35rem .8rem; font-size: .9rem; color: var(--text); }
+.chip { display: inline-flex; align-items: center; gap: .4rem; background: rgba(26,22,28,.5); border: 1px solid rgba(255,255,255,.16); border-radius: 999px; padding: .35rem .8rem; font-size: .9rem; color: var(--text); }
 .chip:hover { border-color: var(--accent); text-decoration: none; }
 .chip .count { color: var(--muted); font-size: .78rem; }
 
 /* quote card */
-.quote-card { background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.1rem 1.2rem; margin: 1rem 0; }
+.quote-card { background: rgba(26,22,28,.4); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius); padding: 1.1rem 1.2rem; margin: 1rem 0; }
 .quote-card blockquote, .quote-detail blockquote { margin: 0; font-size: 1.05rem; }
 blockquote.big { font-size: 1.25rem; line-height: 1.8; margin: .4rem 0 1.4rem; }
 blockquote .en { display: block; color: var(--muted); font-size: .9rem; font-style: italic; margin-bottom: .4rem; line-height: 1.7; }
@@ -252,13 +250,13 @@ blockquote cite { display: block; font-style: normal; color: var(--muted); font-
 .himeka b { color: var(--accent-2); }
 .quote-meta { margin: .7rem 0 0; font-size: .85rem; }
 
-.himeka-box { background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1.4rem 0; }
+.himeka-box { background: rgba(26,22,28,.42); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1.4rem 0; }
 .himeka-box h2 { margin: 0 0 .5rem; font-size: 1rem; color: var(--accent-2); }
 .himeka-box p { margin: 0; }
 
 /* tags */
 .tag-row { display: flex; flex-wrap: wrap; gap: .45rem; margin: 1.2rem 0; }
-.tag { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 6px; padding: .2rem .55rem; font-size: .82rem; color: var(--muted); }
+.tag { background: rgba(26,22,28,.42); border: 1px solid rgba(255,255,255,.14); border-radius: 6px; padding: .2rem .55rem; font-size: .82rem; color: var(--muted); }
 .watch a { font-weight: 600; }
 
 /* pager */
@@ -286,7 +284,7 @@ blockquote cite { display: block; font-style: normal; color: var(--muted); font-
 .sns-handle { color: var(--muted); font-size: .85rem; }
 
 /* footer */
-.site-footer { border-top: 1px solid var(--line); background: var(--bg-soft); padding: 1.8rem 0; margin-top: 2rem; }
+.site-footer { border-top: 1px solid rgba(255,255,255,.12); padding: 1.8rem 0; margin-top: 2rem; text-shadow: 0 1px 6px rgba(0,0,0,.6); }
 .site-footer p { margin: .4rem 0; font-size: .85rem; }
 .footer-links { display: flex; flex-wrap: wrap; gap: .3rem 1rem; }
 .footer-links a { color: var(--muted); }
