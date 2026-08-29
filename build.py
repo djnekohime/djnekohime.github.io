@@ -227,6 +227,12 @@ def build(serve: bool = False) -> None:
     if STATIC.exists():
         shutil.copytree(STATIC, DIST / "static")
 
+    # サイトルート直下に置くファイル（ads.txt など）
+    for name in ("ads.txt", "robots.txt"):
+        src = ROOT / name
+        if src.exists():
+            shutil.copy2(src, DIST / name)
+
     # --- トップ ---
     write("/index.html", env.get_template("home.html").render(
         **ctx_base,
