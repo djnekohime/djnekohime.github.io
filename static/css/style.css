@@ -19,7 +19,7 @@
 html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
-  background: var(--bg);
+  background: #0f0f11;
   color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN",
                "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
@@ -37,7 +37,7 @@ a:hover { text-decoration: underline; }
 .skip:focus { left: 1rem; top: 1rem; background: var(--accent); color: #000; padding: .4rem .8rem; border-radius: 6px; }
 
 /* header */
-.site-header { border-bottom: 1px solid var(--line); background: var(--bg-soft); position: sticky; top: 0; z-index: 10; }
+.site-header { border-bottom: 1px solid var(--line); background: rgba(20,20,22,.94); position: sticky; top: 0; z-index: 10; }
 .site-header .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .4rem .9rem; padding-top: .7rem; padding-bottom: .7rem; }
 .brand { display: flex; align-items: center; gap: .55rem; font-weight: 700; color: var(--text); font-size: 1.02rem; }
 .brand:hover { text-decoration: none; }
@@ -65,17 +65,47 @@ h3 { font-size: 1.02rem; }
 .group-title { color: var(--muted); margin: 1.4rem 0 .5rem; font-size: .92rem; }
 .more { font-weight: 600; }
 
-/* home: fixed video backdrop; all page content scrolls over it */
-body.page-home { background: #0f0f11; }
-.page-home .site-header { display: none; }
+/* ---- fixed background image site-wide; content scrolls over it ---- */
+.site-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: #0f0f11 url("/static/img/hero-poster.jpg") center / cover no-repeat;
+  transform: translateZ(0);   /* keep iOS Safari painting the fixed layer */
+}
+.site-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 62% 40%, rgba(0,0,0,.18), rgba(0,0,0,.5) 74%),
+    linear-gradient(180deg, rgba(10,10,14,.52) 0%, rgba(10,10,14,.34) 30%, rgba(10,10,14,.68) 100%);
+}
 
+/* content lives in translucent dark panels above the fixed background */
+.breadcrumb.wrap,
+main.wrap {
+  position: relative;
+  z-index: 1;
+  background: rgba(15,15,18,.9);
+}
+main.wrap { padding-top: 1rem; padding-bottom: 2.5rem; }
+.breadcrumb.wrap { padding-bottom: .5rem; }
+.site-footer {
+  position: relative;
+  z-index: 1;
+  background: rgba(15,15,18,.94);
+}
+
+/* ---- home: full-screen video splash, no header ---- */
+.page-home .site-header { display: none; }
 .splash-bg {
   position: fixed;
   inset: 0;
   z-index: 0;
   overflow: hidden;
   background: #0f0f11;
-  transform: translateZ(0);   /* keep iOS Safari painting the fixed layer */
+  transform: translateZ(0);
 }
 .splash-media {
   position: absolute;
@@ -93,8 +123,6 @@ body.page-home { background: #0f0f11; }
     radial-gradient(ellipse at 62% 40%, rgba(0,0,0,.18), rgba(0,0,0,.5) 74%),
     linear-gradient(180deg, rgba(10,10,14,.42) 0%, rgba(10,10,14,.22) 32%, rgba(10,10,14,.6) 100%);
 }
-
-/* first screen: title + buttons centred over the video */
 .splash {
   position: relative;
   z-index: 1;
@@ -107,21 +135,10 @@ body.page-home { background: #0f0f11; }
   padding: 3rem 1.1rem 4rem;
 }
 @supports (height: 100svh) { .splash { min-height: 100svh; } }
-
-/* content after the first screen: dark panel gliding over the fixed video */
 .page-home main.wrap {
-  position: relative;
-  z-index: 1;
-  background: rgba(15,15,18,.9);
   border-radius: 20px 20px 0 0;
   box-shadow: 0 -24px 70px rgba(0,0,0,.55);
   padding-top: 2rem;
-  padding-bottom: 2.5rem;
-}
-.page-home .site-footer {
-  position: relative;
-  z-index: 1;
-  background: rgba(15,15,18,.94);
 }
 
 .splash-content { position: relative; z-index: 1; max-width: 42rem; }
