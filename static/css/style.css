@@ -290,6 +290,9 @@ blockquote cite { display: block; font-style: normal; color: var(--muted); font-
 }
 
 /* diary: archive links + calendar */
+.feed-link { margin: 2.5rem 0 0; font-size: .78rem; }
+.feed-link a { color: var(--muted); }
+
 .archive-row { display: flex; flex-wrap: wrap; gap: .45rem .5rem; margin: 1.3rem 0; }
 .archive-row a { display: inline-flex; align-items: baseline; gap: .4rem; padding: .35rem .85rem; border-radius: 999px; background: rgba(20,18,24,.66); border: 1px solid rgba(255,255,255,.22); color: var(--text); font-size: .85rem; }
 .archive-row a:hover { border-color: var(--accent); text-decoration: none; }
