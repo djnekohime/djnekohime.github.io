@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 
+{% block body_class %}page-home{% endblock %}
+
 {% block splash %}
+<video class="splash-media" autoplay muted loop playsinline preload="metadata"
+       poster="/static/img/hero-poster.jpg">
+  <source src="/static/video/hero.mp4" type="video/mp4">
+</video>
+<div class="splash-scrim"></div>
 <section class="splash">
-  <video class="splash-media" autoplay muted loop playsinline preload="metadata"
-         poster="/static/img/hero-poster.jpg">
-    <source src="/static/video/hero.mp4" type="video/mp4">
-  </video>
-  <div class="splash-scrim"></div>
   <div class="splash-content">
     <p class="splash-eyebrow">昭和上等あんこ姫の</p>
     <h1 class="splash-title">隠れ家</h1>
