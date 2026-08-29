@@ -8,9 +8,9 @@
   --line:      #4a4a4a;
   --text:      #eaeaea;
   --muted:     #a8a8a8;
-  --accent:    #e8b64c;
-  --accent-2:  #f0d08a;
-  --link:      #f0d08a;
+  --accent:    #ff3d9a;
+  --accent-2:  #ff8ac4;
+  --link:      #ff9dcb;
   --maxw:      44rem;
   --radius:    12px;
 }
@@ -64,8 +64,41 @@ h3 { font-size: 1.02rem; }
 .more { font-weight: 600; }
 
 /* hero + cards (home) */
-.hero { padding: 1.5rem 0 .5rem; }
-.hero h1 { font-size: 1.9rem; }
+.hero {
+  position: relative;
+  margin: .2rem 0 1.8rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  min-height: 220px;
+  display: flex;
+  align-items: flex-end;
+  background: #1c1c1d url("/static/img/header-sm.webp") center / cover no-repeat;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(95deg,
+    rgba(20,20,21,.92) 0%,
+    rgba(20,20,21,.74) 40%,
+    rgba(20,20,21,.20) 72%,
+    rgba(20,20,21,0) 100%);
+}
+.hero-inner { position: relative; padding: 1.2rem 1.3rem 1.4rem; }
+.hero h1 {
+  font-size: 1.55rem;
+  line-height: 1.45;
+  margin: 0 0 .45rem;
+  color: #fff;
+  text-shadow: 0 2px 14px rgba(0,0,0,.65);
+}
+.hero .lead {
+  margin: 0;
+  max-width: 24rem;
+  color: #f2e7ef;
+  font-size: .95rem;
+  text-shadow: 0 1px 10px rgba(0,0,0,.6);
+}
 .cards { display: grid; gap: .9rem; margin: 1.5rem 0; }
 .card { display: block; background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.1rem 1.2rem; color: var(--text); }
 .card:hover { border-color: var(--accent); text-decoration: none; }
@@ -96,7 +129,7 @@ blockquote.big { font-size: 1.25rem; line-height: 1.8; margin: .4rem 0 1.4rem; }
 blockquote .en { display: block; color: var(--muted); font-size: .9rem; font-style: italic; margin-bottom: .4rem; line-height: 1.7; }
 blockquote cite { display: block; font-style: normal; color: var(--muted); font-size: .88rem; margin-top: .5rem; }
 .note { color: #c98b8b; font-size: .82rem; }
-.himeka { background: rgba(232,182,76,.08); border-left: 3px solid var(--accent); padding: .7rem .9rem; margin: .9rem 0 0; font-size: .95rem; border-radius: 0 8px 8px 0; }
+.himeka { background: rgba(255,61,154,.09); border-left: 3px solid var(--accent); padding: .7rem .9rem; margin: .9rem 0 0; font-size: .95rem; border-radius: 0 8px 8px 0; }
 .himeka b { color: var(--accent-2); }
 .quote-meta { margin: .7rem 0 0; font-size: .85rem; }
 
@@ -144,4 +177,7 @@ blockquote cite { display: block; font-style: normal; color: var(--muted); font-
 @media (min-width: 40rem) {
   .cards { grid-template-columns: repeat(3, 1fr); }
   h1 { font-size: 1.9rem; }
+  .hero { min-height: 300px; background-image: url("/static/img/header.webp"); }
+  .hero h1 { font-size: 2rem; }
+  .hero .lead { font-size: 1rem; }
 }

@@ -321,7 +321,7 @@ def build(serve: bool = False) -> None:
     write("/404.html", env.get_template("404.html").render(**ctx_base, breadcrumbs=[]))
 
     pages = sum(1 for _ in DIST.rglob("*.html"))
-    print(f"✓ ビルド完了: {pages} ページ → {DIST}")
+    print(f"[OK] ビルド完了: {pages} ページ / 出力先 {DIST}")
 
     if serve:
         _serve()
@@ -334,7 +334,7 @@ def _serve(port: int = 8000) -> None:
 
     handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(DIST))
     with socketserver.TCPServer(("", port), handler) as httpd:
-        print(f"→ プレビュー: http://localhost:{port}  (Ctrl+C で停止)")
+        print(f"プレビュー: http://localhost:{port}  (Ctrl+C で停止)")
         try:
             httpd.serve_forever()
         except KeyboardInterrupt:
