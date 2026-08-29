@@ -39,7 +39,9 @@ a:hover { text-decoration: underline; }
 /* header */
 .site-header { border-bottom: 1px solid var(--line); background: var(--bg-soft); position: sticky; top: 0; z-index: 10; }
 .site-header .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .4rem .9rem; padding-top: .7rem; padding-bottom: .7rem; }
-.brand { font-weight: 700; color: var(--text); font-size: 1.02rem; }
+.brand { display: flex; align-items: center; gap: .55rem; font-weight: 700; color: var(--text); font-size: 1.02rem; }
+.brand:hover { text-decoration: none; }
+.brand-avatar { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; flex: none; border: 1px solid var(--line); }
 .site-nav { display: flex; gap: 1rem; font-size: .95rem; }
 .site-nav a { color: var(--muted); }
 .site-nav a:hover { color: var(--accent-2); text-decoration: none; }
