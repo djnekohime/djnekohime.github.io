@@ -5,20 +5,38 @@
 <p class="lead">{{ site.diary_intro }}</p>
 <p class="link-list">
   <a href="{{ site.funnel.youtube_main }}">日々の動画は YouTube「子ども15匹＋旦那1」でも配信中</a><br>
-  <a href="{{ site.funnel.note }}">note でも日々のできごとを発信しています</a>
+  <a href="{{ site.funnel.note }}">note でも日々のできごとを発信しています</a><br>
+  <a href="/diary/rss.xml">RSS で購読する</a>
 </p>
 
-{% if entries %}
+{% if months %}
+<p class="archive-row" aria-label="月別アーカイブ">
+  {% for m in months %}<a href="/diary/{{ m.ym }}/">{{ m.label }} <span class="count">{{ m.count }}</span></a>{% endfor %}
+</p>
+{% endif %}
+
+{% if cal %}
+{% include "_calendar.html" with context %}
+{% endif %}
+
+{% if recent_groups %}
 <ul class="entry-list">
-  {% for e in entries %}
+  {% for g in recent_groups %}
+  <li class="ym-head">{{ g.label }}</li>
+  {% for e in g.entries %}
   <li>
     <a href="{{ e.url }}">
       {% if e.date %}<time>{{ e.date }}</time>{% endif %}
       <span class="entry-title">{{ e.title }}</span>
     </a>
+    {% if e.tags %}<span class="entry-tags">{% for t in e.tags %}<a class="tag" href="{{ tag_url[t] }}">#{{ t }}</a>{% endfor %}</span>{% endif %}
   </li>
   {% endfor %}
+  {% endfor %}
 </ul>
+{% if has_more %}
+<p><a class="more" href="/diary/{{ months[-1].ym }}/">古い日記は月別アーカイブから ›</a></p>
+{% endif %}
 {% else %}
 <p class="muted">まだ記事がありません。</p>
 {% endif %}

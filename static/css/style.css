@@ -267,12 +267,34 @@ blockquote cite { display: block; font-style: normal; color: var(--muted); font-
 /* diary */
 .entry-list { list-style: none; padding: 0; }
 .entry-list li { border-bottom: 1px solid var(--line); }
-.entry-list li a { display: block; padding: .9rem 0; color: var(--text); }
+.entry-list li > a { display: block; padding: .9rem 0 .35rem; color: var(--text); }
 .entry-list time { display: block; color: var(--muted); font-size: .8rem; }
 .entry-title { font-weight: 600; }
+.entry-list li.ym-head { list-style: none; border-bottom: none; color: var(--accent); font-weight: 700; font-size: .82rem; letter-spacing: .06em; padding: 1.4rem 0 .2rem; }
+.entry-list li.ym-head:first-child { padding-top: .4rem; }
+.entry-tags { display: block; padding-bottom: .55rem; }
+.entry-tags .tag { margin-right: .35rem; }
 .prose p { margin: 1rem 0; }
 .prose img { max-width: 100%; height: auto; border-radius: 8px; }
 .prose h2, .prose h3 { margin-top: 1.8rem; }
+
+/* diary: archive links + calendar */
+.archive-row { display: flex; flex-wrap: wrap; gap: .45rem .5rem; margin: 1.3rem 0; }
+.archive-row a { display: inline-flex; align-items: baseline; gap: .4rem; padding: .35rem .85rem; border-radius: 999px; background: rgba(20,18,24,.66); border: 1px solid rgba(255,255,255,.22); color: var(--text); font-size: .85rem; }
+.archive-row a:hover { border-color: var(--accent); text-decoration: none; }
+.archive-row .count { color: var(--accent-2); font-size: .78rem; font-weight: 700; }
+
+.cal { border-collapse: separate; border-spacing: 4px; width: 100%; max-width: 23rem; margin: 1.2rem 0 1.8rem; }
+.cal caption { text-align: left; font-weight: 700; margin-bottom: .5rem; }
+.cal th { color: var(--muted); font-weight: 500; font-size: .76rem; padding: .1rem 0; }
+.cal td { text-align: center; font-size: .85rem; color: var(--muted); }
+.cal td.empty { background: transparent; }
+.cal td:not(.empty) { background: rgba(20,18,24,.5); border-radius: 8px; }
+.cal td.has { color: var(--text); background: transparent; }
+.cal td.has a { display: block; padding: .5rem 0; border-radius: 8px; background: var(--accent); color: #1a1013; font-weight: 700; position: relative; }
+.cal td.has a:hover { background: var(--accent-2); text-decoration: none; }
+.cal td:not(.has) { padding: .5rem 0; }
+.cal td.has .n { position: absolute; top: 1px; right: 4px; font-size: .58rem; }
 
 /* sns page */
 .sns-list { list-style: none; padding: 0; }

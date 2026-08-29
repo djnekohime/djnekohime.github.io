@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}{{ month.label }}の日記 — {{ site.title }}{% endblock %}
+{% block content %}
+<h1>{{ month.label }}の日記</h1>
+<p class="muted">{{ month.count }}件</p>
+
+{% include "_calendar.html" with context %}
+
+<ul class="entry-list">
+  {% for e in month.entries %}
+  <li>
+    <a href="{{ e.url }}">
+      <time>{{ e.date }}</time>
+      <span class="entry-title">{{ e.title }}</span>
+    </a>
+    {% if e.tags %}<span class="entry-tags">{% for t in e.tags %}<a class="tag" href="{{ tag_url[t] }}">#{{ t }}</a>{% endfor %}</span>{% endif %}
+  </li>
+  {% endfor %}
+</ul>
+
+<nav class="pager"><a href="/diary/">‹ 日記トップへ</a></nav>
+{% endblock %}

@@ -7,9 +7,19 @@
   <div class="prose">
     {{ entry.html|safe }}
   </div>
+  {% if entry.tags %}
+  <p class="tag-row">
+    {% for t in entry.tags %}<a class="tag" href="{{ tag_url[t] }}">#{{ t }}</a>{% endfor %}
+  </p>
+  {% endif %}
   {% if entry.youtube %}
   <p class="watch"><a href="{{ entry.youtube }}">▶ この日の関連動画を見る</a></p>
   {% endif %}
 </article>
-<nav class="pager"><a href="/diary/">‹ 日記の一覧へ</a></nav>
+
+<nav class="pager" aria-label="前後の日記">
+  {% if older %}<a class="prev" href="{{ older.url }}">‹ {{ older.title }}</a>{% else %}<span></span>{% endif %}
+  <a href="/diary/">一覧</a>
+  {% if newer %}<a class="next" href="{{ newer.url }}">{{ newer.title }} ›</a>{% else %}<span></span>{% endif %}
+</nav>
 {% endblock %}

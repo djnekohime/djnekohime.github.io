@@ -20,9 +20,15 @@
 from __future__ import annotations
 
 import argparse
+import calendar as _cal
+import hashlib
+import html as _html
 import json
 import re
 import shutil
+from collections import OrderedDict
+from datetime import datetime, timezone
+from email.utils import format_datetime
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -45,6 +51,49 @@ THEME_SLUGS = {
 }
 THEME_ORDER = ["生き方", "仕事", "挑戦", "努力", "経営"]
 GROUP_ORDER = ["経営者・実業家", "スポーツ選手", "歴史上の人物", "海外の名言", "中国古典"]
+
+# 日記タグ → URL用スラッグ（未定義のタグは build 時に警告＋ハッシュで暫定スラッグ）
+DIARY_TAG_SLUGS = {
+    "猫": "neko", "犬": "inu", "メダカ": "medaka", "動物": "doubutsu",
+    "機材": "kizai", "AI": "ai", "音楽": "ongaku", "動画": "douga",
+    "SNS": "sns", "サイト制作": "site", "BTS": "bts",
+    "韓国ドラマ": "kandrama", "韓ドラ": "kandrama",
+    "買い物": "kaimono", "家族": "kazoku", "旦那": "danna",
+    "学び": "manabi", "失敗": "shippai", "お金": "okane", "健康": "kenkou",
+    "料理": "ryouri", "英語": "eigo", "韓国語": "kankokugo", "日常": "nichijou",
+}
+WEEKDAY_JA = ["日", "月", "火", "水", "木", "金", "土"]
+
+
+def diary_tag_slug(tag: str) -> str:
+    s = DIARY_TAG_SLUGS.get(tag)
+    if not s:
+        s = "t" + hashlib.md5(tag.encode("utf-8")).hexdigest()[:6]
+        print(f"  ⚠ 日記タグ '{tag}' の slug 未定義 → 暫定 '{s}'（DIARY_TAG_SLUGS に追加を）")
+    return s
+
+
+def month_calendar(ym: str, posts_by_day: dict) -> dict:
+    """ym='2026-08' → テンプレート用の週×日グリッド。"""
+    y, m = int(ym[:4]), int(ym[5:7])
+    cal = _cal.Calendar(firstweekday=6)  # 日曜はじまり
+    weeks = []
+    for week in cal.monthdatescalendar(y, m):
+        row = []
+        for d in week:
+            if d.month != m:
+                row.append({"day": None})
+                continue
+            ds = d.isoformat()
+            posts = posts_by_day.get(ds, [])
+            row.append({
+                "day": d.day,
+                "date": ds,
+                "url": posts[0]["url"] if posts else None,
+                "count": len(posts),
+            })
+        weeks.append(row)
+    return {"ym": ym, "label": f"{y}年{m}月", "weeks": weeks}
 
 
 # --------------------------------------------------------------------------- #
@@ -137,17 +186,21 @@ def load_diary() -> list[dict]:
     for f in sorted(CONTENT.glob("diary/*.md"), reverse=True):
         text = f.read_text(encoding="utf-8")
         fm, body = _split_front_matter(text)
+        d = fm.get("date", "")
         entries.append(
             {
                 "slug": f.stem,
                 "title": fm.get("title", f.stem),
-                "date": fm.get("date", ""),
+                "date": d,
+                "year": d[:4],
+                "month": d[:7],  # "2026-08"
+                "tags": [t.strip() for t in fm.get("tags", "").split(",") if t.strip()],
                 "youtube": fm.get("youtube", ""),
                 "html": md.markdown(body, extensions=["extra"]),
                 "url": f"/diary/{f.stem}/",
             }
         )
-    entries.sort(key=lambda e: e["date"], reverse=True)
+    entries.sort(key=lambda e: (e["date"], e["slug"]), reverse=True)
     return entries
 
 
@@ -186,6 +239,44 @@ def write(path_from_dist: str, html: str) -> None:
         out = out / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html, encoding="utf-8")
+
+
+def write_raw(path_from_dist: str, text: str) -> None:
+    """拡張子をそのまま使ってファイルを書き出す（rss.xml など）。"""
+    out = DIST / path_from_dist.lstrip("/")
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(text, encoding="utf-8")
+
+
+def build_diary_rss(diary: list[dict], site: dict) -> str:
+    base = f"https://{site.get('domain', 'example.com')}"
+    items = []
+    for e in diary[:20]:
+        try:
+            dt = datetime.strptime(e["date"], "%Y-%m-%d").replace(tzinfo=timezone.utc)
+        except ValueError:
+            dt = datetime.now(timezone.utc)
+        link = base + e["url"]
+        desc = _html.escape(re.sub(r"<[^>]+>", "", e["html"]).strip()[:500])
+        items.append(
+            "    <item>\n"
+            f"      <title>{_html.escape(e['title'])}</title>\n"
+            f"      <link>{link}</link>\n"
+            f"      <guid isPermaLink=\"true\">{link}</guid>\n"
+            f"      <pubDate>{format_datetime(dt)}</pubDate>\n"
+            f"      <description>{desc}</description>\n"
+            "    </item>"
+        )
+    return (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<rss version="2.0">\n  <channel>\n'
+        f"    <title>{_html.escape(site.get('title',''))} — 日記</title>\n"
+        f"    <link>{base}/diary/</link>\n"
+        f"    <description>{_html.escape(site.get('description',''))}</description>\n"
+        "    <language>ja</language>\n"
+        + "\n".join(items)
+        + "\n  </channel>\n</rss>\n"
+    )
 
 
 def build(serve: bool = False) -> None:
@@ -304,18 +395,78 @@ def build(serve: bool = False) -> None:
         ))
 
     # --- 日記 ---
+    # 年月グループ（diary は日付降順）
+    by_month: "OrderedDict[str, list[dict]]" = OrderedDict()
+    for e in diary:
+        by_month.setdefault(e["month"], []).append(e)
+    months = [
+        {"ym": ym, "label": f"{ym[:4]}年{int(ym[5:7])}月", "count": len(es), "entries": es}
+        for ym, es in by_month.items()
+    ]
+    posts_by_day: dict[str, list[dict]] = {}
+    for e in diary:
+        posts_by_day.setdefault(e["date"], []).append(e)
+
+    # タグ集計 & タグ→URL
+    diary_tags: "OrderedDict[str, list[dict]]" = OrderedDict()
+    for e in diary:
+        for t in e["tags"]:
+            diary_tags.setdefault(t, []).append(e)
+    tag_url = {t: f"/diary/tag/{diary_tag_slug(t)}/" for t in diary_tags}
+
+    # トップに出す最近分（30件前後まで、残りは月別アーカイブへ）
+    recent_groups, shown = [], 0
+    for mo in months:
+        if shown >= 30 and recent_groups:
+            break
+        recent_groups.append({"label": mo["label"], "entries": mo["entries"]})
+        shown += len(mo["entries"])
+    has_more = shown < len(diary)
+
     write("/diary/index.html", env.get_template("diary_index.html").render(
         **ctx_base,
         breadcrumbs=[("ホーム", "/"), ("日記", None)],
-        entries=diary,
+        months=months,
+        cal=month_calendar(months[0]["ym"], posts_by_day) if months else None,
+        recent_groups=recent_groups,
+        has_more=has_more,
+        weekday_ja=WEEKDAY_JA,
+        tag_url=tag_url,
     ))
+
     tmpl_d = env.get_template("diary_entry.html")
-    for e in diary:
+    for i, e in enumerate(diary):
+        newer = diary[i - 1] if i > 0 else None
+        older = diary[i + 1] if i < len(diary) - 1 else None
         write(e["url"], tmpl_d.render(
             **ctx_base,
             breadcrumbs=[("ホーム", "/"), ("日記", "/diary/"), (e["title"], None)],
-            entry=e,
+            entry=e, older=older, newer=newer, tag_url=tag_url,
         ))
+
+    # 月別アーカイブ
+    tmpl_dm = env.get_template("diary_month.html")
+    for mo in months:
+        write(f"/diary/{mo['ym']}/", tmpl_dm.render(
+            **ctx_base,
+            breadcrumbs=[("ホーム", "/"), ("日記", "/diary/"), (mo["label"], None)],
+            month=mo,
+            cal=month_calendar(mo["ym"], posts_by_day),
+            weekday_ja=WEEKDAY_JA,
+            tag_url=tag_url,
+        ))
+
+    # 日記タグページ
+    tmpl_dt = env.get_template("diary_tag.html")
+    for t, es in diary_tags.items():
+        write(f"/diary/tag/{diary_tag_slug(t)}/", tmpl_dt.render(
+            **ctx_base,
+            breadcrumbs=[("ホーム", "/"), ("日記", "/diary/"), (f"#{t}", None)],
+            tag=t, entries=es, tag_url=tag_url,
+        ))
+
+    # 日記RSS
+    write_raw("/diary/rss.xml", build_diary_rss(diary, site))
 
     # --- SNS ---
     write("/sns/index.html", env.get_template("sns.html").render(

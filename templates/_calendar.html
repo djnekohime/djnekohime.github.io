@@ -1,0 +1,21 @@
+<table class="cal" aria-label="{{ cal.label }}のカレンダー">
+  <caption>{{ cal.label }}</caption>
+  <thead>
+    <tr>{% for w in weekday_ja %}<th>{{ w }}</th>{% endfor %}</tr>
+  </thead>
+  <tbody>
+    {% for week in cal.weeks %}
+    <tr>
+      {% for c in week %}
+        {% if c.day is none %}
+        <td class="empty"></td>
+        {% elif c.url %}
+        <td class="has"><a href="{{ c.url }}">{{ c.day }}{% if c.count > 1 %}<span class="n">{{ c.count }}</span>{% endif %}</a></td>
+        {% else %}
+        <td>{{ c.day }}</td>
+        {% endif %}
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
