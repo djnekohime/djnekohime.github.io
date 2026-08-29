@@ -278,6 +278,17 @@ blockquote cite { display: block; font-style: normal; color: var(--muted); font-
 .prose img { max-width: 100%; height: auto; border-radius: 8px; }
 .prose h2, .prose h3 { margin-top: 1.8rem; }
 
+/* 日記の本文だけ、読みやすいように背景をやや濃いめの半透明パネルに */
+.diary {
+  background: rgba(14,14,18,.62);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 14px;
+  padding: 1.2rem 1.35rem 1.4rem;
+  margin-top: .4rem;
+}
+
 /* diary: archive links + calendar */
 .archive-row { display: flex; flex-wrap: wrap; gap: .45rem .5rem; margin: 1.3rem 0; }
 .archive-row a { display: inline-flex; align-items: baseline; gap: .4rem; padding: .35rem .85rem; border-radius: 999px; background: rgba(20,18,24,.66); border: 1px solid rgba(255,255,255,.22); color: var(--text); font-size: .85rem; }
