@@ -26,6 +26,8 @@
   </div>
 </header>
 
+{% block splash %}{% endblock %}
+
 {% if breadcrumbs %}
 <nav class="breadcrumb wrap" aria-label="パンくずリスト">
   {% for label, href in breadcrumbs %}

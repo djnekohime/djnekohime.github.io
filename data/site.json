@@ -4,11 +4,11 @@
   "description": "昭和上等あんこ姫の本拠地。名言、日記、SNSへの入り口。",
   "domain": "ancohime.com",
   "sns": [
-    { "name": "X",        "icon": "𝕏",  "label": "X（旧Twitter）", "handle": "@Ancohimesama", "url": "https://x.com/Ancohimesama" },
-    { "name": "Instagram", "icon": "📷", "label": "Instagram",       "handle": "@ancohimesama", "url": "https://www.instagram.com/ancohimesama/" },
-    { "name": "TikTok",    "icon": "🎵", "label": "TikTok",          "handle": "@Ancohimeco",   "url": "https://www.tiktok.com/@Ancohimeco" },
-    { "name": "YouTube1",  "icon": "▶", "label": "YouTube「子ども15匹＋旦那1」", "handle": "@ancogame", "url": "https://www.youtube.com/@ancogame" },
-    { "name": "YouTube2",  "icon": "▶", "label": "YouTube「ひめかとゾーマの名言喫茶」", "handle": "@himekazoma", "url": "https://www.youtube.com/@himekazoma" }
+    { "name": "X",        "icon": "𝕏",  "short": "X",           "label": "X（旧Twitter）", "handle": "@Ancohimesama", "url": "https://x.com/Ancohimesama" },
+    { "name": "Instagram", "icon": "📷", "short": "Instagram",   "label": "Instagram",       "handle": "@ancohimesama", "url": "https://www.instagram.com/ancohimesama/" },
+    { "name": "TikTok",    "icon": "🎵", "short": "TikTok",      "label": "TikTok",          "handle": "@Ancohimeco",   "url": "https://www.tiktok.com/@Ancohimeco" },
+    { "name": "YouTube1",  "icon": "▶", "short": "YouTube 日常", "label": "YouTube「子ども15匹＋旦那1」", "handle": "@ancogame", "url": "https://www.youtube.com/@ancogame" },
+    { "name": "YouTube2",  "icon": "▶", "short": "YouTube 名言", "label": "YouTube「ひめかとゾーマの名言喫茶」", "handle": "@himekazoma", "url": "https://www.youtube.com/@himekazoma" }
   ],
   "funnel": {
     "youtube_main": "https://www.youtube.com/@ancogame",

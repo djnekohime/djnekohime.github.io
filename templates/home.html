@@ -1,11 +1,34 @@
 {% extends "base.html" %}
-{% block content %}
-<section class="hero">
-  <div class="hero-inner">
-    <h1>{{ site.title }}</h1>
-    <p class="lead">{{ site.tagline }}</p>
+
+{% block splash %}
+<section class="splash">
+  <video class="splash-media" autoplay muted loop playsinline preload="metadata"
+         poster="/static/img/hero-poster.jpg">
+    <source src="/static/video/hero.mp4" type="video/mp4">
+  </video>
+  <div class="splash-scrim"></div>
+  <div class="splash-content">
+    <p class="splash-eyebrow">昭和上等あんこ姫の</p>
+    <h1 class="splash-title">隠れ家</h1>
+    <p class="splash-lead">{{ site.tagline }}</p>
+    <nav class="splash-cats" aria-label="カテゴリー">
+      <a href="/meigen/">名言</a>
+      <a href="/diary/">日記</a>
+      <a href="/sns/">SNS</a>
+    </nav>
+    <nav class="splash-sns" aria-label="SNS">
+      {% for s in site.sns %}
+      <a href="{{ s.url }}" target="_blank" rel="noopener">
+        <span class="i" aria-hidden="true">{{ s.icon }}</span>{{ s.short }}
+      </a>
+      {% endfor %}
+    </nav>
   </div>
+  <a class="splash-down" href="#main" aria-label="下へスクロール">▾</a>
 </section>
+{% endblock %}
+
+{% block content %}
 
 <section class="cards">
   <a class="card" href="/meigen/">
