@@ -4,6 +4,7 @@
   "description": "昭和上等あんこ姫の本拠地。名言、日記、SNSへの入り口。",
   "domain": "ancohime.com",
   "sns": [
+    { "name": "LINE",      "icon": "💬", "short": "LINE",        "label": "LINE公式アカウント", "handle": "友だち追加", "url": "https://lin.ee/ODQBDs4" },
     { "name": "X",        "icon": "𝕏",  "short": "X",           "label": "X（旧Twitter）", "handle": "@Ancohimesama", "url": "https://x.com/Ancohimesama" },
     { "name": "Instagram", "icon": "📷", "short": "Instagram",   "label": "Instagram",       "handle": "@ancohimesama", "url": "https://www.instagram.com/ancohimesama/" },
     { "name": "TikTok",    "icon": "🎵", "short": "TikTok",      "label": "TikTok",          "handle": "@Ancohimeco",   "url": "https://www.tiktok.com/@Ancohimeco" },
