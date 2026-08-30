@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}{{ g.title }} — {{ kaiwai.name }} — 界隈語録 — {{ site.title }}{% endblock %}
+{% block description %}{{ kaiwai.name }}の語録「{{ g.title }}」。黒猫サンバのショートコントとみつを風ポエム。{% endblock %}
+{% block content %}
+<article class="goroku">
+  <p class="eyebrow">{{ kaiwai.name }} ・ 語録 {{ num }}/{{ total }}</p>
+  <h1>{{ g.title }}</h1>
+
+  <section class="konto">
+    <h2>ショートコント</h2>
+    {% for line in g.konto %}<p>{{ line }}</p>{% endfor %}
+  </section>
+
+  <section class="mitsuwo">
+    <p class="mitsuwo-label">みつを風ポエム</p>
+    <p class="mitsuwo-poem">{% for line in g.poem %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>
+  </section>
+
+  {% if g.hitokoto %}
+  <p class="samba-hitokoto">
+    <img src="/static/img/samba.webp" width="320" height="320" alt="" class="samba-mini">
+    <span>{{ g.hitokoto }}</span>
+  </p>
+  {% endif %}
+</article>
+
+<nav class="pager" aria-label="前後の語録">
+  {% if prev %}<a class="prev" href="{{ prev_url }}">‹ {{ prev.title }}</a>{% else %}<span></span>{% endif %}
+  <a href="/kaiwai/{{ kaiwai.slug }}/">一覧</a>
+  {% if next %}<a class="next" href="{{ next_url }}">{{ next.title }} ›</a>{% else %}<span></span>{% endif %}
+</nav>
+{% endblock %}

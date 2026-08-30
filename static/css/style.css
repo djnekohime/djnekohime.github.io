@@ -345,6 +345,50 @@ blockquote cite { display: block; font-style: normal; color: var(--muted); font-
 .link-btn .t { font-weight: 700; }
 .link-btn .h { color: var(--muted); font-size: .8rem; margin-left: auto; text-align: right; }
 
+/* 界隈語録 */
+.kaiwai-head { display: flex; align-items: center; gap: 1rem; margin: .4rem 0 .8rem; }
+.kaiwai-avatar { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(255,255,255,.2); flex: none; }
+.kaiwai-head h1 { margin: 0; }
+.kaiwai-head .lead { margin: .2rem 0 0; }
+.kaiwai-meta { display: block; color: var(--muted); font-size: .82rem; padding-bottom: .55rem; }
+.goroku-list { padding-left: 1.4rem; }
+.goroku-list li { padding: .55rem 0; border-bottom: 1px solid var(--line); }
+
+.goroku { margin-top: .4rem; }
+.konto {
+  background: rgba(14,14,18,.42);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 14px;
+  padding: 1.1rem 1.25rem;
+  margin: 1.2rem 0;
+}
+.konto h2 { margin: 0 0 .6rem; font-size: .9rem; color: var(--accent-2); letter-spacing: .04em; }
+.konto p { margin: .5rem 0; }
+.mitsuwo { text-align: center; margin: 2rem 0; }
+.mitsuwo-label { color: var(--accent); font-size: .78rem; letter-spacing: .1em; margin: 0 0 .8rem; }
+.mitsuwo-poem {
+  font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+  font-size: 1.35rem;
+  line-height: 2.2;
+  color: #fff;
+  text-shadow: 0 2px 14px rgba(0,0,0,.7);
+  margin: 0;
+}
+.samba-hitokoto {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  background: rgba(255,61,154,.1);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 10px 10px 0;
+  padding: .8rem 1rem;
+  margin: 1.6rem 0 0;
+  font-size: .95rem;
+}
+.samba-mini { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex: none; }
+
 /* footer */
 .site-footer { border-top: 1px solid rgba(255,255,255,.12); padding: 1.8rem 0; margin-top: 2rem; text-shadow: 0 1px 6px rgba(0,0,0,.6); }
 .site-footer p { margin: .4rem 0; font-size: .85rem; }

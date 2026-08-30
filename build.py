@@ -181,6 +181,13 @@ def load_site() -> dict:
     return json.loads((DATA / "site.json").read_text(encoding="utf-8"))
 
 
+def load_kaiwai() -> dict:
+    p = DATA / "kaiwai.json"
+    if not p.exists():
+        return {}
+    return json.loads(p.read_text(encoding="utf-8"))
+
+
 def load_diary() -> list[dict]:
     entries = []
     for f in sorted(CONTENT.glob("diary/*.md"), reverse=True):
@@ -480,8 +487,75 @@ def build(serve: bool = False) -> None:
         breadcrumbs=[("ホーム", "/"), ("リンク集", None)],
     ))
 
+    # --- 界隈語録 ---
+    kaiwai = load_kaiwai()
+    if kaiwai:
+        presenter = kaiwai["presenter"]
+        cats = kaiwai["categories"]
+        allk = kaiwai["kaiwai"]
+        cat_by_slug = {c["slug"]: c for c in cats}
+        by_cat: dict[str, list] = {}
+        for k in allk:
+            by_cat.setdefault(k["category"], []).append(k)
+
+        write("/kaiwai/index.html", env.get_template("kaiwai_index.html").render(
+            **ctx_base,
+            breadcrumbs=[("ホーム", "/"), ("界隈語録", None)],
+            presenter=presenter, categories=cats, by_cat=by_cat,
+        ))
+
+        tmpl_kc = env.get_template("kaiwai_category.html")
+        for c in cats:
+            ks = by_cat.get(c["slug"], [])
+            if not ks:
+                continue
+            write(f"/kaiwai/{c['slug']}/", tmpl_kc.render(
+                **ctx_base,
+                breadcrumbs=[("ホーム", "/"), ("界隈語録", "/kaiwai/"), (c["name"], None)],
+                category=c, kaiwai_list=ks, presenter=presenter,
+            ))
+
+        tmpl_kk = env.get_template("kaiwai_kaiwai.html")
+        tmpl_kg = env.get_template("kaiwai_goroku.html")
+        for k in allk:
+            cat = cat_by_slug.get(k["category"], {"slug": k["category"], "name": k["category"]})
+            gor = k["goroku"]
+            write(f"/kaiwai/{k['slug']}/", tmpl_kk.render(
+                **ctx_base,
+                breadcrumbs=[("ホーム", "/"), ("界隈語録", "/kaiwai/"),
+                             (cat["name"], f"/kaiwai/{cat['slug']}/"), (k["name"], None)],
+                kaiwai=k, category=cat, presenter=presenter,
+            ))
+            for i, g in enumerate(gor, start=1):
+                write(f"/kaiwai/{k['slug']}/{i}/", tmpl_kg.render(
+                    **ctx_base,
+                    breadcrumbs=[("ホーム", "/"), ("界隈語録", "/kaiwai/"),
+                                 (cat["name"], f"/kaiwai/{cat['slug']}/"),
+                                 (k["name"], f"/kaiwai/{k['slug']}/"), (g["title"], None)],
+                    kaiwai=k, category=cat, g=g, num=i, total=len(gor),
+                    prev=(gor[i - 2] if i > 1 else None),
+                    prev_url=(f"/kaiwai/{k['slug']}/{i - 1}/" if i > 1 else None),
+                    next=(gor[i] if i < len(gor) else None),
+                    next_url=(f"/kaiwai/{k['slug']}/{i + 1}/" if i < len(gor) else None),
+                    presenter=presenter,
+                ))
+
     # --- 404 ---
     write("/404.html", env.get_template("404.html").render(**ctx_base, breadcrumbs=[]))
+
+    # --- sitemap.xml ---
+    base = f"https://{site.get('domain', 'example.com')}"
+    locs = []
+    for f in sorted(DIST.rglob("*.html")):
+        rel = f.relative_to(DIST).as_posix()
+        if rel == "404.html":
+            continue
+        path = rel[:-len("index.html")] if rel.endswith("index.html") else rel
+        locs.append(f"  <url><loc>{base}/{path}</loc></url>")
+    write_raw("/sitemap.xml",
+              '<?xml version="1.0" encoding="UTF-8"?>\n'
+              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+              + "\n".join(locs) + "\n</urlset>\n")
 
     pages = sum(1 for _ in DIST.rglob("*.html"))
     print(f"[OK] ビルド完了: {pages} ページ / 出力先 {DIST}")

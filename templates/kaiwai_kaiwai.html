@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}{{ kaiwai.name }} — 界隈語録 — {{ site.title }}{% endblock %}
+{% block description %}{{ kaiwai.intro }}{% endblock %}
+{% block content %}
+<p class="eyebrow">{{ category.name }}</p>
+<h1>{{ kaiwai.name }}</h1>
+<p class="lead">{{ kaiwai.intro }}</p>
+
+<ol class="goroku-list">
+  {% for g in kaiwai.goroku %}
+  <li><a href="/kaiwai/{{ kaiwai.slug }}/{{ loop.index }}/">{{ g.title }}</a></li>
+  {% endfor %}
+</ol>
+
+<nav class="pager"><a href="/kaiwai/{{ category.slug }}/">‹ {{ category.name }}へ</a></nav>
+{% endblock %}

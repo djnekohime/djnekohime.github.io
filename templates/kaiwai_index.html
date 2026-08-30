@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}界隈語録 — {{ site.title }}{% endblock %}
+{% block description %}黒猫サンバが各「界隈」に潜入して持ち帰る、ショートコントとみつを風ポエムの語録集。{% endblock %}
+{% block content %}
+<div class="kaiwai-head">
+  <img class="kaiwai-avatar" src="/static/img/samba.webp" width="320" height="320" alt="">
+  <div>
+    <h1>界隈語録</h1>
+    <p class="lead">語り手：{{ presenter.name }}（黒猫）</p>
+  </div>
+</div>
+<p>{{ presenter.intro }}</p>
+
+<div class="cards">
+  {% for c in categories %}
+  {% if by_cat.get(c.slug) %}
+  <a class="card" href="/kaiwai/{{ c.slug }}/">
+    <h2>{{ c.name }}</h2>
+    <p>{{ c.desc }}（{{ by_cat.get(c.slug)|length }}界隈）</p>
+  </a>
+  {% endif %}
+  {% endfor %}
+</div>
+{% endblock %}
