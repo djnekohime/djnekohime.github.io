@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}リンク集 — {{ site.title }}{% endblock %}
+{% block description %}昭和上等あんこ姫の SNS・YouTube・note・サイトへの入り口をまとめたページ。{% endblock %}
+{% block content %}
+<div class="links-page">
+  <img class="links-avatar" src="/static/img/avatar.webp" width="240" height="240" alt="">
+  <h1>昭和上等あんこ姫</h1>
+  <p class="links-tagline">{{ site.tagline }}</p>
+
+  <p class="links-head">SNS</p>
+  {% for s in site.sns %}
+  <a class="link-btn" href="{{ s.url }}" target="_blank" rel="noopener">
+    <span class="i" aria-hidden="true">{{ s.icon }}</span>
+    <span class="t">{{ s.label }}</span>
+    {% if s.handle %}<span class="h">{{ s.handle }}</span>{% endif %}
+  </a>
+  {% endfor %}
+  <a class="link-btn" href="{{ site.funnel.note }}" target="_blank" rel="noopener">
+    <span class="i" aria-hidden="true">📝</span>
+    <span class="t">note</span>
+    <span class="h">体験記・解決編</span>
+  </a>
+
+  <p class="links-head">サイトの中身</p>
+  <a class="link-btn" href="/meigen/"><span class="i" aria-hidden="true">📖</span><span class="t">名言</span><span class="h">{{ site.title }}</span></a>
+  <a class="link-btn" href="/diary/"><span class="i" aria-hidden="true">📓</span><span class="t">日記</span><span class="h">日々のできごと</span></a>
+  <a class="link-btn" href="/"><span class="i" aria-hidden="true">🏠</span><span class="t">隠れ家トップ</span><span class="h">ancohime.com</span></a>
+</div>
+{% endblock %}

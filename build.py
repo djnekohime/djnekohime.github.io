@@ -474,6 +474,12 @@ def build(serve: bool = False) -> None:
         breadcrumbs=[("ホーム", "/"), ("SNS", None)],
     ))
 
+    # --- リンク集（LINE リッチメニュー等からの着地ページ） ---
+    write("/links/index.html", env.get_template("links.html").render(
+        **ctx_base,
+        breadcrumbs=[("ホーム", "/"), ("リンク集", None)],
+    ))
+
     # --- 404 ---
     write("/404.html", env.get_template("404.html").render(**ctx_base, breadcrumbs=[]))
 

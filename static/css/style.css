@@ -319,6 +319,32 @@ blockquote cite { display: block; font-style: normal; color: var(--muted); font-
 .sns-name { font-weight: 600; }
 .sns-handle { color: var(--muted); font-size: .85rem; }
 
+/* links (link-in-bio) page */
+.links-page { max-width: 26rem; margin: 0 auto; text-align: center; }
+.links-avatar { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(255,255,255,.2); margin: .4rem 0 .6rem; }
+.links-page h1 { font-size: 1.4rem; margin: 0 0 .2rem; }
+.links-tagline { color: var(--muted); font-size: .9rem; margin: 0 0 1.6rem; }
+.links-head { text-align: left; color: var(--accent); font-size: .8rem; font-weight: 700; letter-spacing: .06em; margin: 1.6rem 0 .5rem; }
+.link-btn {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  width: 100%;
+  padding: .95rem 1.1rem;
+  margin: .55rem 0;
+  border-radius: 12px;
+  background: rgba(20,18,24,.62);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,.16);
+  color: var(--text);
+  text-align: left;
+}
+.link-btn:hover { border-color: var(--accent); background: rgba(255,61,154,.16); text-decoration: none; }
+.link-btn .i { font-size: 1.15rem; width: 1.5rem; text-align: center; flex: none; }
+.link-btn .t { font-weight: 700; }
+.link-btn .h { color: var(--muted); font-size: .8rem; margin-left: auto; text-align: right; }
+
 /* footer */
 .site-footer { border-top: 1px solid rgba(255,255,255,.12); padding: 1.8rem 0; margin-top: 2rem; text-shadow: 0 1px 6px rgba(0,0,0,.6); }
 .site-footer p { margin: .4rem 0; font-size: .85rem; }
