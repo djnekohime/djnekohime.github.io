@@ -1,0 +1,40 @@
+{
+  "intro": "昭和上等あんこ姫がつくったもの。ここから中身を見られます。",
+  "categories": [
+    {
+      "slug": "line-stamps",
+      "name": "LINEスタンプ",
+      "icon": "💬",
+      "works": [
+        {
+          "slug": "gyomu-renraku",
+          "title": "昭和世代の業務連絡",
+          "status": "審査中",
+          "store_url": "",
+          "tagline": "「腰が痛い」「年金たりん」「もう限界」——昭和世代の日常を、やたら硬い“業務連絡”スタイルで。",
+          "description": "高齢の親との家族トーク、介護の申し送り、仕事仲間とのやりとりに。文字を打たなくてもスタンプ1個で用件が伝わる、実用重視の40個。男女問わず使えます。",
+          "count": 40,
+          "price": "¥120",
+          "cover": "cover.png",
+          "samples": [
+            "01.png", "03.png", "05.png", "08.png",
+            "11.png", "14.png", "17.png", "20.png",
+            "24.png", "28.png", "33.png", "40.png"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "music",
+      "name": "音楽",
+      "icon": "🎵",
+      "works": []
+    },
+    {
+      "slug": "goods",
+      "name": "グッズ",
+      "icon": "🧸",
+      "works": []
+    }
+  ]
+}

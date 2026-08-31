@@ -188,6 +188,13 @@ def load_kaiwai() -> dict:
     return json.loads(p.read_text(encoding="utf-8"))
 
 
+def load_works() -> dict:
+    p = DATA / "works.json"
+    if not p.exists():
+        return {}
+    return json.loads(p.read_text(encoding="utf-8"))
+
+
 def load_diary() -> list[dict]:
     entries = []
     for f in sorted(CONTENT.glob("diary/*.md"), reverse=True):
@@ -486,6 +493,27 @@ def build(serve: bool = False) -> None:
         **ctx_base,
         breadcrumbs=[("ホーム", "/"), ("リンク集", None)],
     ))
+
+    # --- 作品（LINEスタンプ・音楽など） ---
+    works = load_works()
+    if works:
+        write("/works/index.html", env.get_template("works_index.html").render(
+            **ctx_base,
+            breadcrumbs=[("ホーム", "/"), ("作品", None)],
+            works=works,
+        ))
+        stamp_tmpl = env.get_template("works_stamp.html")
+        for cat in works.get("categories", []):
+            for w in cat.get("works", []):
+                if cat["slug"] == "line-stamps":
+                    write(f"/works/{cat['slug']}/{w['slug']}/", stamp_tmpl.render(
+                        **ctx_base,
+                        breadcrumbs=[
+                            ("ホーム", "/"), ("作品", "/works/"),
+                            (cat["name"], "/works/"), (w["title"], None),
+                        ],
+                        cat=cat, w=w,
+                    ))
 
     # --- 界隈語録 ---
     kaiwai = load_kaiwai()

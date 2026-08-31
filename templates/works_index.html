@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}作品 — {{ site.title }}{% endblock %}
+{% block description %}昭和上等あんこ姫がつくったもの。LINEスタンプ・音楽など。{% endblock %}
+{% block content %}
+<h1>作品</h1>
+<p class="lead">{{ works.intro }}</p>
+
+{% for cat in works.categories %}
+<section class="block">
+  <h2 class="block-title">{{ cat.icon }} {{ cat.name }}</h2>
+  {% if cat.works %}
+  <div class="works-grid">
+    {% for w in cat.works %}
+    <a class="work-card" href="/works/{{ cat.slug }}/{{ w.slug }}/">
+      <img src="/static/img/works/{{ cat.slug }}/{{ w.slug }}/{{ w.cover }}" alt="{{ w.title }}" loading="lazy" width="240" height="240">
+      <span class="work-title">{{ w.title }}</span>
+      <span class="work-meta">
+        <span class="badge{% if w.status == '販売中' %} on{% endif %}">{{ w.status }}</span>
+        <span>全{{ w.count }}種 ／ {{ w.price }}</span>
+      </span>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="muted">準備中。</p>
+  {% endif %}
+</section>
+{% endfor %}
+{% endblock %}

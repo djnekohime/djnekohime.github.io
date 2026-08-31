@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}{{ w.title }} — LINEスタンプ — {{ site.title }}{% endblock %}
+{% block description %}{{ w.tagline }}{% endblock %}
+{% block content %}
+<h1>{{ w.title }}</h1>
+<p class="stamp-lead">
+  <span class="badge{% if w.status == '販売中' %} on{% endif %}">{{ w.status }}</span>
+  <span class="muted">LINEスタンプ ／ 全{{ w.count }}種 ／ {{ w.price }}</span>
+</p>
+
+<p class="lead">{{ w.tagline }}</p>
+<p>{{ w.description }}</p>
+
+{% if w.store_url %}
+<p><a class="buy-btn" href="{{ w.store_url }}" target="_blank" rel="noopener">LINE STORE で見る ›</a></p>
+{% else %}
+<p class="stamp-notice">ただいま審査中です。販売がはじまったら、ここにLINE STOREへのリンクを載せます。</p>
+{% endif %}
+
+<h2 class="block-title">サンプル</h2>
+<div class="stamp-samples">
+  {% for s in w.samples %}
+  <img src="/static/img/works/{{ cat.slug }}/{{ w.slug }}/{{ s }}" alt="{{ w.title }} サンプル {{ loop.index }}" loading="lazy">
+  {% endfor %}
+</div>
+<p class="muted">全{{ w.count }}種のうち{{ w.samples|length }}種を掲載。</p>
+
+{% if w.store_url %}
+<p><a class="buy-btn" href="{{ w.store_url }}" target="_blank" rel="noopener">LINE STORE で見る ›</a></p>
+{% endif %}
+
+<p class="feed-link"><a class="more" href="/works/">← 作品一覧へ</a></p>
+{% endblock %}

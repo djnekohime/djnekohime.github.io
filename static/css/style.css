@@ -397,9 +397,47 @@ blockquote cite { display: block; font-style: normal; color: var(--muted); font-
 .sns-row { font-size: 1.15rem; letter-spacing: .5rem; }
 .copyright { color: var(--muted); }
 
+/* works（作品） */
+.works-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1rem 0; }
+.work-card {
+  display: flex; flex-direction: column; align-items: flex-start; gap: .5rem;
+  background: rgba(20,18,24,.62);
+  -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,.16); border-radius: 12px;
+  padding: .9rem; color: var(--text);
+}
+.work-card:hover { border-color: var(--accent); background: rgba(255,61,154,.14); text-decoration: none; }
+.work-card img { width: 100%; height: auto; border-radius: 8px; background: rgba(255,255,255,.9); }
+.work-title { font-weight: 700; }
+.work-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; color: var(--muted); font-size: .8rem; }
+
+.badge {
+  display: inline-block; padding: .1rem .5rem; border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.3); color: var(--muted); font-size: .75rem;
+}
+.badge.on { border-color: var(--accent); color: var(--accent-2); }
+
+.stamp-lead { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; margin: 0 0 1rem; }
+
+.buy-btn {
+  display: inline-block; padding: .7rem 1.6rem; border-radius: 999px;
+  background: var(--accent); color: #1a1013; font-weight: 700;
+  box-shadow: 0 6px 22px rgba(255,61,154,.36);
+}
+.buy-btn:hover { background: var(--accent-2); text-decoration: none; }
+
+.stamp-notice {
+  background: rgba(255,61,154,.09); border-left: 3px solid var(--accent);
+  padding: .7rem .9rem; border-radius: 0 8px 8px 0; font-size: .92rem; color: #d6d6d6;
+}
+
+.stamp-samples { display: grid; grid-template-columns: repeat(3, 1fr); gap: .6rem; margin: 1rem 0; }
+.stamp-samples img { width: 100%; height: auto; border-radius: 8px; background: rgba(255,255,255,.92); }
+
 @media (min-width: 40rem) {
   .cards { grid-template-columns: repeat(3, 1fr); }
   h1 { font-size: 1.9rem; }
   .splash-title { font-size: 2.7rem; }
   .splash-lead { font-size: 1.1rem; }
+  .stamp-samples { grid-template-columns: repeat(4, 1fr); }
 }
