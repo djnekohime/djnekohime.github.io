@@ -205,6 +205,17 @@ def load_diary() -> list[dict]:
         excerpt = _strip_tags(html)
         if len(excerpt) > 110:
             excerpt = excerpt[:110].rstrip() + "…"
+        # 見出し画像：front matter の image: 優先、無ければ本文の最初の画像。
+        # 本文先頭の画像を見出しに使う場合は本文からは外す（二重表示を防ぐ）。
+        hero = fm.get("image", "").strip()
+        body_html = html
+        if not hero:
+            first = _first_img(html)
+            if first:
+                hero = first
+                body_html = re.sub(
+                    r"^\s*<p>\s*<img[^>]*>\s*</p>\s*", "", html, count=1
+                )
         entries.append(
             {
                 "slug": f.stem,
@@ -215,9 +226,10 @@ def load_diary() -> list[dict]:
                 "tags": [t.strip() for t in fm.get("tags", "").split(",") if t.strip()],
                 "youtube": fm.get("youtube", ""),
                 "note": fm.get("note", ""),  # 「解決編」note記事のURL（任意）
-                "html": html,
+                "html": html,          # RSS用（画像込み）
+                "body_html": body_html,  # ページ本文用（見出し画像を除いたもの）
                 "excerpt": excerpt,
-                "image": _first_img(html) or fm.get("image", ""),  # OGP用（本文の最初の画像）
+                "image": hero,         # 見出し画像 & OGP画像
                 "url": f"/diary/{f.stem}/",
             }
         )

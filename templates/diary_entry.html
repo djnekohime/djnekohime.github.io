@@ -1,11 +1,14 @@
 {% extends "base.html" %}
 {% block title %}{{ entry.title }} — 日記 — {{ site.title }}{% endblock %}
 {% block content %}
-<article class="diary">
+<article class="diary{% if entry.image %} has-hero{% endif %}">
+  {% if entry.image %}
+  <figure class="diary-hero"><img src="{{ entry.image }}" alt="" loading="eager"></figure>
+  {% endif %}
   <h1>{{ entry.title }}</h1>
   {% if entry.date %}<p class="muted"><time>{{ entry.date }}</time></p>{% endif %}
   <div class="prose">
-    {{ entry.html|safe }}
+    {{ entry.body_html|safe }}
   </div>
   {% if entry.tags %}
   <p class="tag-row">

@@ -290,6 +290,17 @@ blockquote cite { display: block; font-style: normal; color: var(--muted); font-
   padding: 1.2rem 1.35rem 1.4rem;
   margin-top: .4rem;
 }
+.diary.has-hero { padding-top: 0; overflow: hidden; }
+
+/* 日記の見出し画像（本文先頭の画像 or front matter の image:） */
+.diary-hero { margin: 0 -1.35rem 1.1rem; }
+.diary-hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px 14px 0 0;
+}
+.diary.has-hero > h1 { margin-top: 0; }
 
 /* diary: archive links + calendar */
 .feed-link { margin: 2rem 0 0; padding-top: 1rem; border-top: 1px solid var(--line); font-size: .92rem; }
