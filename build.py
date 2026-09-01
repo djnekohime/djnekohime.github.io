@@ -201,6 +201,10 @@ def load_diary() -> list[dict]:
         text = f.read_text(encoding="utf-8")
         fm, body = _split_front_matter(text)
         d = fm.get("date", "")
+        html = md.markdown(body, extensions=["extra"])
+        excerpt = _strip_tags(html)
+        if len(excerpt) > 110:
+            excerpt = excerpt[:110].rstrip() + "…"
         entries.append(
             {
                 "slug": f.stem,
@@ -211,12 +215,23 @@ def load_diary() -> list[dict]:
                 "tags": [t.strip() for t in fm.get("tags", "").split(",") if t.strip()],
                 "youtube": fm.get("youtube", ""),
                 "note": fm.get("note", ""),  # 「解決編」note記事のURL（任意）
-                "html": md.markdown(body, extensions=["extra"]),
+                "html": html,
+                "excerpt": excerpt,
+                "image": _first_img(html) or fm.get("image", ""),  # OGP用（本文の最初の画像）
                 "url": f"/diary/{f.stem}/",
             }
         )
     entries.sort(key=lambda e: (e["date"], e["slug"]), reverse=True)
     return entries
+
+
+def _strip_tags(html_text: str) -> str:
+    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", html_text)).strip()
+
+
+def _first_img(html_text: str) -> str:
+    m = re.search(r'<img[^>]+src="([^"]+)"', html_text)
+    return m.group(1) if m else ""
 
 
 def _split_front_matter(text: str) -> tuple[dict, str]:
@@ -300,6 +315,7 @@ def build(serve: bool = False) -> None:
     site = load_site()
     diary = load_diary()
     env = make_env()
+    base = f"https://{site.get('domain', 'example.com')}"
 
     by_no = {q.no: q for q in quotes}
     people_by_name = {p.name: p for p in people}
@@ -453,10 +469,15 @@ def build(serve: bool = False) -> None:
     for i, e in enumerate(diary):
         newer = diary[i - 1] if i > 0 else None
         older = diary[i + 1] if i < len(diary) - 1 else None
+        og_img = e["image"]
+        if og_img.startswith("/"):
+            og_img = base + og_img
         write(e["url"], tmpl_d.render(
             **ctx_base,
             breadcrumbs=[("ホーム", "/"), ("日記", "/diary/"), (e["title"], None)],
             entry=e, older=older, newer=newer, tag_url=tag_url,
+            og_type="article", og_title=e["title"], og_description=e["excerpt"],
+            og_image=(og_img or None), og_url=base + e["url"],
         ))
 
     # 月別アーカイブ

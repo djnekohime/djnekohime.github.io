@@ -4,7 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% block title %}{{ site.title }}{% endblock %}</title>
-<meta name="description" content="{% block description %}{{ site.description }}{% endblock %}">
+<meta name="description" content="{% block description %}{{ og_description|default(site.description, true) }}{% endblock %}">
+
+{# --- OGP / Twitter（SNSやnoteのリンクカード用） --- #}
+{% set _ogimg = og_image|default('https://' ~ site.domain ~ '/static/img/hero-poster.jpg', true) %}
+<meta property="og:type" content="{{ og_type|default('website', true) }}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{{ og_title|default(site.title, true) }}">
+<meta property="og:description" content="{{ og_description|default(site.description, true) }}">
+<meta property="og:image" content="{{ _ogimg }}">
+{% if og_url %}<meta property="og:url" content="{{ og_url }}">{% endif %}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ og_title|default(site.title, true) }}">
+<meta name="twitter:description" content="{{ og_description|default(site.description, true) }}">
+<meta name="twitter:image" content="{{ _ogimg }}">
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3297384186089990"
      crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/static/css/style.css">
