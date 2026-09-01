@@ -15,6 +15,9 @@
   {% if entry.youtube %}
   <p class="watch"><a href="{{ entry.youtube }}">▶ この日の関連動画を見る</a></p>
   {% endif %}
+  {% if entry.note %}
+  <p class="solve"><a href="{{ entry.note }}">📝 この困りごとの「解決編」をnoteに書きました →</a></p>
+  {% endif %}
 </article>
 
 <nav class="pager" aria-label="前後の日記">

@@ -258,6 +258,8 @@ blockquote cite { display: block; font-style: normal; color: var(--muted); font-
 .tag-row { display: flex; flex-wrap: wrap; gap: .45rem; margin: 1.2rem 0; }
 .tag { background: rgba(26,22,28,.42); border: 1px solid rgba(255,255,255,.14); border-radius: 6px; padding: .2rem .55rem; font-size: .82rem; color: var(--muted); }
 .watch a { font-weight: 600; }
+.solve { margin: .8rem 0 0; padding: .7rem .9rem; background: rgba(255,61,154,.09); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; }
+.solve a { font-weight: 600; }
 
 /* pager */
 .pager { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin: 1.8rem 0; padding-top: 1rem; border-top: 1px solid var(--line); font-size: .9rem; }

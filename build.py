@@ -210,6 +210,7 @@ def load_diary() -> list[dict]:
                 "month": d[:7],  # "2026-08"
                 "tags": [t.strip() for t in fm.get("tags", "").split(",") if t.strip()],
                 "youtube": fm.get("youtube", ""),
+                "note": fm.get("note", ""),  # 「解決編」note記事のURL（任意）
                 "html": md.markdown(body, extensions=["extra"]),
                 "url": f"/diary/{f.stem}/",
             }
