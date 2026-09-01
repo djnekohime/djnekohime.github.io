@@ -362,7 +362,7 @@ def build(serve: bool = False) -> None:
         shutil.copytree(STATIC, DIST / "static")
 
     # サイトルート直下に置くファイル（ads.txt など）
-    for name in ("ads.txt", "robots.txt"):
+    for name in ("ads.txt", "robots.txt", "favicon.ico"):
         src = ROOT / name
         if src.exists():
             shutil.copy2(src, DIST / name)
