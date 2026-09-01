@@ -269,12 +269,17 @@ blockquote cite { display: block; font-style: normal; color: var(--muted); font-
 /* diary */
 .entry-list { list-style: none; padding: 0; }
 .entry-list li { border-bottom: 1px solid var(--line); }
-.entry-list li > a { display: block; padding: .9rem 0 .35rem; color: var(--text); }
+.entry-list li > a { display: flex; gap: .8rem; align-items: flex-start; padding: .9rem 0 .35rem; color: var(--text); }
+.entry-list li > a:hover { text-decoration: none; }
+.entry-list li > a:hover .entry-title { color: var(--accent-2); }
+.entry-thumb { flex: none; width: 108px; height: 72px; object-fit: cover; border-radius: 8px; background: rgba(255,255,255,.06); }
+.entry-thumb--none { border: 1px solid rgba(255,255,255,.08); }
+.entry-body { min-width: 0; }
 .entry-list time { display: block; color: var(--muted); font-size: .8rem; }
 .entry-title { font-weight: 600; }
 .entry-list li.ym-head { list-style: none; border-bottom: none; color: var(--accent); font-weight: 700; font-size: .82rem; letter-spacing: .06em; padding: 1.4rem 0 .2rem; }
 .entry-list li.ym-head:first-child { padding-top: .4rem; }
-.entry-tags { display: block; padding-bottom: .55rem; }
+.entry-tags { display: block; padding: 0 0 .55rem calc(108px + .8rem); }
 .entry-tags .tag { margin-right: .35rem; }
 .prose p { margin: 1rem 0; }
 .prose img { max-width: 100%; height: auto; border-radius: 8px; }

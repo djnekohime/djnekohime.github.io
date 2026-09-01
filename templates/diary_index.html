@@ -25,8 +25,11 @@
   {% for e in g.entries %}
   <li>
     <a href="{{ e.url }}">
-      {% if e.date %}<time>{{ e.date }}</time>{% endif %}
-      <span class="entry-title">{{ e.title }}</span>
+      {% if e.image %}<img class="entry-thumb" src="{{ e.image }}" alt="" loading="lazy">{% else %}<img class="entry-thumb" src="/static/img/avatar.webp" alt="" loading="lazy">{% endif %}
+      <span class="entry-body">
+        {% if e.date %}<time>{{ e.date }}</time>{% endif %}
+        <span class="entry-title">{{ e.title }}</span>
+      </span>
     </a>
     {% if e.tags %}<span class="entry-tags">{% for t in e.tags %}<a class="tag" href="{{ tag_url[t] }}">#{{ t }}</a>{% endfor %}</span>{% endif %}
   </li>
