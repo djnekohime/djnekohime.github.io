@@ -7,7 +7,7 @@
 <meta name="description" content="{% block description %}{{ og_description|default(site.description, true) }}{% endblock %}">
 
 {# --- OGP / Twitter（SNSやnoteのリンクカード用） --- #}
-{% set _ogimg = og_image|default('https://' ~ site.domain ~ '/static/img/hero-poster.jpg', true) %}
+{% set _ogimg = og_image|default('https://' ~ site.domain ~ '/static/img/ogp-default.png', true) %}
 <meta property="og:type" content="{{ og_type|default('website', true) }}">
 <meta property="og:site_name" content="{{ site.title }}">
 <meta property="og:title" content="{{ og_title|default(site.title, true) }}">
