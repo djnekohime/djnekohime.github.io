@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}ことわざ 五十音順 — {{ site.title }}{% endblock %}
+{% block content %}
+<h1>ことわざ（五十音順）</h1>
+<p class="lead">読みの五十音順で引けます。テーマから探すときは <a href="/kotowaza/">ことわざトップ</a> へ。</p>
+<p class="muted">{{ total }}語</p>
+<p class="gyou-nav">{% for g in gyou_list %}<a href="#gyou-{{ g.label }}">{{ g.label }}</a>{% endfor %}</p>
+{% for g in gyou_list %}
+<h2 class="block-title kw-cat" id="gyou-{{ g.label }}">{{ g.label }}行</h2>
+<ul class="kw-list">
+  {% for it in g["items"] %}
+  <li class="kw-item">
+    <span class="kw">{{ it.text }}{% if it.kana %}<span class="kana">{{ it.kana }}</span>{% endif %}</span>
+    <span class="mean">{{ it.mean }}</span>
+  </li>
+  {% endfor %}
+</ul>
+{% endfor %}
+<nav class="pager"><a href="/kotowaza/">‹ テーマ別に戻る</a></nav>
+{% endblock %}

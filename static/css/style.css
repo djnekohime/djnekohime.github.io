@@ -479,3 +479,6 @@ blockquote cite { display: block; font-style: normal; color: var(--muted); font-
 .tanka-item .poem span { display: block; }
 .tanka-item .src { margin-top: .9rem; text-align: right; font-size: .8rem; color: var(--muted); }
 .tanka-item .memo { margin-top: .45rem; font-size: .84rem; color: var(--muted); line-height: 1.75; }
+
+.gyou-nav { display: flex; flex-wrap: wrap; gap: .3rem .7rem; margin: .8rem 0 1.4rem; font-size: 1.05rem; }
+.gyou-nav a { padding: .1rem .3rem; }

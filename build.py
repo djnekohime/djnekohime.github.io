@@ -536,14 +536,46 @@ def build(serve: bool = False) -> None:
 
     # --- ことわざ ---
     if kotowaza.get("cats"):
+        kw_all = [it for c in kotowaza["cats"] for it in c["items"]]
+        kw_total = len(kw_all)
         write("/kotowaza/index.html", env.get_template("kotowaza_index.html").render(
             **ctx_base,
             breadcrumbs=[("ホーム", "/"), ("ことわざ", None)],
             intro=kotowaza.get("intro", ""),
             cats=kotowaza["cats"],
-            total=sum(len(c["items"]) for c in kotowaza["cats"]),
+            total=kw_total,
             og_title="ことわざ", og_description=kotowaza.get("intro", ""),
             og_url=base + "/kotowaza/",
+        ))
+        # 五十音順
+        _k2h = str.maketrans({chr(c): chr(c - 0x60) for c in range(0x30A1, 0x30F7)})
+        GYOU = [
+            ("あ", "あいうえおぁぃぅぇぉゔ"), ("か", "かきくけこがぎぐげご"),
+            ("さ", "さしすせそざじずぜぞ"), ("た", "たちつてとだぢづでどっ"),
+            ("な", "なにぬねの"), ("は", "はひふへほばびぶべぼぱぴぷぺぽ"),
+            ("ま", "まみむめも"), ("や", "やゆよゃゅょ"),
+            ("ら", "らりるれろ"), ("わ", "わをんゐゑ"),
+        ]
+        def _kkey(it):
+            return (it.get("kana", "") or it.get("text", "")).translate(_k2h)
+        def _gyou(it):
+            c = (_kkey(it) or "わ")[0]
+            for lbl, chars in GYOU:
+                if c in chars:
+                    return lbl
+            return "わ"
+        kw_sorted = sorted(kw_all, key=_kkey)
+        gyou_list = []
+        for lbl, _chars in GYOU:
+            items = [it for it in kw_sorted if _gyou(it) == lbl]
+            if items:
+                gyou_list.append({"label": lbl, "items": items})
+        write("/kotowaza/aiueo/index.html", env.get_template("kotowaza_aiueo.html").render(
+            **ctx_base,
+            breadcrumbs=[("ホーム", "/"), ("ことわざ", "/kotowaza/"), ("五十音順", None)],
+            gyou_list=gyou_list, total=kw_total,
+            og_title="ことわざ 五十音順", og_description=kotowaza.get("intro", ""),
+            og_url=base + "/kotowaza/aiueo/",
         ))
 
     # --- 短歌コーナー（日記の一部） ---
