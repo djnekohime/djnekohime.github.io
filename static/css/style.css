@@ -459,3 +459,23 @@ blockquote cite { display: block; font-style: normal; color: var(--muted); font-
   .splash-lead { font-size: 1.1rem; }
   .stamp-samples { grid-template-columns: repeat(4, 1fr); }
 }
+
+
+/* ---- ことわざ ---- */
+.kw-cat { margin-top: 2rem; }
+.kw-list { list-style: none; padding: 0; margin: .7rem 0 1.6rem; }
+.kw-item { padding: .95rem 0; border-bottom: 1px solid var(--line); }
+.kw-item:last-child { border-bottom: 0; }
+.kw-item .kw { font-weight: 700; }
+.kw-item .kw .kana { color: var(--muted); font-size: .78rem; font-weight: 400; margin-left: .5rem; }
+.kw-item .mean { display: block; color: var(--muted); font-size: .92rem; margin-top: .15rem; }
+
+/* ---- 短歌コーナー ---- */
+.tanka-corner { margin-top: 2rem; }
+.tanka-list { list-style: none; padding: 0; margin: 1rem 0; }
+.tanka-item { background: rgba(26,22,28,.4); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius); padding: 1.4rem 1.2rem 1.1rem; margin: 0 0 1.1rem; }
+.tanka-item .poem { text-align: center; line-height: 2.4; font-size: 1.12rem; letter-spacing: .08em; }
+.tanka-item .poem span { display: block; }
+.tanka-item .src { margin-top: .9rem; text-align: right; font-size: .8rem; color: var(--muted); }
+.tanka-item .memo { margin-top: .45rem; font-size: .84rem; color: var(--muted); line-height: 1.75; }

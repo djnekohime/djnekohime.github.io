@@ -195,6 +195,20 @@ def load_works() -> dict:
     return json.loads(p.read_text(encoding="utf-8"))
 
 
+def load_kotowaza() -> dict:
+    p = DATA / "kotowaza.json"
+    if not p.exists():
+        return {}
+    return json.loads(p.read_text(encoding="utf-8"))
+
+
+def load_tanka() -> dict:
+    p = DATA / "tanka.json"
+    if not p.exists():
+        return {}
+    return json.loads(p.read_text(encoding="utf-8"))
+
+
 def load_diary() -> list[dict]:
     entries = []
     for f in sorted(CONTENT.glob("diary/*.md"), reverse=True):
@@ -326,6 +340,8 @@ def build(serve: bool = False) -> None:
     people = load_people(quotes)
     site = load_site()
     diary = load_diary()
+    kotowaza = load_kotowaza()
+    tanka = load_tanka()
     env = make_env()
     base = f"https://{site.get('domain', 'example.com')}"
 
@@ -373,6 +389,7 @@ def build(serve: bool = False) -> None:
         recent_quotes=quotes[-3:][::-1],
         total_quotes=len(quotes),
         total_people=len(people),
+        total_kotowaza=sum(len(c["items"]) for c in kotowaza.get("cats", [])),
         diary_recent=diary[:3],
     ))
 
@@ -475,6 +492,7 @@ def build(serve: bool = False) -> None:
         has_more=has_more,
         weekday_ja=WEEKDAY_JA,
         tag_url=tag_url,
+        tanka_poems=tanka.get("poems", []),
     ))
 
     tmpl_d = env.get_template("diary_entry.html")
@@ -515,6 +533,28 @@ def build(serve: bool = False) -> None:
 
     # 日記RSS
     write_raw("/diary/rss.xml", build_diary_rss(diary, site))
+
+    # --- ことわざ ---
+    if kotowaza.get("cats"):
+        write("/kotowaza/index.html", env.get_template("kotowaza_index.html").render(
+            **ctx_base,
+            breadcrumbs=[("ホーム", "/"), ("ことわざ", None)],
+            intro=kotowaza.get("intro", ""),
+            cats=kotowaza["cats"],
+            total=sum(len(c["items"]) for c in kotowaza["cats"]),
+            og_title="ことわざ", og_description=kotowaza.get("intro", ""),
+            og_url=base + "/kotowaza/",
+        ))
+
+    # --- 短歌コーナー（日記の一部） ---
+    write("/tanka/index.html", env.get_template("tanka_index.html").render(
+        **ctx_base,
+        breadcrumbs=[("ホーム", "/"), ("日記", "/diary/"), ("短歌コーナー", None)],
+        intro=tanka.get("intro", ""),
+        poems=tanka.get("poems", []),
+        og_title="短歌コーナー", og_description=tanka.get("intro", ""),
+        og_url=base + "/tanka/",
+    ))
 
     # --- SNS ---
     write("/sns/index.html", env.get_template("sns.html").render(

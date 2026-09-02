@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}ことわざ — {{ site.title }}{% endblock %}
+{% block content %}
+<h1>ことわざ</h1>
+<p class="lead">{{ intro }}</p>
+<p class="muted">{{ total }}語</p>
+{% for c in cats %}
+<h2 class="block-title kw-cat">{{ c.name }}</h2>
+<ul class="kw-list">
+  {% for it in c["items"] %}
+  <li class="kw-item">
+    <span class="kw">{{ it.text }}{% if it.kana %}<span class="kana">{{ it.kana }}</span>{% endif %}</span>
+    <span class="mean">{{ it.mean }}</span>
+  </li>
+  {% endfor %}
+</ul>
+{% endfor %}
+{% endblock %}

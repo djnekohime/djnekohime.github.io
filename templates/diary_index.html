@@ -8,6 +8,22 @@
   <a href="{{ site.funnel.note }}">note でも日々のできごとを発信しています</a>
 </p>
 
+{% if tanka_poems %}
+<section class="block tanka-corner">
+  <h2 class="block-title">短歌コーナー</h2>
+  <p class="muted">その日の日記から、三十一文字をひとつ。</p>
+  <ul class="tanka-list">
+    {% for p in tanka_poems[:2] %}
+    <li class="tanka-item">
+      <div class="poem">{% for l in p.lines %}<span>{{ l }}</span>{% endfor %}</div>
+      <div class="src">{% if p.from %}― {{ p["from"] }}{% endif %}</div>
+    </li>
+    {% endfor %}
+  </ul>
+  <p><a class="more" href="/tanka/">短歌コーナーへ ›</a></p>
+</section>
+{% endif %}
+
 {% if months %}
 <p class="archive-row" aria-label="月別アーカイブ">
   {% for m in months %}<a href="/diary/{{ m.ym }}/">{{ m.label }} <span class="count">{{ m.count }}</span></a>{% endfor %}
