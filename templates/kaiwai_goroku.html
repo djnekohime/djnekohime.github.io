@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}{{ g.title }} — {{ kaiwai.name }} — 界隈語録 — {{ site.title }}{% endblock %}
-{% block description %}{{ kaiwai.name }}の語録「{{ g.title }}」。黒猫サンバのショートコントとみつを風ポエム。{% endblock %}
+{% block description %}{{ kaiwai.name }}の語録「{{ g.title }}」。黒猫サンバのショートコントとひとことポエム。{% endblock %}
 {% block content %}
 <article class="goroku">
   <p class="eyebrow">{{ kaiwai.name }} ・ 語録 {{ num }}/{{ total }}</p>
@@ -11,9 +11,9 @@
     {% for line in g.konto %}<p>{{ line }}</p>{% endfor %}
   </section>
 
-  <section class="mitsuwo">
-    <p class="mitsuwo-label">みつを風ポエム</p>
-    <p class="mitsuwo-poem">{% for line in g.poem %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>
+  <section class="kaipoem">
+    <p class="kaipoem-label">ひとことポエム</p>
+    <p class="kaipoem-body">{% for line in g.poem %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>
   </section>
 
   {% if g.hitokoto %}

@@ -384,9 +384,9 @@ blockquote cite { display: block; font-style: normal; color: var(--muted); font-
 }
 .konto h2 { margin: 0 0 .6rem; font-size: .9rem; color: var(--accent-2); letter-spacing: .04em; }
 .konto p { margin: .5rem 0; }
-.mitsuwo { text-align: center; margin: 2rem 0; }
-.mitsuwo-label { color: var(--accent); font-size: .78rem; letter-spacing: .1em; margin: 0 0 .8rem; }
-.mitsuwo-poem {
+.kaipoem { text-align: center; margin: 2rem 0; }
+.kaipoem-label { color: var(--accent); font-size: .78rem; letter-spacing: .1em; margin: 0 0 .8rem; }
+.kaipoem-body {
   font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
   font-size: 1.35rem;
   line-height: 2.2;
