@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 """
-note 画像セットを1コマンドで生成 — 見出し画像＋解決策まとめカード
+note 画像セット＋Instagram 解決編リール素材を1コマンドで生成
 
-ancohime.com の日記「解決編」note 用。下の CONFIG だけ書き替えて実行:
+ancohime.com の日記「解決編」note／リール用。下の CONFIG だけ書き替えて実行:
 
     .venv\\Scripts\\python.exe scripts\\make_note_images.py
 
-出力（Obsidian の himeka フォルダ。note.com へ手動アップロード）:
-  1. {DATE} note見出し画像.png      … 1280×670（アイキャッチ）
-  2. {DATE} note解決策{n}つ.png     … 1080×1080（本文中／SNS用のまとめ）
+出力（Obsidian の himeka フォルダ。note.com / Instagram へ手動アップロード）:
+  1. {DATE} note見出し画像.png          … 1280×670（アイキャッチ）
+  2. {DATE} note解決策{n}つ.png         … 1080×1080（本文中／SNS用のまとめ）
+  3. {DATE} リール/01_hook.png 〜 09_close.png … 1080×1920（9:16 リールのスライド）
 
 依存: Pillow（.venv）。フォントは Windows 同梱の Noto Sans JP。
 """
@@ -25,7 +26,7 @@ EYEBROW_PINK = "「解決編」"
 EYECATCH_TITLE = ["「かわいい」を千回見せられて、", "ヨウムが欲しくなった"]
 EYECATCH_SUB = ["SNSに「欲しい」を作られない", "ための7つの方法"]
 
-# 解決策まとめカード
+# 解決策まとめカード ＋ リールのテロップ（共通で使う）
 CARD_EYEBROW = "SNSと物欲"
 SOLUTIONS = [
     "フィードの偏りに気づく",
@@ -36,6 +37,15 @@ SOLUTIONS = [
     "相談は「売り手じゃない人」にする",
     "「飼う」の前に「関わる」で満たす",
 ]
+
+# Instagram 解決編リール（9:16）
+REEL_EYEBROW = "解決編リール"
+REEL_HOOK = ["猫15匹の家で、", "ヨウムが", "飼いたくなった"]
+REEL_HOOK_SUB = "インスタが「喋る鳥」で埋まってた"
+REEL_PROGRESS_LABEL = "SNSに「欲しい」を作られない7つの方法"
+REEL_CLOSE = ["我慢やない。", "「情報の入り口」に", "仕組みを入れるだけ"]
+REEL_CLOSE_CTA = "▶ フル解説は note（プロフのリンク）"
+REEL_CLOSE_SUB = "この日の日記 → ancohime.com"
 
 NAME = "昭和上等あんこ姫"
 HANDLE = "@ancohimesama"
@@ -58,6 +68,24 @@ def gradient_bg(w, h):
     c.putpixel((0, 1), (28, 28, 33))
     c.putpixel((1, 1), (19, 19, 23))
     return c.resize((w, h), Image.BICUBIC)
+
+
+def wrap(d, text, font, max_w):
+    """日本語向け・文字単位の折り返し。'\n' は強制改行。"""
+    lines, cur = [], ""
+    for ch in text:
+        if ch == "\n":
+            lines.append(cur)
+            cur = ""
+            continue
+        if d.textlength(cur + ch, font=font) <= max_w or not cur:
+            cur += ch
+        else:
+            lines.append(cur)
+            cur = ch
+    if cur:
+        lines.append(cur)
+    return lines
 
 
 def make_eyecatch():
@@ -120,7 +148,88 @@ def make_card():
     print("saved:", out)
 
 
+def make_reel():
+    """9:16 のリール用スライド。01=Hook / 02..=テロップ7枚 / 09=締め。"""
+    W, H = 1080, 1920
+    n = len(SOLUTIONS)
+    outdir = HIMEKA / f"{DATE} リール"
+    outdir.mkdir(parents=True, exist_ok=True)
+
+    f_eye = f("NotoSansJP-Medium.otf", 34)
+    f_hook = f("NotoSansJP-Bold.otf", 96)
+    f_hooksub = f("NotoSansJP-Regular.otf", 40)
+    f_prog = f("NotoSansJP-Medium.otf", 34)
+    f_num = f("NotoSansJP-Bold.otf", 78)
+    f_tip = f("NotoSansJP-Bold.otf", 68)
+    f_close = f("NotoSansJP-Bold.otf", 84)
+    f_cta = f("NotoSansJP-Medium.otf", 40)
+    f_sub = f("NotoSansJP-Regular.otf", 34)
+    f_name = f("NotoSansJP-Bold.otf", 34)
+    f_foot = f("NotoSansJP-Regular.otf", 26)
+
+    LEFT, BAR_X, BAR_W = 120, 88, 8
+    MAXW = W - LEFT - 90
+
+    # --- 01 Hook ---
+    img = gradient_bg(W, H)
+    d = ImageDraw.Draw(img)
+    top = 430
+    d.rectangle([BAR_X, top - 8, BAR_X + BAR_W, top + 40 + 130 * len(REEL_HOOK) + 30],
+                fill=PINK)
+    d.text((LEFT, top), REEL_EYEBROW, font=f_eye, fill=PINK)
+    y = top + 74
+    for line in REEL_HOOK:
+        d.text((LEFT, y), line, font=f_hook, fill=WHITE)
+        y += 130
+    d.text((LEFT, y + 24), REEL_HOOK_SUB, font=f_hooksub, fill=SUB_GRAY)
+    d.text((LEFT, H - 150), NAME, font=f_name, fill=PINK)
+    p = outdir / "01_hook.png"
+    img.save(p)
+    print("saved:", p)
+
+    # --- 02..08 テロップ ---
+    for i, item in enumerate(SOLUTIONS):
+        img = gradient_bg(W, H)
+        d = ImageDraw.Draw(img)
+        d.text((LEFT, 250), REEL_PROGRESS_LABEL, font=f_prog, fill=GRAY)
+        d.text((LEFT, 300), f"{i + 1} / {n}", font=f_prog, fill=PINK)
+
+        r = 66
+        cx, cy = LEFT + r, 640
+        d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=PINK)
+        d.text((cx, cy - 2), str(i + 1), font=f_num, fill="white", anchor="mm")
+
+        lines = wrap(d, item, f_tip, MAXW)
+        ty = cy + r + 70
+        for ln in lines:
+            d.text((LEFT, ty), ln, font=f_tip, fill=WHITE)
+            ty += 92
+
+        d.text((LEFT, H - 130), f"{NAME}  /  note {HANDLE}", font=f_foot, fill=GRAY)
+        p = outdir / f"{i + 2:02d}_tip{i + 1}.png"
+        img.save(p)
+        print("saved:", p)
+
+    # --- 09 締め ---
+    img = gradient_bg(W, H)
+    d = ImageDraw.Draw(img)
+    top = 470
+    d.rectangle([BAR_X, top - 8, BAR_X + BAR_W, top + 118 * len(REEL_CLOSE) + 8],
+                fill=PINK)
+    y = top
+    for line in REEL_CLOSE:
+        d.text((LEFT, y), line, font=f_close, fill=WHITE)
+        y += 118
+    d.text((LEFT, y + 60), REEL_CLOSE_CTA, font=f_cta, fill=PINK)
+    d.text((LEFT, y + 130), REEL_CLOSE_SUB, font=f_sub, fill=SUB_GRAY)
+    d.text((LEFT, H - 150), NAME, font=f_name, fill=PINK)
+    p = outdir / f"{n + 2:02d}_close.png"
+    img.save(p)
+    print("saved:", p)
+
+
 if __name__ == "__main__":
     HIMEKA.mkdir(parents=True, exist_ok=True)
     make_eyecatch()
     make_card()
+    make_reel()
