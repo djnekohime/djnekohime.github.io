@@ -54,7 +54,7 @@ GROUP_ORDER = ["経営者・実業家", "スポーツ選手", "歴史上の人�
 
 # 日記タグ → URL用スラッグ（未定義のタグは build 時に警告＋ハッシュで暫定スラッグ）
 DIARY_TAG_SLUGS = {
-    "猫": "neko", "犬": "inu", "メダカ": "medaka", "動物": "doubutsu",
+    "猫": "neko", "犬": "inu", "メダカ": "medaka", "鳥": "tori", "動物": "doubutsu",
     "機材": "kizai", "AI": "ai", "音楽": "ongaku", "動画": "douga",
     "SNS": "sns", "サイト制作": "site", "BTS": "bts",
     "韓国ドラマ": "kandrama", "韓ドラ": "kandrama",
