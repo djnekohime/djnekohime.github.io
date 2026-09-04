@@ -3,6 +3,7 @@ title: メダカのこと、なんも知らんままチャッピーの言いな�
 date: 2026-09-04
 tags: メダカ, 失敗
 image: /static/img/diary/2026-09-04-medaka.jpg
+note: https://note.com/ancohimesama/n/n62765f486a81
 ---
 
 メダカを、またお迎えした。
