@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}お問い合わせ — {{ site.title }}{% endblock %}
+{% block description %}昭和上等あんこ姫の隠れ家（ancohime.com）へのお問い合わせ方法。{% endblock %}
+{% block content %}
+<h1>お問い合わせ</h1>
+
+<p class="lead">掲載内容の誤り・ご要望・その他お問い合わせは、以下のSNSアカウントのDM（ダイレクトメッセージ）よりご連絡ください。</p>
+
+<ul class="sns-list">
+  {% for s in site.sns %}
+  <li><a href="{{ s.url }}"><span class="sns-icon">{{ s.icon }}</span>
+    <span class="sns-name">{{ s.label }}</span>
+    <span class="sns-handle">{{ s.handle }}</span></a></li>
+  {% endfor %}
+</ul>
+
+<p class="muted">内容の確認・返信までお時間をいただく場合があります。あらかじめご了承ください。</p>
+{% endblock %}

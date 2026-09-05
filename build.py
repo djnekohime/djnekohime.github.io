@@ -601,6 +601,20 @@ def build(serve: bool = False) -> None:
         breadcrumbs=[("ホーム", "/"), ("リンク集", None)],
     ))
 
+    # --- 法務ページ（このサイトについて／プライバシーポリシー／お問い合わせ） ---
+    write("/about/index.html", env.get_template("about.html").render(
+        **ctx_base,
+        breadcrumbs=[("ホーム", "/"), ("このサイトについて", None)],
+    ))
+    write("/privacy/index.html", env.get_template("privacy.html").render(
+        **ctx_base,
+        breadcrumbs=[("ホーム", "/"), ("プライバシーポリシー", None)],
+    ))
+    write("/contact/index.html", env.get_template("contact.html").render(
+        **ctx_base,
+        breadcrumbs=[("ホーム", "/"), ("お問い合わせ", None)],
+    ))
+
     # --- 作品（LINEスタンプ・音楽など） ---
     works = load_works()
     if works:
