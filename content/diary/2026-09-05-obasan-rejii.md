@@ -3,6 +3,7 @@ title: ホームセンターのレジでじいさんに絡まれて、「おば�
 date: 2026-09-05
 tags: あるある, 自虐
 image: /static/img/diary/2026-09-05-obasan.jpg
+note: https://note.com/ancohimesama/n/n75aa6017bbd9
 ---
 
 今日、ホームセンターのレジで、知らんじいさんに絡まれた。
