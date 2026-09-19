@@ -1,6 +1,7 @@
 ---
 title: フィルターも薬も、いったいなんやったんや。停電三日でもメダカぴんぴんしとった話
 date: 2026-09-14
+note: https://note.com/ancohimesama/n/n63c1452c08be
 tags: メダカ
 image: /static/img/diary/2026-09-14-medaka-teiden.png
 ---
