@@ -1,6 +1,7 @@
 ---
 title: うち、運がええほうやと思って生きてきた。けど、たぶん運だけちゃう
 date: 2026-09-19
+note: https://note.com/ancohimesama/n/n3671e7caef9f
 tags: 猫, 日常
 ---
 
