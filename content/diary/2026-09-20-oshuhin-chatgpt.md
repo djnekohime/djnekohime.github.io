@@ -1,6 +1,7 @@
 ---
 title: 家宅捜索が入った想定で、ChatGPTに押収品を並べさせたら、うちのことを知りすぎてた
 date: 2026-09-20
+note: https://note.com/ancohimesama/n/n9202bef4d544
 tags: AI, 日常, 猫
 ---
 
