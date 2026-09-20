@@ -18,32 +18,34 @@ from PIL import Image, ImageDraw, ImageFont
 
 # ================================ CONFIG ================================== #
 HIMEKA = Path(r"C:/Users/himic/HIMEKA避難所/note下書き画像")  # ※Dドライブ不在(9/7火事)のため一時的にC:に出力。Dが戻ったら本来の場所へ移す
-DATE = "2026-09-20"
+DATE = "2026-09-20b"
 
 # 見出し画像
 EYEBROW_GRAY = "ancohime.com の日記の"
-EYEBROW_PINK = "「解決編」"
-EYECATCH_TITLE = ["AI情報が多すぎて", "頭爆発しそうな人へ"]
-EYECATCH_SUB = ["「なんのため？」で", "拾う情報を選ぶ方法"]
+EYEBROW_PINK = "「押収品」"
+EYECATCH_TITLE = ["家宅捜索が入った想定で", "ChatGPTに押収品を並べさせた"]
+EYECATCH_SUB = ["うちのこと、", "知りすぎてて吹いた"]
 
 # 解決策まとめカード ＋ リールのテロップ（共通で使う）
-CARD_EYEBROW = "AI情報に溺れないための"
+CARD_TITLE = "押収品リスト {n}点"
+CARD_FILE = "note押収品{n}点"
+CARD_EYEBROW = "ChatGPTが並べたうちの持ち物"
 SOLUTIONS = [
-    "ぜんぶ拾うのは、もう無理。そう認める",
-    "その行動、なんのため？と自分に聞く",
-    "動機は3つ。お金・暇つぶし・好き",
-    "暇つぶしは、今日は見送る",
-    "お金か好きで答えが出たものだけやる",
-    "好きを続けたら、それが財産になる",
+    "パソコン・カメラ・三脚・リングライト",
+    "保護された猫たち・犬たち・ヨウム",
+    "メダカの水槽と飼育用品",
+    "ギター・キーボード・音楽制作機材",
+    "プロテイン・EAA・モンスター",
+    "初音ミクのフィギュア・リラックマ",
 ]
 
-# Instagram 解決編リール（9:16）
-REEL_EYEBROW = "解決編リール"
-REEL_HOOK = ["AI情報が多すぎて", "頭爆発しそう"]
-REEL_HOOK_SUB = "2年前はぜんぶ拾えてたのに"
-REEL_PROGRESS_LABEL = "拾う情報の選び方６つ"
-REEL_CLOSE = ["ぜんぶ拾わなくていい。", "「なんのため？」で", "好きだけ拾う"]
-REEL_CLOSE_CTA = "▶ フル解説は note（プロフのリンク）"
+# Instagram リール（9:16）
+REEL_EYEBROW = "ChatGPTの押収品"
+REEL_HOOK = ["家宅捜索の想定で", "ChatGPTに押収品を", "並べさせたら"]
+REEL_HOOK_SUB = "うちのこと知りすぎてた"
+REEL_PROGRESS_LABEL = "押収されたもの"
+REEL_CLOSE = ["犯罪の証拠、ゼロ。", "全部、好きなものと", "家族やった"]
+REEL_CLOSE_CTA = "▶ 全文は note（プロフのリンク）"
 REEL_CLOSE_SUB = "この日の日記 → ancohime.com"
 
 NAME = "昭和上等あんこ姫"
@@ -129,7 +131,7 @@ def make_card():
     eye_y, title_y = 92, 126
     d.rectangle([BAR_X, eye_y - 4, BAR_X + BAR_W, title_y + 96], fill=PINK)
     d.text((LEFT, eye_y), CARD_EYEBROW, font=f_eye, fill=GRAY)
-    d.text((LEFT, title_y), f"解決策 {n}つ", font=f_title, fill=WHITE)
+    d.text((LEFT, title_y), CARD_TITLE.format(n=n), font=f_title, fill=WHITE)
 
     top, bottom = 300, 1000
     pitch = min(100, (bottom - top) / n)
@@ -142,7 +144,7 @@ def make_card():
         d.text((LEFT + 2 * r + 24, cy), item, font=f_item, fill=LIST_TXT, anchor="lm")
 
     d.text((40, H - 52), f"{NAME}  /  note {HANDLE}", font=f_foot, fill=GRAY)
-    out = HIMEKA / f"{DATE} note解決策{n}つ.png"
+    out = HIMEKA / f"{DATE} {CARD_FILE.format(n=n)}.png"
     img.save(out)
     print("saved:", out)
 
