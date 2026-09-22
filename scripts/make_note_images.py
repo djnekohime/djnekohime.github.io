@@ -18,33 +18,31 @@ from PIL import Image, ImageDraw, ImageFont
 
 # ================================ CONFIG ================================== #
 HIMEKA = Path(r"C:/Users/himic/HIMEKA避難所/note下書き画像")  # ※Dドライブ不在(9/7火事)のため一時的にC:に出力。Dが戻ったら本来の場所へ移す
-DATE = "2026-09-20b"
+DATE = "2026-09-22"
 
 # 見出し画像
 EYEBROW_GRAY = "ancohime.com の日記の"
-EYEBROW_PINK = "「押収品」"
-EYECATCH_TITLE = ["家宅捜索が入った想定で", "ChatGPTに押収品を並べさせた"]
-EYECATCH_SUB = ["うちのこと、", "知りすぎてて吹いた"]
+EYEBROW_PINK = "「ありがとうがない」"
+EYECATCH_TITLE = ["ありがとうがない。", "ごちそうさまがない。"]
+EYECATCH_SUB = ["それ、誰がやってると", "思ってんねん"]
 
 # 解決策まとめカード ＋ リールのテロップ（共通で使う）
-CARD_TITLE = "押収品リスト {n}点"
-CARD_FILE = "note押収品{n}点"
-CARD_EYEBROW = "ChatGPTが並べたうちの持ち物"
+CARD_TITLE = "「勝手に完成してる」もの {n}コ"
+CARD_FILE = "note当たり前{n}コ"
+CARD_EYEBROW = "気づいたら終わってることにされてるもの"
 SOLUTIONS = [
-    "パソコン・カメラ・三脚・リングライト",
-    "保護された猫たち・犬たち・ヨウム",
-    "メダカの水槽と飼育用品",
-    "ギター・キーボード・音楽制作機材",
-    "プロテイン・EAA・モンスター",
-    "初音ミクのフィギュア・リラックマ",
+    "洗濯されてる",
+    "ごはんができてる",
+    "部屋が片づく",
+    "子どもが寝てる",
 ]
 
 # Instagram リール（9:16）
-REEL_EYEBROW = "ChatGPTの押収品"
-REEL_HOOK = ["家宅捜索の想定で", "ChatGPTに押収品を", "並べさせたら"]
-REEL_HOOK_SUB = "うちのこと知りすぎてた"
-REEL_PROGRESS_LABEL = "押収されたもの"
-REEL_CLOSE = ["犯罪の証拠、ゼロ。", "全部、好きなものと", "家族やった"]
+REEL_EYEBROW = "それ、誰がやってると思ってる？"
+REEL_HOOK = ["洗濯されてる", "ごはんができてる", "部屋が片づく"]
+REEL_HOOK_SUB = "全部勝手に完成してると思ってるやろ"
+REEL_PROGRESS_LABEL = "当たり前にされてるもの"
+REEL_CLOSE = ["「手伝う」じゃなくて", "お前もやれ"]
 REEL_CLOSE_CTA = "▶ 全文は note（プロフのリンク）"
 REEL_CLOSE_SUB = "この日の日記 → ancohime.com"
 
