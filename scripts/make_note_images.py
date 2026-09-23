@@ -17,8 +17,9 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 # ================================ CONFIG ================================== #
-HIMEKA = Path(r"C:/Users/himic/HIMEKA避難所/note下書き画像")  # ※Dドライブ不在(9/7火事)のため一時的にC:に出力。Dが戻ったら本来の場所へ移す
+HIMEKA_ROOT = Path(r"C:/Users/himic/HIMEKA避難所/日記")  # ※Dドライブ不在(9/7火事)のため一時的にC:に出力。Dが戻ったら本来の場所へ移す
 DATE = "2026-09-22"
+HIMEKA = HIMEKA_ROOT / DATE  # 日付ごとのサブフォルダに自動で分けて保存
 
 # 見出し画像
 EYEBROW_GRAY = "ancohime.com の日記の"
