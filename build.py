@@ -62,6 +62,7 @@ DIARY_TAG_SLUGS = {
     "学び": "manabi", "失敗": "shippai", "お金": "okane", "健康": "kenkou",
     "料理": "ryouri", "英語": "eigo", "韓国語": "kankokugo", "日常": "nichijou",
     "あるある": "aruaru", "自虐": "jigyaku",
+    "家事": "kaji", "本音": "honne",
 }
 WEEKDAY_JA = ["日", "月", "火", "水", "木", "金", "土"]
 

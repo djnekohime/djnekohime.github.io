@@ -18,34 +18,34 @@ from PIL import Image, ImageDraw, ImageFont
 
 # ================================ CONFIG ================================== #
 HIMEKA_ROOT = Path(r"C:/Users/himic/HIMEKA避難所/日記")  # ※Dドライブ不在(9/7火事)のため一時的にC:に出力。Dが戻ったら本来の場所へ移す
-DATE = "2026-09-22"
+DATE = "2026-09-23"
 HIMEKA = HIMEKA_ROOT / DATE  # 日付ごとのサブフォルダに自動で分けて保存
 
 # 見出し画像
 EYEBROW_GRAY = "ancohime.com の日記の"
-EYEBROW_PINK = "「ありがとうがない」"
-EYECATCH_TITLE = ["ありがとうがない。", "ごちそうさまがない。"]
-EYECATCH_SUB = ["それ、誰がやってると", "思ってんねん"]
+EYEBROW_PINK = "「ほっとするパートさん」"
+EYECATCH_TITLE = ["忙しい店で、", "あの人の列だけほっとする"]
+EYECATCH_SUB = ["機械みたいなレジばかりの時代に", "ずば抜けて目立つ人がやってること"]
 
 # 解決策まとめカード ＋ リールのテロップ（共通で使う）
-CARD_TITLE = "変える {n}つのこと"
+CARD_TITLE = "ほっとする人の {n}つ"
 CARD_FILE = "note解決策{n}つ"
-CARD_EYEBROW = "気づいたらできること"
+CARD_EYEBROW = "今日から真似できること"
 SOLUTIONS = [
-    "気づいたら先に言う",
-    "やったことは声に出す",
-    "「手伝う」をやめる",
-    "家事を書き出す",
-    "まるごと任せてみる",
-    "家族のルールにする",
+    "急いでても、動作はていねいに",
+    "誰にでも同じ顔で接する",
+    "目を見て、ひとこと添える",
+    "「ありがとう」を最後まで言い切る",
+    "待たせたら、先に謝る",
+    "客のほうも「ありがとう」を返す",
 ]
 
 # Instagram リール（9:16）
-REEL_EYEBROW = "それ、誰がやってると思ってる？"
-REEL_HOOK = ["洗濯されてる", "ごはんができてる", "部屋が片づく"]
-REEL_HOOK_SUB = "全部勝手に完成してると思ってるやろ"
-REEL_PROGRESS_LABEL = "変えられること"
-REEL_CLOSE = ["「手伝う」じゃなくて", "お前もやれ"]
+REEL_EYEBROW = "いつものドラッグストアで"
+REEL_HOOK = ["忙しい店", "ゆっくり、ていねい", "なのにほっとする"]
+REEL_HOOK_SUB = "あの人の列だけ、なんか違う"
+REEL_PROGRESS_LABEL = "ほっとする人がやってること"
+REEL_CLOSE = ["笑顔ひとつで", "こっちも優しくなれる"]
 REEL_CLOSE_CTA = "▶ 全文は note（プロフのリンク）"
 REEL_CLOSE_SUB = "この日の日記 → ancohime.com"
 
