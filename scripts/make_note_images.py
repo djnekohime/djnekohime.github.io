@@ -28,21 +28,23 @@ EYECATCH_TITLE = ["ありがとうがない。", "ごちそうさまがない。
 EYECATCH_SUB = ["それ、誰がやってると", "思ってんねん"]
 
 # 解決策まとめカード ＋ リールのテロップ（共通で使う）
-CARD_TITLE = "「勝手に完成してる」もの {n}コ"
-CARD_FILE = "note当たり前{n}コ"
-CARD_EYEBROW = "気づいたら終わってることにされてるもの"
+CARD_TITLE = "変える {n}つのこと"
+CARD_FILE = "note解決策{n}つ"
+CARD_EYEBROW = "気づいたらできること"
 SOLUTIONS = [
-    "洗濯されてる",
-    "ごはんができてる",
-    "部屋が片づく",
-    "子どもが寝てる",
+    "気づいたら先に言う",
+    "やったことは声に出す",
+    "「手伝う」をやめる",
+    "家事を書き出す",
+    "まるごと任せてみる",
+    "家族のルールにする",
 ]
 
 # Instagram リール（9:16）
 REEL_EYEBROW = "それ、誰がやってると思ってる？"
 REEL_HOOK = ["洗濯されてる", "ごはんができてる", "部屋が片づく"]
 REEL_HOOK_SUB = "全部勝手に完成してると思ってるやろ"
-REEL_PROGRESS_LABEL = "当たり前にされてるもの"
+REEL_PROGRESS_LABEL = "変えられること"
 REEL_CLOSE = ["「手伝う」じゃなくて", "お前もやれ"]
 REEL_CLOSE_CTA = "▶ 全文は note（プロフのリンク）"
 REEL_CLOSE_SUB = "この日の日記 → ancohime.com"
