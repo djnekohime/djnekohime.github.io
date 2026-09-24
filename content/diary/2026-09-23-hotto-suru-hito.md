@@ -1,6 +1,7 @@
 ---
 title: いつものドラッグストアに、ほっとするパートさんがおる
 date: 2026-09-23
+note: https://note.com/ancohimesama/n/n30ba56a46cb8
 tags: 買い物, 日常
 ---
 
