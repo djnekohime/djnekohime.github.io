@@ -18,34 +18,34 @@ from PIL import Image, ImageDraw, ImageFont
 
 # ================================ CONFIG ================================== #
 HIMEKA_ROOT = Path(r"C:/Users/himic/HIMEKA避難所/日記")  # ※Dドライブ不在(9/7火事)のため一時的にC:に出力。Dが戻ったら本来の場所へ移す
-DATE = "2026-09-23"
+DATE = "2026-09-25"
 HIMEKA = HIMEKA_ROOT / DATE  # 日付ごとのサブフォルダに自動で分けて保存
 
 # 見出し画像
 EYEBROW_GRAY = "ancohime.com の日記の"
-EYEBROW_PINK = "「ほっとするパートさん」"
-EYECATCH_TITLE = ["忙しい店で、", "あの人の列だけほっとする"]
-EYECATCH_SUB = ["機械みたいなレジばかりの時代に", "ずば抜けて目立つ人がやってること"]
+EYEBROW_PINK = "「俺は働いてる」"
+EYECATCH_TITLE = ["ねこじゃらしも", "まともに振れへん"]
+EYECATCH_SUB = ["猫が夢中になる振り方、", "6つ教えたる"]
 
 # 解決策まとめカード ＋ リールのテロップ（共通で使う）
-CARD_TITLE = "ほっとする人の {n}つ"
+CARD_TITLE = "猫が夢中になる振り方 {n}つ"
 CARD_FILE = "note解決策{n}つ"
-CARD_EYEBROW = "今日から真似できること"
+CARD_EYEBROW = "ねこじゃらし、今日から"
 SOLUTIONS = [
-    "急いでても、動作はていねいに",
-    "誰にでも同じ顔で接する",
-    "目を見て、ひとこと添える",
-    "「ありがとう」を最後まで言い切る",
-    "待たせたら、先に謝る",
-    "客のほうも「ありがとう」を返す",
+    "振り回さない。逃げる動きをさせる",
+    "物かげに隠して、ちらっと出す",
+    "床をはわせる（虫・ネズミの動き）",
+    "止める「間」をつくる",
+    "最後は必ずつかまえさせる",
+    "遊んだら、そのままごはん",
 ]
 
 # Instagram リール（9:16）
-REEL_EYEBROW = "いつものドラッグストアで"
-REEL_HOOK = ["忙しい店", "ゆっくり、ていねい", "なのにほっとする"]
-REEL_HOOK_SUB = "あの人の列だけ、なんか違う"
-REEL_PROGRESS_LABEL = "ほっとする人がやってること"
-REEL_CLOSE = ["笑顔ひとつで", "こっちも優しくなれる"]
+REEL_EYEBROW = "ごはん前の5分"
+REEL_HOOK = ["ねこじゃらし", "ぶんぶん振っても", "猫は来ない"]
+REEL_HOOK_SUB = "飽きたんちゃう。振り方が獲物になってへんだけ"
+REEL_PROGRESS_LABEL = "猫が夢中になる振り方"
+REEL_CLOSE = ["狩って、食べて、", "ぐっすり寝る"]
 REEL_CLOSE_CTA = "▶ 全文は note（プロフのリンク）"
 REEL_CLOSE_SUB = "この日の日記 → ancohime.com"
 
