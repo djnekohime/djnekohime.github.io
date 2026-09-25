@@ -1,6 +1,7 @@
 ---
 title: 「俺は働いてる」だってよ。だからなに？
 date: 2026-09-25
+note: https://note.com/ancohimesama/n/n4e3f122a51f6
 tags: 猫, 本音, 家事
 ---
 
