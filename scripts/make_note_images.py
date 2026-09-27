@@ -18,34 +18,33 @@ from PIL import Image, ImageDraw, ImageFont
 
 # ================================ CONFIG ================================== #
 HIMEKA_ROOT = Path(r"C:/Users/himic/HIMEKA避難所/日記")  # ※Dドライブ不在(9/7火事)のため一時的にC:に出力。Dが戻ったら本来の場所へ移す
-DATE = "2026-09-25"
+DATE = "2026-09-27"
 HIMEKA = HIMEKA_ROOT / DATE  # 日付ごとのサブフォルダに自動で分けて保存
 
 # 見出し画像
 EYEBROW_GRAY = "ancohime.com の日記の"
-EYEBROW_PINK = "「俺は働いてる」"
-EYECATCH_TITLE = ["ねこじゃらしも", "まともに振れへん"]
-EYECATCH_SUB = ["猫が夢中になる振り方、", "6つ教えたる"]
+EYEBROW_PINK = "「朝マック行こうや」"
+EYECATCH_TITLE = ["謝らへんまま", "仲直りしてもうた"]
+EYECATCH_SUB = ["「ごめん」より先に効く、", "うちの仲直り5つ"]
 
 # 解決策まとめカード ＋ リールのテロップ（共通で使う）
-CARD_TITLE = "猫が夢中になる振り方 {n}つ"
+CARD_TITLE = "謝らへん仲直り {n}つ"
 CARD_FILE = "note解決策{n}つ"
-CARD_EYEBROW = "ねこじゃらし、今日から"
+CARD_EYEBROW = "喧嘩した次の日の朝に"
 SOLUTIONS = [
-    "振り回さない。逃げる動きをさせる",
-    "物かげに隠して、ちらっと出す",
-    "床をはわせる（虫・ネズミの動き）",
-    "止める「間」をつくる",
-    "最後は必ずつかまえさせる",
-    "遊んだら、そのままごはん",
+    "「ごめん」より「ごはん行こ」",
+    "誘われたら、意地張らんと乗る",
+    "その場で蒸し返さない",
+    "食べてる間は、どうでもええ話",
+    "譲れんことだけ、落ち着いてから別の日に",
 ]
 
 # Instagram リール（9:16）
-REEL_EYEBROW = "ごはん前の5分"
-REEL_HOOK = ["ねこじゃらし", "ぶんぶん振っても", "猫は来ない"]
-REEL_HOOK_SUB = "飽きたんちゃう。振り方が獲物になってへんだけ"
-REEL_PROGRESS_LABEL = "猫が夢中になる振り方"
-REEL_CLOSE = ["狩って、食べて、", "ぐっすり寝る"]
+REEL_EYEBROW = "喧嘩した次の日の朝"
+REEL_HOOK = ["「ごめん」って", "言えへんまま", "仲直りしてもうた"]
+REEL_HOOK_SUB = "きっかけは「朝マック行こうや」の一言"
+REEL_PROGRESS_LABEL = "謝らへん仲直り"
+REEL_CLOSE = ["食べ終わったら、", "もう普段どおり"]
 REEL_CLOSE_CTA = "▶ 全文は note（プロフのリンク）"
 REEL_CLOSE_SUB = "この日の日記 → ancohime.com"
 
