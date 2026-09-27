@@ -1,6 +1,7 @@
 ---
 title: 喧嘩した次の日、「朝マック行こうや」
 date: 2026-09-27
+note: https://note.com/ancohimesama/n/nfd5e53e79386
 tags: 旦那, 日常, 本音
 ---
 
