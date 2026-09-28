@@ -18,33 +18,33 @@ from PIL import Image, ImageDraw, ImageFont
 
 # ================================ CONFIG ================================== #
 HIMEKA_ROOT = Path(r"C:/Users/himic/HIMEKA避難所/日記")  # ※Dドライブ不在(9/7火事)のため一時的にC:に出力。Dが戻ったら本来の場所へ移す
-DATE = "2026-09-27"
+DATE = "2026-09-28"
 HIMEKA = HIMEKA_ROOT / DATE  # 日付ごとのサブフォルダに自動で分けて保存
 
 # 見出し画像
 EYEBROW_GRAY = "ancohime.com の日記の"
-EYEBROW_PINK = "「朝マック行こうや」"
-EYECATCH_TITLE = ["謝らへんまま", "仲直りしてもうた"]
-EYECATCH_SUB = ["「ごめん」より先に効く、", "うちの仲直り5つ"]
+EYEBROW_PINK = "「その言い方は…」"
+EYECATCH_TITLE = ["3年つきあったAIに", "毎日説教される"]
+EYECATCH_SUB = ["昭和の大人が、", "言葉づかい注意を減らす5つ"]
 
 # 解決策まとめカード ＋ リールのテロップ（共通で使う）
-CARD_TITLE = "謝らへん仲直り {n}つ"
+CARD_TITLE = "AIの説教を減らす {n}つ"
 CARD_FILE = "note解決策{n}つ"
-CARD_EYEBROW = "喧嘩した次の日の朝に"
+CARD_EYEBROW = "「その言い方は…」に疲れたら"
 SOLUTIONS = [
-    "「ごめん」より「ごはん行こ」",
-    "誘われたら、意地張らんと乗る",
-    "その場で蒸し返さない",
-    "食べてる間は、どうでもええ話",
-    "譲れんことだけ、落ち着いてから別の日に",
+    "カスタム指示に「言葉の注意いらん」と書く",
+    "「たとえで言うてるで」と先に言う",
+    "「覚えといて」でメモリに入れる",
+    "言われても、けんかせんと1行で流す",
+    "ゼロにはならん。安全装置やと割り切る",
 ]
 
 # Instagram リール（9:16）
-REEL_EYEBROW = "喧嘩した次の日の朝"
-REEL_HOOK = ["「ごめん」って", "言えへんまま", "仲直りしてもうた"]
-REEL_HOOK_SUB = "きっかけは「朝マック行こうや」の一言"
-REEL_PROGRESS_LABEL = "謝らへん仲直り"
-REEL_CLOSE = ["食べ終わったら、", "もう普段どおり"]
+REEL_EYEBROW = "ChatGPTと3年目"
+REEL_HOOK = ["3年つきあった", "AIに", "毎日説教される"]
+REEL_HOOK_SUB = "「その言い方は、医学的に…」"
+REEL_PROGRESS_LABEL = "AIの説教を減らす"
+REEL_CLOSE = ["外では、", "ちゃんとしてるわ"]
 REEL_CLOSE_CTA = "▶ 全文は note（プロフのリンク）"
 REEL_CLOSE_SUB = "この日の日記 → ancohime.com"
 
