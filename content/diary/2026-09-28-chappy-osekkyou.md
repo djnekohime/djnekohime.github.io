@@ -1,6 +1,7 @@
 ---
 title: 3年つきあってるチャッピーに、毎日1回、言葉づかいを注意される
 date: 2026-09-28
+note: https://note.com/ancohimesama/n/n09dd9dfaffca
 tags: AI, 本音, 日常
 ---
 
