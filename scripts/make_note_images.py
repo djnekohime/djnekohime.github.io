@@ -18,33 +18,33 @@ from PIL import Image, ImageDraw, ImageFont
 
 # ================================ CONFIG ================================== #
 HIMEKA_ROOT = Path(r"C:/Users/himic/HIMEKA避難所/日記")  # ※Dドライブ不在(9/7火事)のため一時的にC:に出力。Dが戻ったら本来の場所へ移す
-DATE = "2026-09-28"
+DATE = "2026-10-02"
 HIMEKA = HIMEKA_ROOT / DATE  # 日付ごとのサブフォルダに自動で分けて保存
 
 # 見出し画像
 EYEBROW_GRAY = "ancohime.com の日記の"
-EYEBROW_PINK = "「その言い方は…」"
-EYECATCH_TITLE = ["3年つきあったAIに", "毎日説教される"]
-EYECATCH_SUB = ["昭和の大人が、", "言葉づかい注意を減らす5つ"]
+EYEBROW_PINK = "「ゴミ捨て場の言い争い」"
+EYECATCH_TITLE = ["イラッとする一言に", "乗らない5つ"]
+EYECATCH_SUB = ["人のふり見て、", "我がふり直した昭和の大人"]
 
 # 解決策まとめカード ＋ リールのテロップ（共通で使う）
-CARD_TITLE = "AIの説教を減らす {n}つ"
+CARD_TITLE = "イラッに乗らない {n}つ"
 CARD_FILE = "note解決策{n}つ"
-CARD_EYEBROW = "「その言い方は…」に疲れたら"
+CARD_EYEBROW = "言い返したくなったら"
 SOLUTIONS = [
-    "カスタム指示に「言葉の注意いらん」と書く",
-    "「たとえで言うてるで」と先に言う",
-    "「覚えといて」でメモリに入れる",
-    "言われても、けんかせんと1行で流す",
-    "ゼロにはならん。安全装置やと割り切る",
+    "口を開く前に、6秒だけ待つ",
+    "「この人、今日なんかあったんやな」と思う",
+    "返すのは用件だけ。「はい、わかりました」",
+    "その場で勝たんでいい。用事すませて帰る",
+    "横から見たら自分はどう見えるか、1回想像する",
 ]
 
 # Instagram リール（9:16）
-REEL_EYEBROW = "ChatGPTと3年目"
-REEL_HOOK = ["3年つきあった", "AIに", "毎日説教される"]
-REEL_HOOK_SUB = "「その言い方は、医学的に…」"
-REEL_PROGRESS_LABEL = "AIの説教を減らす"
-REEL_CLOSE = ["外では、", "ちゃんとしてるわ"]
+REEL_EYEBROW = "ゴミ捨て場で見た"
+REEL_HOOK = ["ちょっとした", "言葉づかいで", "大人が喧嘩"]
+REEL_HOOK_SUB = "ほっといたらええのに"
+REEL_PROGRESS_LABEL = "イラッに乗らない"
+REEL_CLOSE = ["人のふり見て、", "我がふり直せ"]
 REEL_CLOSE_CTA = "▶ 全文は note（プロフのリンク）"
 REEL_CLOSE_SUB = "この日の日記 → ancohime.com"
 
