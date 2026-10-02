@@ -1,6 +1,7 @@
 ---
 title: ゴミの持ち込み場で、程度の低い言い争いを見た
 date: 2026-10-02
+note: https://note.com/ancohimesama/n/nbea9316379ed
 tags: 日常, 本音
 ---
 
