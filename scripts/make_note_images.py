@@ -23,7 +23,7 @@ HIMEKA = HIMEKA_ROOT / DATE  # 日付ごとのサブフォルダに自動で分�
 
 # 見出し画像
 EYEBROW_GRAY = "ancohime.com の日記の"
-EYEBROW_PINK = "「ゴミ捨て場の言い争い」"
+EYEBROW_PINK = "「ゴミ持ち込み場の言い争い」"
 EYECATCH_TITLE = ["イラッとする一言に", "乗らない5つ"]
 EYECATCH_SUB = ["人のふり見て、", "我がふり直した昭和の大人"]
 
@@ -40,7 +40,7 @@ SOLUTIONS = [
 ]
 
 # Instagram リール（9:16）
-REEL_EYEBROW = "ゴミ捨て場で見た"
+REEL_EYEBROW = "ゴミを持ち込みに行って見た"
 REEL_HOOK = ["ちょっとした", "言葉づかいで", "大人が喧嘩"]
 REEL_HOOK_SUB = "ほっといたらええのに"
 REEL_PROGRESS_LABEL = "イラッに乗らない"
