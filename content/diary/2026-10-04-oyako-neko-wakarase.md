@@ -1,6 +1,7 @@
 ---
 title: 引っ越したら、父猫が息子猫をじわじわ「わからせ」とる
 date: 2026-10-04
+note: https://note.com/ancohimesama/n/n99d4ad24559c
 tags: 日常, 猫
 ---
 
