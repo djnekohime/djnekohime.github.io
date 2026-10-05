@@ -1,6 +1,7 @@
 ---
 title: 糸リフト、いちばん安いとこで受けたら、そこからが営業やった
 date: 2026-10-06
+note: https://note.com/ancohimesama/n/ndbd5ca593fd7
 tags: 日常, お金
 ---
 
