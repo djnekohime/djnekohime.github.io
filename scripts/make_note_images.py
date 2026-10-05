@@ -18,33 +18,33 @@ from PIL import Image, ImageDraw, ImageFont
 
 # ================================ CONFIG ================================== #
 HIMEKA_ROOT = Path(r"C:/Users/himic/HIMEKA避難所/日記")  # ※Dドライブ不在(9/7火事)のため一時的にC:に出力。Dが戻ったら本来の場所へ移す
-DATE = "2026-10-04"
+DATE = "2026-10-06"
 HIMEKA = HIMEKA_ROOT / DATE  # 日付ごとのサブフォルダに自動で分けて保存
 
 # 見出し画像
 EYEBROW_GRAY = "ancohime.com の日記の"
-EYEBROW_PINK = "「親子猫のにらみ合い」"
-EYECATCH_TITLE = ["猫のにらみ合い、", "見守る5つ"]
-EYECATCH_SUB = ["引っ越したら、父ちゃんが", "息子をわからせ始めた"]
+EYEBROW_PINK = "「激安から始まる営業」"
+EYECATCH_TITLE = ["激安施術で、", "流されない5つ"]
+EYECATCH_SUB = ["安さで呼ばれて、カウンセラーに", "あれこれ足された話"]
 
 # 解決策まとめカード ＋ リールのテロップ（共通で使う）
-CARD_TITLE = "にらみ合いを見守る {n}つ"
+CARD_TITLE = "安さに流されない {n}つ"
 CARD_FILE = "note解決策{n}つ"
-CARD_EYEBROW = "猫がにらみ合ったら"
+CARD_EYEBROW = "美容クリニックの契約前に"
 SOLUTIONS = [
-    "ケガ・食欲・トイレだけ、毎日見張る",
-    "ごはん・水・トイレ・寝床は、別々の場所に",
-    "逃げ道と、高い場所を作ってやる",
-    "なでる・ごはんは、先住が先",
-    "割って入るなら、体やなく視線を切る",
+    "やりたい施術と、予算の上限を決めて行く",
+    "「◯円から」は総額やない。総額を聞く",
+    "割引の条件を、最初に聞く",
+    "その場で契約せん。「持ち帰ります」",
+    "追加の提案は「今日やらんと困る？」",
 ]
 
 # Instagram リール（9:16）
-REEL_EYEBROW = "引っ越したら起きた"
-REEL_HOOK = ["父ちゃんが", "息子を", "わからせる"]
-REEL_HOOK_SUB = "お母さんは大激怒"
-REEL_PROGRESS_LABEL = "にらみ合いを見守る"
-REEL_CLOSE = ["ほっといていいのは、", "ここまで"]
+REEL_EYEBROW = "糸リフトで行ったら"
+REEL_HOOK = ["激安に", "釣られて", "行ってみた"]
+REEL_HOOK_SUB = "カウンセラーが、営業やった話"
+REEL_PROGRESS_LABEL = "流されない"
+REEL_CLOSE = ["流されへんのは、", "準備がすべて"]
 REEL_CLOSE_CTA = "▶ 全文は note（プロフのリンク）"
 REEL_CLOSE_SUB = "この日の日記 → ancohime.com"
 
