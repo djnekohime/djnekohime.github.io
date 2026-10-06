@@ -429,6 +429,7 @@ def build(serve: bool = False) -> None:
             prev=by_no.get(q.no - 1), next=by_no.get(q.no + 1),
             same_person=same_person[:6],
             theme_slugs=THEME_SLUGS,
+            noindex=True,  # 名言1つ1ページは薄いので検索に出さない（一覧・人物別・テーマ別に力を集める）
         ))
 
     # --- 人物別 ---
@@ -700,6 +701,8 @@ def build(serve: bool = False) -> None:
         rel = f.relative_to(DIST).as_posix()
         if rel == "404.html":
             continue
+        if 'name="robots" content="noindex' in f.read_text(encoding="utf-8"):
+            continue  # 検索に出さないページはサイトマップにも載せない
         path = rel[:-len("index.html")] if rel.endswith("index.html") else rel
         locs.append(f"  <url><loc>{base}/{path}</loc></url>")
     write_raw("/sitemap.xml",
