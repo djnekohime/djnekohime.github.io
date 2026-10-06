@@ -750,6 +750,21 @@ def main() -> None:
             "note": NOTE.get(no, ""),
             "youtube": YT,
         })
+    # 追加分（No.261〜）は scripts/quotes_extra.py に書く
+    from quotes_extra import EXTRA
+    for i, (person, group, cats, quote, comment, attr, en, note) in enumerate(EXTRA, start=len(out) + 1):
+        out.append({
+            "no": i,
+            "quote": quote,
+            "attribution": attr,
+            "person": person,
+            "group": group,
+            "categories": cats,
+            "commentary": comment,
+            "en": en,
+            "note": note,
+            "youtube": YT,
+        })
     missing = [q["no"] for q in out if not q["commentary"]]
     OUT.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"✓ {len(out)} 件を {OUT} に書き出し")

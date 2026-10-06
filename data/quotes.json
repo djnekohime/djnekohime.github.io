@@ -3747,141 +3747,737 @@
  },
  {
   "no": 261,
-  "quote": "素振りを1本でも多くやったヤツが、勝つ世界。",
-  "attribution": "元中日ドラゴンズ選手・監督（三度の三冠王・通称「オレ流」）",
-  "person": "落合博満",
-  "group": "スポーツ選手",
+  "quote": "足るを知る者は富む。",
+  "attribution": "古代中国の思想家・道家の祖",
+  "person": "老子",
+  "group": "中国古典",
   "categories": [
-   "努力"
+   "生き方"
   ],
-  "commentary": "つまり、才能やセンスの前に、まず基礎練習の量で差がつくってこと。地味な繰り返しをコツコツやれる人が、結局いちばん強いんだよね。",
+  "commentary": "つまり、お金や持ち物がどれだけあるかより、「これで十分」と思えるかどうかが豊かさの分かれ目ってこと。比べ始めると、いくら持っててもゴールが逃げていくんだよね。",
   "en": "",
   "note": "",
   "youtube": "https://www.youtube.com/@ancogame"
  },
  {
   "no": 262,
-  "quote": "欠点を直すこと、それはよい部分が失われることでもある。",
-  "attribution": "元中日ドラゴンズ選手・監督（三度の三冠王・通称「オレ流」）",
-  "person": "落合博満",
-  "group": "スポーツ選手",
+  "quote": "上善は水の若し。",
+  "attribution": "古代中国の思想家・道家の祖",
+  "person": "老子",
+  "group": "中国古典",
   "categories": [
    "生き方"
   ],
-  "commentary": "つまり、完璧を目指して自分を全部直そうとしなくていいってこと。欠点とセットになってる長所もあるから、削りすぎると魅力まで消えちゃうんだよね。",
+  "commentary": "つまり、いちばん良いあり方は水みたいなもの。争わず、相手の形に合わせて、それでいて低いところへ静かに流れていく。力まない強さの話だよね。",
   "en": "",
   "note": "",
   "youtube": "https://www.youtube.com/@ancogame"
  },
  {
   "no": 263,
-  "quote": "志の低い人間は、それよりさらに低い実績しか挙げられない。",
-  "attribution": "元中日ドラゴンズ選手・監督（三度の三冠王・通称「オレ流」）",
-  "person": "落合博満",
-  "group": "スポーツ選手",
+  "quote": "知る者は言わず、言う者は知らず。",
+  "attribution": "古代中国の思想家・道家の祖",
+  "person": "老子",
+  "group": "中国古典",
   "categories": [
-   "挑戦"
+   "生き方"
   ],
-  "commentary": "つまり、目標を低く見積もった時点で、結果はもっと低くなるってこと。どうせやるなら、ちょっと本気で高いところを狙ったほうがいいんだよね。",
+  "commentary": "つまり、本当に分かってる人ほど、ペラペラ語らない。声の大きさと中身の深さは別物だよ、ってことだよね。",
   "en": "",
   "note": "",
   "youtube": "https://www.youtube.com/@ancogame"
  },
  {
   "no": 264,
-  "quote": "やるからには、負ける勝負はしません。",
-  "attribution": "元中日ドラゴンズ選手・監督（三度の三冠王・通称「オレ流」）",
-  "person": "落合博満",
-  "group": "スポーツ選手",
+  "quote": "人に勝つ者は力あり、自ら勝つ者は強し。",
+  "attribution": "古代中国の思想家・道家の祖",
+  "person": "老子",
+  "group": "中国古典",
   "categories": [
-   "挑戦"
+   "努力",
+   "生き方"
   ],
-  "commentary": "つまり、「とりあえずやってみる」じゃなくて、勝つ準備をしてから挑むってこと。本気の勝負ほど、事前の仕込みがものを言うんだよね。",
+  "commentary": "つまり、他人に勝つには力がいるけど、自分に勝つには「強さ」がいる。いちばんの相手は、昨日サボった自分なんだよね。",
   "en": "",
   "note": "",
   "youtube": "https://www.youtube.com/@ancogame"
  },
  {
   "no": 265,
-  "quote": "下を向くな。あきらめるな。前を向け。",
-  "attribution": "元中日ドラゴンズ選手・監督（三度の三冠王・通称「オレ流」）",
-  "person": "落合博満",
-  "group": "スポーツ選手",
+  "quote": "大器晩成。",
+  "attribution": "古代中国の思想家・道家の祖",
+  "person": "老子",
+  "group": "中国古典",
   "categories": [
-   "生き方"
+   "努力",
+   "挑戦"
   ],
-  "commentary": "つまり、落ち込んでる時間があるなら、その分前を向く準備をしろってこと。シンプルだけど、これが一番効くんだよね。",
+  "commentary": "つまり、大きな器ほど出来上がるのに時間がかかる。結果がまだ出ないのは、遅いんじゃなくて、まだ作ってる途中なんだよね。",
   "en": "",
   "note": "",
   "youtube": "https://www.youtube.com/@ancogame"
  },
  {
   "no": 266,
-  "quote": "誰かがだめだと誰かが出て来るんだよ、それが新旧交代っていうんだよ。",
-  "attribution": "元中日ドラゴンズ選手・監督（三度の三冠王・通称「オレ流」）",
-  "person": "落合博満",
-  "group": "スポーツ選手",
+  "quote": "無用の用。",
+  "attribution": "古代中国の思想家・道家",
+  "person": "荘子",
+  "group": "中国古典",
   "categories": [
-   "仕事"
+   "生き方"
   ],
-  "commentary": "つまり、誰か一人が抜けても組織は回るし、次の人が育つってこと。自分がいなくなっても大丈夫な仕組みを作れる人が、実は一番強いんだよね。",
+  "commentary": "つまり、役に立たないように見えるものにも、ちゃんと役目がある。「何の役に立つの？」ばかりで測らないほうが、人生は広くなるんだよね。",
   "en": "",
   "note": "",
   "youtube": "https://www.youtube.com/@ancogame"
  },
  {
   "no": 267,
-  "quote": "勝つ自信がなくなったらサッサとユニフォームを脱ぎます。",
-  "attribution": "元中日ドラゴンズ選手・監督（三度の三冠王・通称「オレ流」）",
-  "person": "落合博満",
-  "group": "スポーツ選手",
+  "quote": "天の時は地の利に如かず、地の利は人の和に如かず。",
+  "attribution": "古代中国の思想家・儒家",
+  "person": "孟子",
+  "group": "中国古典",
   "categories": [
-   "仕事"
+   "仕事",
+   "経営"
   ],
-  "commentary": "つまり、中途半端な気持ちで居座らない、っていう潔さのこと。「もう無理かも」って思った時が、次を考えるタイミングなんだよね。",
+  "commentary": "つまり、タイミングも環境も大事だけど、結局いちばん効くのは「人の輪」。チームがバラバラだったら、どんな好条件もムダになるんだよね。",
   "en": "",
   "note": "",
   "youtube": "https://www.youtube.com/@ancogame"
  },
  {
   "no": 268,
-  "quote": "泥臭い、かっこわるい。そういう野球ができて初めて上位にいける。",
-  "attribution": "元中日ドラゴンズ選手・監督（三度の三冠王・通称「オレ流」）",
-  "person": "落合博満",
-  "group": "スポーツ選手",
+  "quote": "淡泊にあらざれば以て志を明らかにするなく、寧静にあらざれば以て遠きを致すなし。",
+  "attribution": "三国時代・蜀の軍師",
+  "person": "諸葛亮",
+  "group": "中国古典",
   "categories": [
+   "生き方",
    "努力"
   ],
-  "commentary": "つまり、スマートに結果だけ出す人なんてほとんどいなくて、みんな裏では泥臭くやってるってこと。かっこ悪い努力を隠さなくていいんだよね。",
+  "commentary": "つまり、欲や雑音に振り回されてると、本当にやりたいことが見えなくなる。落ち着いた心でいる人だけが、遠くまで行けるんだよね。",
   "en": "",
   "note": "",
   "youtube": "https://www.youtube.com/@ancogame"
  },
  {
   "no": 269,
-  "quote": "私は、人生や仕事というものは誰かを頼るのではなく、自分で切り開いていかなければつまらないと思っている。",
-  "attribution": "元中日ドラゴンズ選手・監督（三度の三冠王・通称「オレ流」）",
-  "person": "落合博満",
-  "group": "スポーツ選手",
+  "quote": "青は藍より出でて藍より青し。",
+  "attribution": "古代中国の思想家・儒家",
+  "person": "荀子",
+  "group": "中国古典",
   "categories": [
-   "生き方"
+   "努力"
   ],
-  "commentary": "つまり、誰かに用意してもらった道より、自分で選び取った道のほうが面白いってこと。多少遠回りでも、自分で切り開いた分だけ愛着が湧くんだよね。",
+  "commentary": "つまり、教わった人が、教えてくれた人を超えることもある。学びって、最後は「師匠を越える」ところまでが恩返しなんだよね。",
   "en": "",
   "note": "",
   "youtube": "https://www.youtube.com/@ancogame"
  },
  {
   "no": 270,
-  "quote": "今日の試合が終わった時点で、明日の試合は始まる。",
-  "attribution": "元中日ドラゴンズ選手・監督（三度の三冠王・通称「オレ流」）",
-  "person": "落合博満",
+  "quote": "やってみせ、言って聞かせて、させてみせ、ほめてやらねば、人は動かじ。",
+  "attribution": "連合艦隊司令長官",
+  "person": "山本五十六",
+  "group": "歴史上の人物",
+  "categories": [
+   "仕事",
+   "経営"
+  ],
+  "commentary": "つまり、人を動かしたいなら、まず自分がやって見せて、やらせて、ほめる。口で言うだけじゃ誰も動かないってことだよね。",
+  "en": "",
+  "note": "※諸説あり",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 271,
+  "quote": "世界がぜんたい幸福にならないうちは個人の幸福はあり得ない。",
+  "attribution": "詩人・童話作家",
+  "person": "宮沢賢治",
+  "group": "歴史上の人物",
+  "categories": [
+   "生き方"
+  ],
+  "commentary": "つまり、自分だけ幸せでも、まわりが苦しいままじゃ本当の幸せにならない。優しくて、ちょっと壮大な願いだよね。",
+  "en": "",
+  "note": "",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 272,
+  "quote": "誰よりも三倍、四倍、五倍勉強する者、それが天才だ。",
+  "attribution": "細菌学者",
+  "person": "野口英世",
+  "group": "歴史上の人物",
+  "categories": [
+   "努力"
+  ],
+  "commentary": "つまり、天才っていうのは生まれつきじゃなくて、人の何倍もやった結果ってこと。才能がないって落ち込む前に、量で勝負する道があるんだよね。",
+  "en": "",
+  "note": "※諸説あり",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 273,
+  "quote": "稽古とは、一より習い十を知り、十よりかえるもとのその一。",
+  "attribution": "茶人・茶の湯の大成者",
+  "person": "千利休",
+  "group": "歴史上の人物",
+  "categories": [
+   "努力",
+   "生き方"
+  ],
+  "commentary": "つまり、基本から始めて、いろんなことを知って、最後はまた基本に戻ってくる。いちばん奥が深いのは、いちばん最初に習うことなんだよね。",
+  "en": "",
+  "note": "",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 274,
+  "quote": "初心忘るべからず。",
+  "attribution": "能の大成者",
+  "person": "世阿弥",
+  "group": "歴史上の人物",
+  "categories": [
+   "努力",
+   "挑戦"
+  ],
+  "commentary": "つまり、慣れてきた頃こそ、始めた時の気持ちを思い出そうってこと。ちなみに世阿弥の言う「初心」は、未熟だった頃の自分を忘れない、っていう厳しい意味もあるんだよね。",
+  "en": "",
+  "note": "",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 275,
+  "quote": "少しのことにも、先達はあらまほしきことなり。",
+  "attribution": "『徒然草』の作者・随筆家",
+  "person": "吉田兼好",
+  "group": "歴史上の人物",
+  "categories": [
+   "生き方",
+   "仕事"
+  ],
+  "commentary": "つまり、ちょっとしたことでも、案内してくれる先輩がいたほうがいい。最初の一歩で誰に聞くかが、あとで大きく効いてくるんだよね。",
+  "en": "",
+  "note": "",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 276,
+  "quote": "古人の跡を求めず、古人の求めたる所を求めよ。",
+  "attribution": "俳諧師・俳聖",
+  "person": "松尾芭蕉",
+  "group": "歴史上の人物",
+  "categories": [
+   "生き方",
+   "挑戦"
+  ],
+  "commentary": "つまり、昔の偉い人の「やり方」をなぞるんじゃなくて、その人が何を目指してたかを追いかけろってこと。真似じゃなく、志を受け継ぐんだよね。",
+  "en": "",
+  "note": "",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 277,
+  "quote": "天は自ら助くる者を助く。",
+  "attribution": "イギリスの作家・『自助論』の著者",
+  "person": "Samuel Smiles",
+  "group": "海外の名言",
+  "categories": [
+   "努力",
+   "生き方"
+  ],
+  "commentary": "つまり、待ってるだけの人より、自分で動いた人に追い風が吹く。神頼みの前に、まず一歩出そうってことだよね。明治に日本で大ベストセラーになった『西国立志編』（自助論）の冒頭の言葉なんだ。",
+  "en": "Heaven helps those who help themselves.",
+  "note": "※古い格言を著書で紹介した言葉",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 278,
+  "quote": "私たちの疑いは裏切り者だ。挑むことを恐れるあまり、手に入るはずの良いものを失わせる。",
+  "attribution": "イギリスの劇作家・詩人",
+  "person": "William Shakespeare",
+  "group": "海外の名言",
+  "categories": [
+   "挑戦"
+  ],
+  "commentary": "つまり、「どうせダメかも」という疑いが、本来つかめたはずのチャンスを逃させるってこと。やる前から諦めるのが、いちばんもったいないんだよね。",
+  "en": "Our doubts are traitors, and make us lose the good we oft might win, by fearing to attempt.",
+  "note": "",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 279,
+  "quote": "気に入らないなら、変えなさい。変えられないなら、考え方を変えなさい。文句を言ってはいけません。",
+  "attribution": "詩人・作家・公民権運動家",
+  "person": "Maya Angelou",
+  "group": "海外の名言",
+  "categories": [
+   "生き方"
+  ],
+  "commentary": "つまり、愚痴を言う前に「変えられるか」を考える。変えられないなら見方を変える。そうやって気持ちのハンドルを自分に取り戻すんだよね。",
+  "en": "If you don't like something, change it. If you can't change it, change your attitude. Don't complain.",
+  "note": "",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 280,
+  "quote": "ひとりでできることは、ほんのわずか。でも、力を合わせれば、できることはとても多い。",
+  "attribution": "社会福祉活動家・作家",
+  "person": "Helen Keller",
+  "group": "海外の名言",
+  "categories": [
+   "仕事",
+   "生き方"
+  ],
+  "commentary": "つまり、ひとりで全部抱えなくていい。頼ったり、組んだりしたほうが、結果的に遠くまで行けるんだよね。",
+  "en": "Alone we can do so little; together we can do so much.",
+  "note": "",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 281,
+  "quote": "誰もが大きなことをできるわけではありません。でも、小さなことを大きな愛を込めてすることはできます。",
+  "attribution": "カトリックの修道女・ノーベル平和賞受賞者",
+  "person": "Mother Teresa",
+  "group": "海外の名言",
+  "categories": [
+   "生き方"
+  ],
+  "commentary": "つまり、大きなことをしなくても、小さな親切に心を込めれば、それが立派な貢献になるってこと。今日できることから十分なんだよね。",
+  "en": "Not all of us can do great things. But we can do small things with great love.",
+  "note": "",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 282,
+  "quote": "明日死ぬかのように生きなさい。永遠に生きるかのように学びなさい。",
+  "attribution": "インド独立運動の指導者",
+  "person": "Mahatma Gandhi",
+  "group": "海外の名言",
+  "categories": [
+   "生き方",
+   "努力"
+  ],
+  "commentary": "つまり、今日を全力で味わいつつ、学ぶことは一生やめない。「今」と「ずっと先」を両方持っておこうって話だよね。",
+  "en": "Live as if you were to die tomorrow. Learn as if you were to live forever.",
+  "note": "※諸説あり",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 283,
+  "quote": "私は歩みの遅い人間だが、後ろへ歩いたことは一度もない。",
+  "attribution": "第16代アメリカ大統領",
+  "person": "Abraham Lincoln",
+  "group": "海外の名言",
+  "categories": [
+   "努力",
+   "挑戦"
+  ],
+  "commentary": "つまり、スピードより方向。遅くてもいいから、後ろには戻らない。亀の歩みでも、積み重ねればちゃんと遠くへ行けるんだよね。",
+  "en": "I am a slow walker, but I never walk back.",
+  "note": "※諸説あり",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 284,
+  "quote": "シンプルさこそ、究極の洗練である。",
+  "attribution": "ルネサンス期の芸術家・科学者",
+  "person": "Leonardo da Vinci",
+  "group": "海外の名言",
+  "categories": [
+   "仕事",
+   "生き方"
+  ],
+  "commentary": "つまり、足し算で飾るより、引き算で磨いたほうが、いちばん美しくなるってこと。説明も、デザインも、部屋の中も同じなんだよね。",
+  "en": "Simplicity is the ultimate sophistication.",
+  "note": "※諸説あり",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 285,
+  "quote": "できると信じれば、もう半分は達成したようなものだ。",
+  "attribution": "第26代アメリカ大統領",
+  "person": "Theodore Roosevelt",
+  "group": "海外の名言",
+  "categories": [
+   "挑戦",
+   "生き方"
+  ],
+  "commentary": "つまり、「どうせ無理」と思った瞬間に、半分負けてる。まず信じるところから始めようってことだよね。",
+  "en": "Believe you can and you're halfway there.",
+  "note": "※諸説あり",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 286,
+  "quote": "自分にはできないと思うことを、やらなければならない。",
+  "attribution": "アメリカ合衆国大統領夫人・人権活動家",
+  "person": "Eleanor Roosevelt",
+  "group": "海外の名言",
+  "categories": [
+   "挑戦",
+   "生き方"
+  ],
+  "commentary": "つまり、「できない」と感じる壁の向こうにこそ、成長がある。怖いことを一個だけやってみる日があっていいんだよね。",
+  "en": "You must do the thing you think you cannot do.",
+  "note": "",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 287,
+  "quote": "うまく言うより、うまくやるほうが良い。",
+  "attribution": "アメリカ建国の父・発明家",
+  "person": "Benjamin Franklin",
+  "group": "海外の名言",
+  "categories": [
+   "仕事",
+   "努力"
+  ],
+  "commentary": "つまり、きれいな言葉より、実際にやったことが信用になる。有言実行をシンプルに言ったらこうなるんだよね。",
+  "en": "Well done is better than well said.",
+  "note": "",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 288,
+  "quote": "人生で恐れるべきものは何もありません。理解すべきものがあるだけです。",
+  "attribution": "物理学者・化学者・ノーベル賞2度受賞",
+  "person": "Marie Curie",
+  "group": "海外の名言",
+  "categories": [
+   "挑戦",
+   "生き方"
+  ],
+  "commentary": "つまり、怖いのは「知らない」から。分かってしまえば、怖さは小さくなる。まず調べて、まず知ろう、ってことだよね。",
+  "en": "Nothing in life is to be feared, it is only to be understood.",
+  "note": "",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 289,
+  "quote": "人生は近くで見ると悲劇だが、遠くから見れば喜劇だ。",
+  "attribution": "喜劇俳優・映画監督",
+  "person": "Charlie Chaplin",
+  "group": "海外の名言",
+  "categories": [
+   "生き方"
+  ],
+  "commentary": "つまり、渦中にいると深刻でも、少し距離を取って眺めたら笑える話になる。今しんどいことも、いつか笑い話にできるんだよね。",
+  "en": "Life is a tragedy when seen in close-up, but a comedy in long-shot.",
+  "note": "",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 290,
+  "quote": "不可能なんてない。Impossible は、I'm possible と読めるのだから。",
+  "attribution": "女優・ユニセフ親善大使",
+  "person": "Audrey Hepburn",
+  "group": "海外の名言",
+  "categories": [
+   "挑戦",
+   "生き方"
+  ],
+  "commentary": "つまり、「不可能」という単語の中にさえ「私はできる」が隠れてるってこと。言葉遊びだけど、ちょっと勇気が出るんだよね。",
+  "en": "Nothing is impossible, the word itself says 'I'm possible'!",
+  "note": "※諸説あり",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 291,
+  "quote": "私たちは、繰り返し行うことの結果である。だから優秀さとは行為ではなく、習慣なのだ。",
+  "attribution": "古代ギリシャの哲学者",
+  "person": "Aristotle",
+  "group": "海外の名言",
+  "categories": [
+   "努力",
+   "生き方"
+  ],
+  "commentary": "つまり、すごい人は特別な一発がある人じゃなくて、毎日の習慣がすごい人。小さな繰り返しが、その人を作るんだよね。",
+  "en": "We are what we repeatedly do. Excellence, then, is not an act, but a habit.",
+  "note": "※諸説あり",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 292,
+  "quote": "物事が困難だから、私たちは挑まないのではない。挑まないから、困難になるのだ。",
+  "attribution": "古代ローマの哲学者",
+  "person": "Seneca",
+  "group": "海外の名言",
+  "categories": [
+   "挑戦"
+  ],
+  "commentary": "つまり、難しそうに見えるのは、やってないからってこと。一歩目を踏み出すと、意外と道ができるんだよね。",
+  "en": "It is not because things are difficult that we do not dare; it is because we do not dare that they are difficult.",
+  "note": "",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 293,
+  "quote": "大きなことは、小さなことの積み重ねで成し遂げられる。",
+  "attribution": "画家",
+  "person": "Vincent van Gogh",
+  "group": "海外の名言",
+  "categories": [
+   "努力",
+   "挑戦"
+  ],
+  "commentary": "つまり、いきなり大きなことはできなくていい。今日の小さな一手を、毎日積み上げるのがいちばん確実だよね。",
+  "en": "Great things are done by a series of small things brought together.",
+  "note": "",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 294,
+  "quote": "私たちが恐れるべき唯一のものは、恐れそのものだ。",
+  "attribution": "第32代アメリカ大統領",
+  "person": "Franklin D. Roosevelt",
+  "group": "海外の名言",
+  "categories": [
+   "挑戦",
+   "生き方"
+  ],
+  "commentary": "つまり、問題そのものより、「怖い」という気持ちが人を動けなくする。怖さに飲まれなければ、半分は乗り越えてるんだよね。",
+  "en": "The only thing we have to fear is fear itself.",
+  "note": "",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 295,
+  "quote": "私を殺さないものは、私をより強くする。",
+  "attribution": "ドイツの哲学者",
+  "person": "Friedrich Nietzsche",
+  "group": "海外の名言",
+  "categories": [
+   "挑戦",
+   "生き方"
+  ],
+  "commentary": "つまり、乗り越えたつらさは、あとで自分の強さになる。今は苦しくても、あとから「あれで強くなった」と言える日が来るんだよね。",
+  "en": "That which does not kill us makes us stronger.",
+  "note": "",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 296,
+  "quote": "努力できること、それが才能である。",
+  "attribution": "元プロ野球選手・MLBワールドシリーズMVP",
+  "person": "松井秀喜",
   "group": "スポーツ選手",
   "categories": [
    "努力"
   ],
-  "commentary": "つまり、昨日の結果を引きずってる暇はなくて、もう次が始まってるってこと。切り替えの早さも実力のうちなんだよね。",
+  "commentary": "つまり、才能って「うまさ」じゃなくて、「続けられる力」のこと。コツコツ努力ができる時点で、もう才能を持ってるんだよね。",
   "en": "",
+  "note": "",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 297,
+  "quote": "自分ではコントロールできないことは、気にしない。",
+  "attribution": "元プロ野球選手・MLBワールドシリーズMVP",
+  "person": "松井秀喜",
+  "group": "スポーツ選手",
+  "categories": [
+   "生き方",
+   "挑戦"
+  ],
+  "commentary": "つまり、他人の評価や天気や運みたいな、自分で動かせないことに悩まない。動かせることだけに集中するのが、メンタルを守るコツなんだよね。",
+  "en": "",
+  "note": "※諸説あり",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 298,
+  "quote": "苦しい時は、私の背中を見なさい。",
+  "attribution": "元サッカー女子日本代表・ワールドカップ優勝",
+  "person": "澤穂希",
+  "group": "スポーツ選手",
+  "categories": [
+   "挑戦",
+   "仕事"
+  ],
+  "commentary": "つまり、言葉で励ますより、先に自分が頑張る姿で見せる。リーダーって、そういうものなんだよね。",
+  "en": "",
+  "note": "※諸説あり",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 299,
+  "quote": "プレッシャーや困難といった、あらゆるマイナスなことは、僕にとってもっと高く上がるチャンスだ。",
+  "attribution": "元プロバスケットボール選手・NBA5度優勝",
+  "person": "Kobe Bryant",
+  "group": "スポーツ選手",
+  "categories": [
+   "挑戦",
+   "努力"
+  ],
+  "commentary": "つまり、きついことを「邪魔」じゃなく「踏み台」にする見方。しんどい時ほど、伸びるタイミングなんだよね。",
+  "en": "Everything negative — pressure, challenges — is all an opportunity for me to rise.",
+  "note": "",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 300,
+  "quote": "成功は偶然ではない。努力、粘り強さ、学び、犠牲、そして何よりも、自分のしていることへの愛だ。",
+  "attribution": "元サッカー選手・ワールドカップ3度優勝",
+  "person": "Pelé",
+  "group": "スポーツ選手",
+  "categories": [
+   "努力",
+   "仕事"
+  ],
+  "commentary": "つまり、成功には近道がなくて、全部ちゃんと理由がある。最後に「好き」が残る人が、いちばん強いんだよね。",
+  "en": "Success is no accident. It is hard work, perseverance, learning, studying, sacrifice and most of all, love of what you are doing or learning to do.",
+  "note": "",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 301,
+  "quote": "ストライクを取られるたびに、次のホームランに近づいている。",
+  "attribution": "元プロ野球選手・MLBのレジェンド",
+  "person": "Babe Ruth",
+  "group": "スポーツ選手",
+  "categories": [
+   "挑戦",
+   "努力"
+  ],
+  "commentary": "つまり、空振りは失敗じゃなくて、当たりに近づく途中。打席に立ち続けた人だけが、いつかホームランを打つんだよね。",
+  "en": "Every strike brings me closer to the next home run.",
+  "note": "",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 302,
+  "quote": "夢を叶えたいなら、戦わなければいけない。犠牲を払って、懸命に努力しなければいけない。",
+  "attribution": "サッカー選手・ワールドカップ優勝",
+  "person": "Lionel Messi",
+  "group": "スポーツ選手",
+  "categories": [
+   "努力",
+   "挑戦"
+  ],
+  "commentary": "つまり、夢は待っていても向こうから来ない。何かを手放してでも、取りにいくものなんだよね。",
+  "en": "You have to fight to reach your dream. You have to sacrifice and work hard for it.",
+  "note": "",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 303,
+  "quote": "何事にも限界を設けてはいけない。夢を見れば見るほど、遠くまで行ける。",
+  "attribution": "元競泳選手・五輪金メダル23個",
+  "person": "Michael Phelps",
+  "group": "スポーツ選手",
+  "categories": [
+   "挑戦",
+   "努力"
+  ],
+  "commentary": "つまり、自分で上限を決めた瞬間に、そこで止まる。決めなければ、思ったより遠くまで行けるんだよね。",
+  "en": "You can't put a limit on anything. The more you dream, the farther you get.",
+  "note": "",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 304,
+  "quote": "私は一万種類の蹴りを一度ずつ練習した者は恐れない。一種類の蹴りを一万回練習した者を恐れる。",
+  "attribution": "俳優・武道家（截拳道の創始者）",
+  "person": "Bruce Lee",
+  "group": "スポーツ選手",
+  "categories": [
+   "努力"
+  ],
+  "commentary": "つまり、あれもこれも手を出すより、ひとつを極めた人のほうが強いってこと。繰り返しの深さが、技の重みになるんだよね。",
+  "en": "I fear not the man who has practiced 10,000 kicks once, but I fear the man who has practiced one kick 10,000 times.",
+  "note": "※諸説あり",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 305,
+  "quote": "転んでもただでは起きるな。そこらの土でもつかんで来い。",
+  "attribution": "日清食品創業者・インスタントラーメンの発明者",
+  "person": "安藤百福",
+  "group": "経営者・実業家",
+  "categories": [
+   "挑戦",
+   "仕事"
+  ],
+  "commentary": "つまり、失敗しても、そこから何か持ち帰れ。転んだ場所でも学びを拾えば、それはもう失敗じゃなくて仕込みなんだよね。",
+  "en": "",
+  "note": "※諸説あり",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 306,
+  "quote": "やってみなはれ。",
+  "attribution": "サントリー創業者",
+  "person": "鳥井信治郎",
+  "group": "経営者・実業家",
+  "categories": [
+   "挑戦",
+   "仕事"
+  ],
+  "commentary": "つまり、考え込んでないで、まずやってみろってこと。たった一言だけど、挑戦する会社の空気はここから生まれるんだよね。",
+  "en": "",
+  "note": "",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 307,
+  "quote": "ボスはひとりしかいない。お客様だ。",
+  "attribution": "ウォルマート創業者",
+  "person": "Sam Walton",
+  "group": "経営者・実業家",
+  "categories": [
+   "仕事",
+   "経営"
+  ],
+  "commentary": "つまり、社長でも上司でもなくて、お客さんがすべてを決める。商売の原点はここなんだよね。",
+  "en": "There is only one boss. The customer.",
+  "note": "",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 308,
+  "quote": "自分の義務を果たし、さらに少しだけ余計にやりなさい。そうすれば未来は自然とうまくいく。",
+  "attribution": "鉄鋼王・実業家",
+  "person": "Andrew Carnegie",
+  "group": "経営者・実業家",
+  "categories": [
+   "仕事",
+   "努力"
+  ],
+  "commentary": "つまり、言われたことの、ほんの少し上をやる。それを続けた人だけが、気づけば信頼されてるんだよね。",
+  "en": "Do your duty and a little more and the future will take care of itself.",
+  "note": "※諸説あり",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 309,
+  "quote": "ビジネスのチャンスはバスのようなもの。いつも次のが来る。",
+  "attribution": "ヴァージン・グループ創業者",
+  "person": "Richard Branson",
+  "group": "経営者・実業家",
+  "categories": [
+   "挑戦",
+   "経営"
+  ],
+  "commentary": "つまり、一台逃しても落ち込まなくていい。次が来るから、乗れる準備だけしておこうってことだよね。",
+  "en": "Business opportunities are like buses, there's always another one coming.",
+  "note": "",
+  "youtube": "https://www.youtube.com/@ancogame"
+ },
+ {
+  "no": 310,
+  "quote": "失敗を楽しみ、そこから学びなさい。",
+  "attribution": "ダイソン創業者・発明家",
+  "person": "James Dyson",
+  "group": "経営者・実業家",
+  "categories": [
+   "挑戦",
+   "努力"
+  ],
+  "commentary": "つまり、掃除機を5,000台以上試作した人の言葉。失敗の数だけ、正解に近づいてるってことなんだよね。",
+  "en": "Enjoy failure and learn from it.",
   "note": "",
   "youtube": "https://www.youtube.com/@ancogame"
  }
