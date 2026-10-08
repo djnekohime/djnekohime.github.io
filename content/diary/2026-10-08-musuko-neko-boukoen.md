@@ -1,6 +1,7 @@
 ---
 title: 猫の住処をシャッフルしたら、息子猫が膀胱炎になって、石までできとった
 date: 2026-10-08
+note: https://note.com/ancohimesama/n/n93b8d31cae54
 tags: 日常, 猫
 ---
 
