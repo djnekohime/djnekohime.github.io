@@ -18,33 +18,33 @@ from PIL import Image, ImageDraw, ImageFont
 
 # ================================ CONFIG ================================== #
 HIMEKA_ROOT = Path(r"C:/Users/himic/HIMEKA避難所/日記")  # ※Dドライブ不在(9/7火事)のため一時的にC:に出力。Dが戻ったら本来の場所へ移す
-DATE = "2026-10-06"
+DATE = "2026-10-08"
 HIMEKA = HIMEKA_ROOT / DATE  # 日付ごとのサブフォルダに自動で分けて保存
 
 # 見出し画像
 EYEBROW_GRAY = "ancohime.com の日記の"
-EYEBROW_PINK = "「激安から始まる営業」"
-EYECATCH_TITLE = ["激安施術で、", "流されない5つ"]
-EYECATCH_SUB = ["安さで呼ばれて、カウンセラーに", "あれこれ足された話"]
+EYEBROW_PINK = "「猫のトイレの異変」"
+EYECATCH_TITLE = ["猫のトイレの異変、", "見逃さない5つ"]
+EYECATCH_SUB = ["住処を変えたら、息子猫が", "膀胱炎になった話"]
 
 # 解決策まとめカード ＋ リールのテロップ（共通で使う）
-CARD_TITLE = "安さに流されない {n}つ"
+CARD_TITLE = "猫のトイレの異変 {n}つ"
 CARD_FILE = "note解決策{n}つ"
-CARD_EYEBROW = "美容クリニックの契約前に"
+CARD_EYEBROW = "猫の膀胱炎で病院に走った話から"
 SOLUTIONS = [
-    "やりたい施術と、予算の上限を決めて行く",
-    "「◯円から」は総額やない。総額を聞く",
-    "割引の条件を、最初に聞く",
-    "その場で契約せん。「持ち帰ります」",
-    "追加の提案は「今日やらんと困る？」",
+    "トイレの回数と、しゃがむ様子を見る",
+    "おしっこが出てへんなら、すぐ病院",
+    "住処や相性が変わったら、いつもより観察",
+    "水を飲める場所を、増やす",
+    "処方食と薬は、獣医さんの指示どおり",
 ]
 
 # Instagram リール（9:16）
-REEL_EYEBROW = "糸リフトで行ったら"
-REEL_HOOK = ["激安に", "釣られて", "行ってみた"]
-REEL_HOOK_SUB = "カウンセラーが、営業やった話"
-REEL_PROGRESS_LABEL = "流されない"
-REEL_CLOSE = ["流されへんのは、", "準備がすべて"]
+REEL_EYEBROW = "猫の住処を変えたら"
+REEL_HOOK = ["息子猫が", "膀胱炎に", "なった"]
+REEL_HOOK_SUB = "トイレの異変で、速攻病院へ"
+REEL_PROGRESS_LABEL = "見逃さない"
+REEL_CLOSE = ["いつもと違うを、", "見逃さない"]
 REEL_CLOSE_CTA = "▶ 全文は note（プロフのリンク）"
 REEL_CLOSE_SUB = "この日の日記 → ancohime.com"
 
