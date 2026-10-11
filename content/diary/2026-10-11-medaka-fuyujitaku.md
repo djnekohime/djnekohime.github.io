@@ -1,6 +1,7 @@
 ---
 title: メダカの冬支度をしようと思ったのに、まだ暖かくて、えさをあげすぎてまう
 date: 2026-10-11
+note: https://note.com/ancohimesama/n/n3c4d6ceae53c
 tags: 日常, メダカ
 ---
 
