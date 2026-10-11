@@ -18,33 +18,33 @@ from PIL import Image, ImageDraw, ImageFont
 
 # ================================ CONFIG ================================== #
 HIMEKA_ROOT = Path(r"C:/Users/himic/HIMEKA避難所/日記")  # ※Dドライブ不在(9/7火事)のため一時的にC:に出力。Dが戻ったら本来の場所へ移す
-DATE = "2026-10-08"
+DATE = "2026-10-11"
 HIMEKA = HIMEKA_ROOT / DATE  # 日付ごとのサブフォルダに自動で分けて保存
 
 # 見出し画像
 EYEBROW_GRAY = "ancohime.com の日記の"
-EYEBROW_PINK = "「猫のトイレの異変」"
-EYECATCH_TITLE = ["猫のトイレの異変、", "見逃さない5つ"]
-EYECATCH_SUB = ["住処を変えたら、息子猫が", "膀胱炎になった話"]
+EYEBROW_PINK = "「メダカの冬支度」"
+EYECATCH_TITLE = ["メダカの冬支度、", "知っておきたい5つ"]
+EYECATCH_SUB = ["まだ暖かい日に、えさを", "あげすぎてまう話"]
 
 # 解決策まとめカード ＋ リールのテロップ（共通で使う）
-CARD_TITLE = "猫のトイレの異変 {n}つ"
+CARD_TITLE = "メダカの冬支度 {n}つ"
 CARD_FILE = "note解決策{n}つ"
-CARD_EYEBROW = "猫の膀胱炎で病院に走った話から"
+CARD_EYEBROW = "えさをあげすぎてまう日記から"
 SOLUTIONS = [
-    "トイレの回数と、しゃがむ様子を見る",
-    "おしっこが出てへんなら、すぐ病院",
-    "住処や相性が変わったら、いつもより観察",
-    "水を飲める場所を、増やす",
-    "処方食と薬は、獣医さんの指示どおり",
+    "水温計を入れて、えさは水温で決める",
+    "暖かい日も、少なめ・食べきれる量だけ",
+    "水温10℃を切ったら、えさはやめる",
+    "水は多め・深めに。水換えは控えめ",
+    "水草や隠れ家で、じっとできる場所を",
 ]
 
 # Instagram リール（9:16）
-REEL_EYEBROW = "猫の住処を変えたら"
-REEL_HOOK = ["息子猫が", "膀胱炎に", "なった"]
-REEL_HOOK_SUB = "トイレの異変で、速攻病院へ"
-REEL_PROGRESS_LABEL = "見逃さない"
-REEL_CLOSE = ["いつもと違うを、", "見逃さない"]
+REEL_EYEBROW = "メダカの冬支度"
+REEL_HOOK = ["暖かい日に", "えさを", "あげすぎてまう"]
+REEL_HOOK_SUB = "冬のメダカ、どう過ごすん？"
+REEL_PROGRESS_LABEL = "冬支度"
+REEL_CLOSE = ["えさは、水温で", "決める"]
 REEL_CLOSE_CTA = "▶ 全文は note（プロフのリンク）"
 REEL_CLOSE_SUB = "この日の日記 → ancohime.com"
 
