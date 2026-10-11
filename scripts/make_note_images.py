@@ -24,27 +24,27 @@ HIMEKA = HIMEKA_ROOT / DATE  # 日付ごとのサブフォルダに自動で分�
 # 見出し画像
 EYEBROW_GRAY = "ancohime.com の日記の"
 EYEBROW_PINK = "「メダカの冬支度」"
-EYECATCH_TITLE = ["メダカの冬支度、", "知っておきたい5つ"]
+EYECATCH_TITLE = ["室内メダカの冬支度、", "知っておきたい5つ"]
 EYECATCH_SUB = ["まだ暖かい日に、えさを", "あげすぎてまう話"]
 
 # 解決策まとめカード ＋ リールのテロップ（共通で使う）
-CARD_TITLE = "メダカの冬支度 {n}つ"
+CARD_TITLE = "室内メダカの冬支度 {n}つ"
 CARD_FILE = "note解決策{n}つ"
 CARD_EYEBROW = "えさをあげすぎてまう日記から"
 SOLUTIONS = [
-    "水温計を入れて、えさは水温で決める",
-    "暖かい日も、少なめ・食べきれる量だけ",
-    "水温10℃を切ったら、えさはやめる",
-    "水は多め・深めに。水換えは控えめ",
-    "水草や隠れ家で、じっとできる場所を",
+    "水温計を入れて、毎日の水温を見る",
+    "暖房のある部屋なら、冬もふつうに動く",
+    "えさは少なめ・食べきれる量だけ",
+    "窓際・夜の冷え込みで、水温を急に下げない",
+    "水換えは少しずつ、同じ水温の水で",
 ]
 
 # Instagram リール（9:16）
 REEL_EYEBROW = "メダカの冬支度"
 REEL_HOOK = ["暖かい日に", "えさを", "あげすぎてまう"]
-REEL_HOOK_SUB = "冬のメダカ、どう過ごすん？"
+REEL_HOOK_SUB = "室内のメダカ、冬どうする？"
 REEL_PROGRESS_LABEL = "冬支度"
-REEL_CLOSE = ["えさは、水温で", "決める"]
+REEL_CLOSE = ["えさは減らす、", "水温は急に下げない"]
 REEL_CLOSE_CTA = "▶ 全文は note（プロフのリンク）"
 REEL_CLOSE_SUB = "この日の日記 → ancohime.com"
 
