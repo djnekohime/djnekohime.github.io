@@ -18,33 +18,33 @@ from PIL import Image, ImageDraw, ImageFont
 
 # ================================ CONFIG ================================== #
 HIMEKA_ROOT = Path(r"C:/Users/himic/HIMEKA避難所/日記")  # ※Dドライブ不在(9/7火事)のため一時的にC:に出力。Dが戻ったら本来の場所へ移す
-DATE = "2026-10-11"
+DATE = "2026-10-16"
 HIMEKA = HIMEKA_ROOT / DATE  # 日付ごとのサブフォルダに自動で分けて保存
 
 # 見出し画像
 EYEBROW_GRAY = "ancohime.com の日記の"
-EYEBROW_PINK = "「メダカの冬支度」"
-EYECATCH_TITLE = ["室内メダカの冬支度、", "知っておきたい5つ"]
-EYECATCH_SUB = ["まだ暖かい日に、えさを", "あげすぎてまう話"]
+EYEBROW_PINK = "「親子丼を食べたら寝た」"
+EYECATCH_TITLE = ["食べたら午前中が消えた、", "試してみたい5つ"]
+EYECATCH_SUB = ["朝ごはんに親子丼を", "食べて寝てしまった話"]
 
 # 解決策まとめカード ＋ リールのテロップ（共通で使う）
-CARD_TITLE = "室内メダカの冬支度 {n}つ"
+CARD_TITLE = "食べても寝ない工夫 {n}つ"
 CARD_FILE = "note解決策{n}つ"
-CARD_EYEBROW = "えさをあげすぎてまう日記から"
+CARD_EYEBROW = "親子丼で寝てしまった日記から"
 SOLUTIONS = [
-    "水温計を入れて、毎日の水温を見る",
-    "暖房のある部屋なら、冬もふつうに動く",
-    "えさは少なめ・食べきれる量だけ",
-    "窓際・夜の冷え込みで、水温を急に下げない",
-    "水換えは少しずつ、同じ水温の水で",
+    "おかず（たんぱく質）から先に食べる",
+    "ごはんは半分にして、残りは2〜3時間後に",
+    "食後に10分、立つ・歩く",
+    "朝は卵・ヨーグルトなど、ごはんつぶ以外から",
+    "「食べたら寝る」を予定に入れておく",
 ]
 
 # Instagram リール（9:16）
-REEL_EYEBROW = "メダカの冬支度"
-REEL_HOOK = ["暖かい日に", "えさを", "あげすぎてまう"]
-REEL_HOOK_SUB = "室内のメダカ、冬どうする？"
-REEL_PROGRESS_LABEL = "冬支度"
-REEL_CLOSE = ["えさは減らす、", "水温は急に下げない"]
+REEL_EYEBROW = "ごはんつぶで眠くなる人へ"
+REEL_HOOK = ["食べたら", "午前中が", "消えた"]
+REEL_HOOK_SUB = "朝に親子丼を食べた日"
+REEL_PROGRESS_LABEL = "食べ方"
+REEL_CLOSE = ["おかずから食べて、", "ごはんは分ける"]
 REEL_CLOSE_CTA = "▶ 全文は note（プロフのリンク）"
 REEL_CLOSE_SUB = "この日の日記 → ancohime.com"
 
