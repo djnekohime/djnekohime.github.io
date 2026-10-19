@@ -18,33 +18,33 @@ from PIL import Image, ImageDraw, ImageFont
 
 # ================================ CONFIG ================================== #
 HIMEKA_ROOT = Path(r"C:/Users/himic/HIMEKA避難所/日記")  # ※Dドライブ不在(9/7火事)のため一時的にC:に出力。Dが戻ったら本来の場所へ移す
-DATE = "2026-10-16"
+DATE = "2026-10-19"
 HIMEKA = HIMEKA_ROOT / DATE  # 日付ごとのサブフォルダに自動で分けて保存
 
 # 見出し画像
 EYEBROW_GRAY = "ancohime.com の日記の"
-EYEBROW_PINK = "「親子丼を食べたら寝た」"
-EYECATCH_TITLE = ["食べたら午前中が消えた、", "試してみたい5つ"]
-EYECATCH_SUB = ["朝ごはんに親子丼を", "食べて寝てしまった話"]
+EYEBROW_PINK = "「駐車場、隣やった」"
+EYECATCH_TITLE = ["間違えて隣に止めた、", "再発防止の5つ"]
+EYECATCH_SUB = ["自分の車が2日間", "隣の区画にいた話"]
 
 # 解決策まとめカード ＋ リールのテロップ（共通で使う）
-CARD_TITLE = "食べても寝ない工夫 {n}つ"
+CARD_TITLE = "止め間違えない工夫 {n}つ"
 CARD_FILE = "note解決策{n}つ"
-CARD_EYEBROW = "親子丼で寝てしまった日記から"
+CARD_EYEBROW = "駐車場、隣やった日記から"
 SOLUTIONS = [
-    "おかず（たんぱく質）から先に食べる",
-    "ごはんは半分にして、残りは2〜3時間後に",
-    "食後に10分、立つ・歩く",
-    "朝は卵・ヨーグルトなど、ごはんつぶ以外から",
-    "「食べたら寝る」を予定に入れておく",
+    "止めた直後に、区画番号をスマホで撮る",
+    "止める前に、区画番号を声に出して確認する",
+    "隣と見分けがつく目印（柱・ライン）を覚える",
+    "自分用の目印を、置くか貼る（許可の範囲で）",
+    "間違いに気づいたら、すぐ管理会社に連絡する",
 ]
 
 # Instagram リール（9:16）
-REEL_EYEBROW = "ごはんつぶで眠くなる人へ"
-REEL_HOOK = ["食べたら", "午前中が", "消えた"]
-REEL_HOOK_SUB = "朝に親子丼を食べた日"
-REEL_PROGRESS_LABEL = "食べ方"
-REEL_CLOSE = ["おかずから食べて、", "ごはんは分ける"]
+REEL_EYEBROW = "駐車場あるある"
+REEL_HOOK = ["自分の車が", "隣の区画に", "2日いた"]
+REEL_HOOK_SUB = "借りとる場所は、ずっとあいとった"
+REEL_PROGRESS_LABEL = "対策"
+REEL_CLOSE = ["区画番号は、", "止めた直後に撮る"]
 REEL_CLOSE_CTA = "▶ 全文は note（プロフのリンク）"
 REEL_CLOSE_SUB = "この日の日記 → ancohime.com"
 
