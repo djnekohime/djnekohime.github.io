@@ -18,33 +18,33 @@ from PIL import Image, ImageDraw, ImageFont
 
 # ================================ CONFIG ================================== #
 HIMEKA_ROOT = Path(r"C:/Users/himic/HIMEKA避難所/日記")  # ※Dドライブ不在(9/7火事)のため一時的にC:に出力。Dが戻ったら本来の場所へ移す
-DATE = "2026-10-19"
+DATE = "2026-10-20"
 HIMEKA = HIMEKA_ROOT / DATE  # 日付ごとのサブフォルダに自動で分けて保存
 
 # 見出し画像
 EYEBROW_GRAY = "ancohime.com の日記の"
-EYEBROW_PINK = "「駐車場、隣やった」"
-EYECATCH_TITLE = ["間違えて隣に止めた、", "再発防止の5つ"]
-EYECATCH_SUB = ["自分の車が2日間", "隣の区画にいた話"]
+EYEBROW_PINK = "「リスクも受け入れる」"
+EYECATCH_TITLE = ["「SNSのリターンだけ欲しい」", "はおかしくない？"]
+EYECATCH_SUB = ["格闘家の投稿から広がった論争", "うちのSNSの使い方5つ"]
 
 # 解決策まとめカード ＋ リールのテロップ（共通で使う）
-CARD_TITLE = "止め間違えない工夫 {n}つ"
+CARD_TITLE = "うちのSNSの使い方 {n}つ"
 CARD_FILE = "note解決策{n}つ"
-CARD_EYEBROW = "駐車場、隣やった日記から"
+CARD_EYEBROW = "リスクの日記から"
 SOLUTIONS = [
-    "止めた直後に、区画番号をスマホで撮る",
-    "止める前に、区画番号を声に出して確認する",
-    "隣と見分けがつく目印（柱・ライン）を覚える",
-    "自分用の目印を、置くか貼る（許可の範囲で）",
-    "間違いに気づいたら、すぐ管理会社に連絡する",
+    "拡散力が大きい＝リスクも大きい",
+    "いいところを使うなら、悪いところも受け入れる",
+    "他人の投稿は、個人の意見として見る",
+    "否定的な意見も「そういう考え方もある」",
+    "匿名の悪口は、便所の落書きと思えばいい",
 ]
 
 # Instagram リール（9:16）
-REEL_EYEBROW = "駐車場あるある"
-REEL_HOOK = ["自分の車が", "隣の区画に", "2日いた"]
-REEL_HOOK_SUB = "借りとる場所は、ずっとあいとった"
-REEL_PROGRESS_LABEL = "対策"
-REEL_CLOSE = ["区画番号は、", "止めた直後に撮る"]
+REEL_EYEBROW = "SNSの使い方"
+REEL_HOOK = ["いいとこだけ", "使いたいは", "おかしくない？"]
+REEL_HOOK_SUB = "拡散力が大きいぶん、リスクも大きい"
+REEL_PROGRESS_LABEL = "使い方"
+REEL_CLOSE = ["リターンを取るなら、", "リスクも受け入れる"]
 REEL_CLOSE_CTA = "▶ 全文は note（プロフのリンク）"
 REEL_CLOSE_SUB = "この日の日記 → ancohime.com"
 
