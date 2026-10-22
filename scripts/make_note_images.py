@@ -18,33 +18,33 @@ from PIL import Image, ImageDraw, ImageFont
 
 # ================================ CONFIG ================================== #
 HIMEKA_ROOT = Path(r"C:/Users/himic/HIMEKA避難所/日記")  # ※Dドライブ不在(9/7火事)のため一時的にC:に出力。Dが戻ったら本来の場所へ移す
-DATE = "2026-10-21"
+DATE = "2026-10-23"
 HIMEKA = HIMEKA_ROOT / DATE  # 日付ごとのサブフォルダに自動で分けて保存
 
 # 見出し画像
 EYEBROW_GRAY = "ancohime.com の日記の"
-EYEBROW_PINK = "「判定はいらん」"
-EYECATCH_TITLE = ["「判定してくれ」とは", "言うとらん"]
-EYECATCH_SUB = ["AIに話を聞いてほしいときの", "頼み方5つ"]
+EYEBROW_PINK = "「お薬のにおい」"
+EYECATCH_TITLE = ["お薬だけ", "よけて食べる猫"]
+EYECATCH_SUB = ["ストルバイト結石、投薬14日目に", "やってよかった5つ"]
 
 # 解決策まとめカード ＋ リールのテロップ（共通で使う）
-CARD_TITLE = "判定なしで聞いてもらう {n}つ"
+CARD_TITLE = "やってよかった {n}つ"
 CARD_FILE = "note解決策{n}つ"
-CARD_EYEBROW = "席はあるのに料理がない日記から"
+CARD_EYEBROW = "お薬のにおいがわかる日記から"
 SOLUTIONS = [
-    "最初に「判定はいらん」と書く",
-    "「掘り下げて」と「評価して」は別",
-    "判定が来たら「頼んでない」と言う",
-    "話を聞いてほしい日は、役割を決める",
-    "合わんときは、別のAIに話す",
+    "お薬は、おやつに混ぜて飲ませる",
+    "水の入れ物を、数で増やす",
+    "ごはんは、獣医さんと相談して変える",
+    "ストレスを、まず減らす",
+    "トイレの回数と、出ているかを見る",
 ]
 
 # Instagram リール（9:16）
-REEL_EYEBROW = "AIとの付き合い方"
-REEL_HOOK = ["判定してくれ", "とは", "言うとらん"]
-REEL_HOOK_SUB = "聞いてほしいだけ"
-REEL_PROGRESS_LABEL = "頼み方"
-REEL_CLOSE = ["最初の1行に、", "「判定はいらん」"]
+REEL_EYEBROW = "猫との暮らし"
+REEL_HOOK = ["お薬だけ", "よけて食べる", "おでぶ猫"]
+REEL_HOOK_SUB = "ストルバイト結石・投薬14日目"
+REEL_PROGRESS_LABEL = "工夫"
+REEL_CLOSE = ["水の入れ物を、", "1個増やす"]
 REEL_CLOSE_CTA = "▶ 全文は note（プロフのリンク）"
 REEL_CLOSE_SUB = "この日の日記 → ancohime.com"
 
