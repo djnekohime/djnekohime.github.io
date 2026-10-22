@@ -689,6 +689,7 @@ def build(serve: bool = False) -> None:
                     next=(gor[i] if i < len(gor) else None),
                     next_url=(f"/kaiwai/{k['slug']}/{i + 1}/" if i < len(gor) else None),
                     presenter=presenter,
+                    noindex=True,  # 語録1つ1ページは薄いので検索に出さない（界隈ごとのまとめページに力を集める）。2026-10-23 AdSense不承認対策
                 ))
 
     # --- 404 ---
