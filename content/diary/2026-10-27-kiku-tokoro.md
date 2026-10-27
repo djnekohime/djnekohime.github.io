@@ -2,6 +2,7 @@
 title: 英語もハングルも、全部は聞かんでええらしい
 date: 2026-10-27
 tags: 英語, 韓国語, 勉強, 日常
+note: https://note.com/ancohimesama/n/n3b18d9a8b699
 ---
 
 韓国語と英語を勉強しとる。
