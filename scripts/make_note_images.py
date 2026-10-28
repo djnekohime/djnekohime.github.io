@@ -18,33 +18,35 @@ from PIL import Image, ImageDraw, ImageFont
 
 # ================================ CONFIG ================================== #
 HIMEKA_ROOT = Path(r"C:/Users/himic/HIMEKA避難所/日記")  # ※Dドライブ不在(9/7火事)のため一時的にC:に出力。Dが戻ったら本来の場所へ移す
-DATE = "2026-10-23"
+DATE = "2026-10-28"
 HIMEKA = HIMEKA_ROOT / DATE  # 日付ごとのサブフォルダに自動で分けて保存
 
 # 見出し画像
 EYEBROW_GRAY = "ancohime.com の日記の"
-EYEBROW_PINK = "「お薬のにおい」"
-EYECATCH_TITLE = ["お薬だけ", "よけて食べる猫"]
-EYECATCH_SUB = ["ストルバイト結石、投薬14日目に", "やってよかった5つ"]
+EYEBROW_PINK = "「見せ方迷子」"
+EYECATCH_TITLE = ["見せ方に迷ったら", "猫に教えてもらう"]
+EYECATCH_SUB = ["英語4コマ、毎日動画にして", "続けられる仕組み7つ"]
 
 # 解決策まとめカード ＋ リールのテロップ（共通で使う）
 CARD_TITLE = "やってよかった {n}つ"
 CARD_FILE = "note解決策{n}つ"
-CARD_EYEBROW = "お薬のにおいがわかる日記から"
+CARD_EYEBROW = "見せ方に迷ってた日記から"
 SOLUTIONS = [
-    "お薬は、おやつに混ぜて飲ませる",
-    "水の入れ物を、数で増やす",
-    "ごはんは、獣医さんと相談して変える",
-    "ストレスを、まず減らす",
-    "トイレの回数と、出ているかを見る",
+    "決める前に「仮で一回やってみる」を先に置く",
+    "迷ったら、今あるキャラや仕組みにそのまま乗せる",
+    "毎日やることは「材料をひとつ入れるだけ」まで減らす",
+    "見せ方より先に、続けられる形から決める",
+    "受け手が動く仕掛けをひとつ混ぜる",
+    "迷った時間に制限時間をつけておく",
+    "うまくいった形は、他のテーマにもそのまま流用する",
 ]
 
 # Instagram リール（9:16）
-REEL_EYEBROW = "猫との暮らし"
-REEL_HOOK = ["お薬だけ", "よけて食べる", "おでぶ猫"]
-REEL_HOOK_SUB = "ストルバイト結石・投薬14日目"
-REEL_PROGRESS_LABEL = "工夫"
-REEL_CLOSE = ["水の入れ物を、", "1個増やす"]
+REEL_EYEBROW = "見せ方迷子"
+REEL_HOOK = ["見せ方に", "迷ってたの、", "猫に任せた"]
+REEL_HOOK_SUB = "英語4コマ、動画化で迷子だった話"
+REEL_PROGRESS_LABEL = "コツ"
+REEL_CLOSE = ["迷ったら、", "今ある形に乗せる"]
 REEL_CLOSE_CTA = "▶ 全文は note（プロフのリンク）"
 REEL_CLOSE_SUB = "この日の日記 → ancohime.com"
 
