@@ -18,33 +18,35 @@ from PIL import Image, ImageDraw, ImageFont
 
 # ================================ CONFIG ================================== #
 HIMEKA_ROOT = Path(r"C:/Users/himic/HIMEKA避難所/日記")  # ※Dドライブ不在(9/7火事)のため一時的にC:に出力。Dが戻ったら本来の場所へ移す
-DATE = "2026-10-23"
+DATE = "2026-11-11"
 HIMEKA = HIMEKA_ROOT / DATE  # 日付ごとのサブフォルダに自動で分けて保存
 
 # 見出し画像
 EYEBROW_GRAY = "ancohime.com の日記の"
-EYEBROW_PINK = "「お薬のにおい」"
-EYECATCH_TITLE = ["お薬だけ", "よけて食べる猫"]
-EYECATCH_SUB = ["ストルバイト結石、投薬14日目に", "やってよかった5つ"]
+EYEBROW_PINK = "「ごはんを減らしてた子」"
+EYECATCH_TITLE = ["減らしてた量を", "うっかり元どおり"]
+EYECATCH_SUB = ["吐かせてしまった日に", "やっておきたい7つ"]
 
 # 解決策まとめカード ＋ リールのテロップ（共通で使う）
-CARD_TITLE = "やってよかった {n}つ"
+CARD_TITLE = "やっておきたい {n}つ"
 CARD_FILE = "note解決策{n}つ"
-CARD_EYEBROW = "お薬のにおいがわかる日記から"
+CARD_EYEBROW = "ごはんの量をうっかり忘れた日記から"
 SOLUTIONS = [
-    "お薬は、おやつに混ぜて飲ませる",
-    "水の入れ物を、数で増やす",
-    "ごはんは、獣医さんと相談して変える",
-    "ストレスを、まず減らす",
-    "トイレの回数と、出ているかを見る",
+    "その子だけ、器の色やかたちを変える",
+    "配る前に、その子の分だけ先取りしておく",
+    "保管容器に「この子は少なめ」とラベルを貼る",
+    "配膳は、必ずその子からスタートする",
+    "旦那にも同じルールを共有する",
+    "配膳を流れ作業にせず、その子だけ一拍おいて確認する",
+    "吐いた日は責めずに、引っかかった原因だけ記録する",
 ]
 
 # Instagram リール（9:16）
 REEL_EYEBROW = "猫との暮らし"
-REEL_HOOK = ["お薬だけ", "よけて食べる", "おでぶ猫"]
-REEL_HOOK_SUB = "ストルバイト結石・投薬14日目"
+REEL_HOOK = ["減らしてた", "ごはんを", "うっかり同じ量"]
+REEL_HOOK_SUB = "吐き戻し、またやってしまった"
 REEL_PROGRESS_LABEL = "工夫"
-REEL_CLOSE = ["水の入れ物を、", "1個増やす"]
+REEL_CLOSE = ["その子だけ", "器の色を変える"]
 REEL_CLOSE_CTA = "▶ 全文は note（プロフのリンク）"
 REEL_CLOSE_SUB = "この日の日記 → ancohime.com"
 
