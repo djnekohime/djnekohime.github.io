@@ -18,33 +18,35 @@ from PIL import Image, ImageDraw, ImageFont
 
 # ================================ CONFIG ================================== #
 HIMEKA_ROOT = Path(r"C:/Users/himic/HIMEKA避難所/日記")  # ※Dドライブ不在(9/7火事)のため一時的にC:に出力。Dが戻ったら本来の場所へ移す
-DATE = "2026-10-23"
+DATE = "2026-11-14"
 HIMEKA = HIMEKA_ROOT / DATE  # 日付ごとのサブフォルダに自動で分けて保存
 
 # 見出し画像
 EYEBROW_GRAY = "ancohime.com の日記の"
-EYEBROW_PINK = "「お薬のにおい」"
-EYECATCH_TITLE = ["お薬だけ", "よけて食べる猫"]
-EYECATCH_SUB = ["ストルバイト結石、投薬14日目に", "やってよかった5つ"]
+EYEBROW_PINK = "「あきらめた水槽」"
+EYECATCH_TITLE = ["あきらめた水槽で", "勝手に育った命"]
+EYECATCH_SUB = ["えさもあげてへん2カ月、", "メダカの赤ちゃんが2匹"]
 
 # 解決策まとめカード ＋ リールのテロップ（共通で使う）
 CARD_TITLE = "やってよかった {n}つ"
 CARD_FILE = "note解決策{n}つ"
-CARD_EYEBROW = "お薬のにおいがわかる日記から"
+CARD_EYEBROW = "あきらめた水槽の日記から"
 SOLUTIONS = [
-    "お薬は、おやつに混ぜて飲ませる",
-    "水の入れ物を、数で増やす",
-    "ごはんは、獣医さんと相談して変える",
-    "ストレスを、まず減らす",
-    "トイレの回数と、出ているかを見る",
+    "びっくりしたら、まず写真を1枚だけ撮る",
+    "今すぐやることと、今日はやらんことを紙に分ける",
+    "道具を買う前に、まず24時間様子を見る",
+    "「困っとることあるか」を自分に聞く",
+    "ひとりで決めずに、誰かに話してから動く",
+    "前と今で違うところを1つだけ書き出す",
+    "対策の前に、うれしかったことを1行メモする",
 ]
 
 # Instagram リール（9:16）
-REEL_EYEBROW = "猫との暮らし"
-REEL_HOOK = ["お薬だけ", "よけて食べる", "おでぶ猫"]
-REEL_HOOK_SUB = "ストルバイト結石・投薬14日目"
+REEL_EYEBROW = "メダカのいる暮らし"
+REEL_HOOK = ["えさなしで", "2カ月育った", "メダカの赤ちゃん"]
+REEL_HOOK_SUB = "あきらめた水槽・放置2カ月"
 REEL_PROGRESS_LABEL = "工夫"
-REEL_CLOSE = ["水の入れ物を、", "1個増やす"]
+REEL_CLOSE = ["びっくりしたら、", "まず写真を1枚"]
 REEL_CLOSE_CTA = "▶ 全文は note（プロフのリンク）"
 REEL_CLOSE_SUB = "この日の日記 → ancohime.com"
 
