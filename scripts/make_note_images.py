@@ -18,33 +18,35 @@ from PIL import Image, ImageDraw, ImageFont
 
 # ================================ CONFIG ================================== #
 HIMEKA_ROOT = Path(r"C:/Users/himic/HIMEKA避難所/日記")  # ※Dドライブ不在(9/7火事)のため一時的にC:に出力。Dが戻ったら本来の場所へ移す
-DATE = "2026-10-23"
+DATE = "2026-11-27"
 HIMEKA = HIMEKA_ROOT / DATE  # 日付ごとのサブフォルダに自動で分けて保存
 
 # 見出し画像
 EYEBROW_GRAY = "ancohime.com の日記の"
-EYEBROW_PINK = "「お薬のにおい」"
-EYECATCH_TITLE = ["お薬だけ", "よけて食べる猫"]
-EYECATCH_SUB = ["ストルバイト結石、投薬14日目に", "やってよかった5つ"]
+EYEBROW_PINK = "「毎月のBMI論争」"
+EYECATCH_TITLE = ["数字はぜんぶ", "異常なしやのに"]
+EYECATCH_SUB = ["毎月「太りなさい」と言われる人に", "やってみてほしい7つ"]
 
 # 解決策まとめカード ＋ リールのテロップ（共通で使う）
-CARD_TITLE = "やってよかった {n}つ"
+CARD_TITLE = "やってみてほしい {n}つ"
 CARD_FILE = "note解決策{n}つ"
-CARD_EYEBROW = "お薬のにおいがわかる日記から"
+CARD_EYEBROW = "毎月「太れ」と言われる日記から"
 SOLUTIONS = [
-    "お薬は、おやつに混ぜて飲ませる",
-    "水の入れ物を、数で増やす",
-    "ごはんは、獣医さんと相談して変える",
-    "ストレスを、まず減らす",
-    "トイレの回数と、出ているかを見る",
+    "セリフを1つだけ決めておく",
+    "その場で結論を出さない",
+    "話題が出るのを先に予想する",
+    "数字を紙で見せながら話す",
+    "「反論を増やさない」と先に決める",
+    "イラッとした気持ちは後で書く",
+    "先生を変える権利を自分に許す",
 ]
 
 # Instagram リール（9:16）
-REEL_EYEBROW = "猫との暮らし"
-REEL_HOOK = ["お薬だけ", "よけて食べる", "おでぶ猫"]
-REEL_HOOK_SUB = "ストルバイト結石・投薬14日目"
-REEL_PROGRESS_LABEL = "工夫"
-REEL_CLOSE = ["水の入れ物を、", "1個増やす"]
+REEL_EYEBROW = "病院とのやりとり"
+REEL_HOOK = ["血液検査", "ぜんぶ正常", "やのに"]
+REEL_HOOK_SUB = "毎月「太りなさい」と言われる日"
+REEL_PROGRESS_LABEL = "対策"
+REEL_CLOSE = ["セリフを1つだけ", "先に決めておく"]
 REEL_CLOSE_CTA = "▶ 全文は note（プロフのリンク）"
 REEL_CLOSE_SUB = "この日の日記 → ancohime.com"
 
